@@ -191,6 +191,20 @@ export const servicesData = [
     link: "/services#taxi-professionnel",
     price: "Sur devis",
     image: "/images/services/service-taxi-professionnel.webp"
+  },
+  {
+    title: "Service de nuit",
+    description: "Disponible 24h/24 pour vos déplacements nocturnes en toute sécurité. Retours de soirée et urgences.",
+    link: "/services",
+    price: "À partir de 20€",
+    image: "/images/services/service-taxi-nuit.webp"
+  },
+  {
+    title: "Événements et séminaires",
+    description: "Transport pour vos événements professionnels ou privés. Mariages, séminaires, soirées d'entreprise.",
+    link: "/services",
+    price: "Sur devis",
+    image: "/images/services/service-evenements.webp"
   }
 ];
 
