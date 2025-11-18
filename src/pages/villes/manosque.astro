@@ -1,0 +1,507 @@
+---
+/**
+ * Page Taxi Manosque - Page locale optimisée SEO
+ * Sous-préfecture des Alpes-de-Haute-Provence
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import ImageHero from '../../components/ImageHero.astro';
+import BookingForm from '../../components/BookingForm.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const title = "Taxi Manosque 24h/24";
+const description = "Réservez votre taxi à Manosque. Service professionnel disponible 24h/24. Transfert aéroport, gare, zone industrielle. Devis gratuit. Appelez le 01 23 45 67 89.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="taxi manosque, taxi 04100, réservation taxi manosque, transport manosque, VTC manosque, taxi zone industrielle manosque"
+>
+  <!-- Hero Section locale -->
+  <ImageHero
+    title="Taxi à Manosque : votre service disponible 24h/24"
+    subtitle="Service de taxi professionnel dans la ville la plus dynamique des Alpes-de-Haute-Provence. Réservation rapide pour tous vos déplacements professionnels et personnels."
+    image="/images/villes/alpes-haute-provence-paysage.webp"
+    imageAlt="Taxi professionnel à Manosque, Alpes-de-Haute-Provence"
+    ctaPrimary={{ text: "Appelez maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Réserver en ligne", href: "#booking" }}
+    variant="full"
+    height="medium"
+    overlay="dark"
+  />
+
+  <!-- Informations sur Manosque -->
+  <section class="city-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-main">
+          <h2>Service de taxi à Manosque et son agglomération</h2>
+
+          <p>
+            <strong>Taxi Manosque</strong> vous propose un service de transport professionnel dans toute la ville
+            et ses environs. Que vous soyez dans le <strong>centre-ville</strong>, à la <strong>zone industrielle</strong>,
+            au <strong>quartier Mont d'Or</strong>, à <strong>Pierrevert</strong>, <strong>Volx</strong> ou <strong>Oraison</strong>,
+            nous intervenons rapidement pour tous vos besoins de déplacement professionnel ou personnel.
+          </p>
+
+          <p>
+            Manosque, avec ses 23 000 habitants, est la ville la plus peuplée du département des Alpes-de-Haute-Provence.
+            Pôle économique majeur avec la présence de grandes entreprises comme L'Occitane en Provence, la ville nécessite
+            des solutions de transport fiables et ponctuelles. Notre <strong>service de taxi à Manosque</strong> répond
+            aux besoins des particuliers comme des professionnels.
+          </p>
+
+          <h3>Nos services de taxi à Manosque</h3>
+
+          <ul class="services-list">
+            <li>
+              <strong>Transfert zone industrielle</strong> - Navette vers et depuis la zone d'activité de Manosque,
+              idéal pour les déplacements professionnels
+            </li>
+            <li>
+              <strong>Transfert gare de Manosque</strong> - Transport depuis et vers la gare SNCF, correspondances
+              garanties pour vos trains
+            </li>
+            <li>
+              <strong>Transfert aéroport</strong> - Transport vers les aéroports de Marseille-Provence (1h),
+              Aix-en-Provence TGV et Nice
+            </li>
+            <li>
+              <strong>Courses locales</strong> - Déplacements dans Manosque et communes environnantes : Pierrevert,
+              Volx, Oraison, Valensole
+            </li>
+            <li>
+              <strong>Transport médical</strong> - Service conventionné CPAM pour vos rendez-vous médicaux au
+              Centre Hospitalier de Manosque
+            </li>
+            <li>
+              <strong>Taxi professionnel entreprises</strong> - Service dédié aux entreprises manosquines avec
+              facturation mensuelle et disponibilité prioritaire
+            </li>
+            <li>
+              <strong>Taxi longue distance</strong> - Trajets vers Aix-en-Provence, Marseille, Nice, Digne,
+              Avignon et toute la région PACA
+            </li>
+          </ul>
+
+          <h3>Points d'intérêt et destinations populaires à Manosque</h3>
+
+          <p>
+            Notre service de <strong>taxi à Manosque</strong> vous emmène vers toutes les destinations importantes
+            de la ville et de son agglomération :
+          </p>
+
+          <ul class="destinations-list">
+            <li><strong>Gare SNCF de Manosque</strong> - Centre-ville, liaisons TER vers Aix et Marseille</li>
+            <li><strong>Zone industrielle de Manosque</strong> - L'Occitane, entreprises, entrepôts logistiques</li>
+            <li><strong>Centre Hospitalier de Manosque</strong> - Établissement de santé principal</li>
+            <li><strong>Centre Jean Giono</strong> - Médiathèque et centre culturel</li>
+            <li><strong>Fondation Carzou</strong> - Musée et patrimoine culturel</li>
+            <li><strong>Centre commercial Les Passages</strong> - Shopping et loisirs</li>
+            <li><strong>Portes de Provence</strong> - Zone commerciale</li>
+            <li><strong>Plateau de Valensole</strong> - Champs de lavande (proximité)</li>
+          </ul>
+
+          <h3>Liaisons depuis Manosque</h3>
+
+          <div class="routes-info">
+            <div class="route-card">
+              <h4>Vers les aéroports</h4>
+              <ul>
+                <li>Taxi Manosque → Aéroport Marseille : 1h - à partir de 90€</li>
+                <li>Taxi Manosque → Aéroport Nice : 2h15 - à partir de 140€</li>
+                <li>Taxi Manosque → Aix TGV : 40 min - à partir de 70€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Vers les villes principales</h4>
+              <ul>
+                <li>Taxi Manosque → Digne-les-Bains : 45 min - à partir de 60€</li>
+                <li>Taxi Manosque → Aix-en-Provence : 50 min - à partir de 75€</li>
+                <li>Taxi Manosque → Marseille : 1h15 - à partir de 100€</li>
+                <li>Taxi Manosque → Forcalquier : 25 min - à partir de 35€</li>
+                <li>Taxi Manosque → Sisteron : 50 min - à partir de 65€</li>
+                <li>Taxi Manosque → Apt : 40 min - à partir de 55€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Communes de l'agglomération</h4>
+              <ul>
+                <li>Taxi Manosque → Pierrevert : 10 min - à partir de 20€</li>
+                <li>Taxi Manosque → Volx : 10 min - à partir de 20€</li>
+                <li>Taxi Manosque → Oraison : 15 min - à partir de 25€</li>
+                <li>Taxi Manosque → Valensole : 20 min - à partir de 30€</li>
+                <li>Taxi Manosque → Gréoux-les-Bains : 20 min - à partir de 30€</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Service taxi pour les entreprises de Manosque</h3>
+
+          <p>
+            Manosque est un pôle économique majeur des Alpes-de-Haute-Provence avec sa zone industrielle dynamique.
+            Nous proposons un <strong>service taxi professionnel</strong> adapté aux besoins des entreprises :
+            transport de collaborateurs, transferts clients vers l'aéroport, navette zone industrielle, mise à
+            disposition pour événements d'entreprise. Notre service inclut la <strong>facturation mensuelle groupée</strong>,
+            un compte entreprise dédié et une disponibilité prioritaire.
+          </p>
+        </div>
+
+        <aside class="info-sidebar">
+          <div class="booking-widget">
+            <BookingForm title="Réserver un taxi à Manosque" compact={true} />
+          </div>
+
+          <div class="contact-widget">
+            <h3>Contactez-nous</h3>
+            <p>Service disponible 24h/24 et 7j/7</p>
+            <a href="tel:+33123456789" class="phone-link">01 23 45 67 89</a>
+            <p class="contact-info">
+              Réponse rapide garantie<br />
+              Devis gratuit sans engagement
+            </p>
+          </div>
+
+          <div class="zones-widget">
+            <h3>Autres villes desservies</h3>
+            <ul>
+              <li><a href="/villes/digne-les-bains">Taxi Digne-les-Bains</a></li>
+              <li><a href="/villes/sisteron">Taxi Sisteron</a></li>
+              <li><a href="/villes/forcalquier">Taxi Forcalquier</a></li>
+              <li><a href="/villes/chateau-arnoux">Taxi Château-Arnoux</a></li>
+              <li><a href="/villes/barcelonnette">Taxi Barcelonnette</a></li>
+              <li><a href="/villes">Voir toutes les villes</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services Cards -->
+  <section class="services-section bg-light">
+    <div class="container">
+      <h2 class="text-center">Nos services de taxi à Manosque</h2>
+      <div class="services-grid">
+        <ServiceCard
+          title="Transfert zone industrielle"
+          description="Transport professionnel vers la zone d'activité de Manosque. Service régulier pour entreprises."
+          price="25€"
+        />
+        <ServiceCard
+          title="Taxi aéroport depuis Manosque"
+          description="Transport vers Marseille, Nice et Aix TGV. Suivi de vol et assistance bagages inclus."
+          price="90€"
+        />
+        <ServiceCard
+          title="Courses locales Manosque"
+          description="Déplacements dans Manosque et communes environnantes. Service rapide et fiable."
+          price="18€"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de réservation -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="booking-centered">
+        <h2 class="text-center">Réservez votre taxi à Manosque</h2>
+        <p class="text-center section-subtitle">
+          Remplissez le formulaire ci-dessous et recevez votre devis gratuit sous 15 minutes
+        </p>
+        <div class="booking-form-large">
+          <BookingForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    title="Besoin d'un taxi à Manosque maintenant ?"
+    subtitle="Appelez-nous ou réservez en ligne pour un service rapide et professionnel dans toute la ville"
+    buttonText="Appeler maintenant"
+    phoneNumber="01 23 45 67 89"
+  />
+
+  <!-- Contenu SEO -->
+  <section class="seo-content">
+    <div class="container">
+      <article class="seo-article">
+        <h2>Pourquoi choisir notre service de taxi à Manosque ?</h2>
+
+        <p>
+          Notre entreprise de <strong>taxi à Manosque</strong> est spécialisée dans le transport de personnes
+          depuis plus de 15 ans. Basés dans les Alpes-de-Haute-Provence, nous connaissons parfaitement
+          <strong>Manosque</strong> et son agglomération. Que vous ayez besoin d'un <strong>taxi pour la zone
+          industrielle de Manosque</strong>, d'un <strong>transfert vers l'aéroport de Marseille</strong> ou
+          d'un simple déplacement en ville, nos chauffeurs professionnels sont à votre disposition
+          <strong>24 heures sur 24 et 7 jours sur 7</strong>.
+        </p>
+
+        <h3>Manosque, pôle économique des Alpes-de-Haute-Provence</h3>
+
+        <p>
+          Avec ses 23 000 habitants, <strong>Manosque</strong> est la ville la plus peuplée du département 04.
+          Dynamique et attractive, elle accueille de nombreuses entreprises, dont le siège mondial de
+          <strong>L'Occitane en Provence</strong>. Sa zone industrielle est un pôle d'emploi majeur qui nécessite
+          des solutions de transport fiables pour les salariés et visiteurs. Notre <strong>service de taxi</strong>
+          répond à ces besoins avec des navettes régulières vers la zone d'activité et le centre-ville.
+        </p>
+
+        <p>
+          Notre flotte de véhicules récents et climatisés peut accueillir de 1 à 8 passagers selon vos besoins.
+          Tous nos chauffeurs sont titulaires de la carte professionnelle et parfaitement formés pour vous garantir
+          un trajet confortable et sécurisé. Nous desservons également les communes environnantes : Pierrevert,
+          Volx, Oraison, Valensole, Gréoux-les-Bains et Vinon-sur-Verdon.
+        </p>
+
+        <h3>Réservation de taxi simple et rapide à Manosque</h3>
+
+        <p>
+          Réserver un <strong>taxi à Manosque</strong> est très simple. Vous pouvez nous contacter par
+          téléphone au 01 23 45 67 89 ou utiliser notre formulaire de réservation en ligne disponible 24h/24.
+          Nous vous répondons rapidement avec un <strong>devis gratuit et sans engagement</strong>. Vous recevrez
+          ensuite une confirmation par SMS et email avec toutes les informations de votre course.
+        </p>
+
+        <p>
+          Pour les professionnels, nous proposons un service dédié avec facturation mensuelle, compte entreprise
+          et disponibilité prioritaire. Idéal pour les entreprises de la zone industrielle qui ont des besoins
+          réguliers de transport pour leurs collaborateurs ou clients. Nos tarifs sont transparents et compétitifs.
+          Pas de surprise à l'arrivée : le prix vous est communiqué avant chaque course.
+        </p>
+
+        <h3>Transport vers les aéroports depuis Manosque</h3>
+
+        <p>
+          Notre <strong>service de transfert aéroport depuis Manosque</strong> vous emmène vers tous les aéroports
+          de la région en toute sérénité. Que ce soit pour l'<strong>aéroport de Marseille-Provence</strong> (1h de trajet),
+          l'<strong>aéroport de Nice Côte d'Azur</strong> (2h15) ou la <strong>gare TGV d'Aix-en-Provence</strong> (40 min),
+          nous assurons un service porte-à-porte avec suivi de vol en temps réel et assistance bagages. Réservez à
+          l'avance pour garantir votre place et bénéficier de nos meilleurs tarifs.
+        </p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .city-info {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .info-main h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-main h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+  }
+
+  .info-main h4 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .info-main p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .services-list,
+  .destinations-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .services-list li,
+  .destinations-list li {
+    padding: var(--spacing-sm) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .services-list li::before,
+  .destinations-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .routes-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .route-card {
+    background-color: var(--color-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .route-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-sm);
+  }
+
+  .route-card li {
+    padding: 0.5rem 0;
+    color: var(--color-gray-dark);
+  }
+
+  .info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .booking-widget,
+  .contact-widget,
+  .zones-widget {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+  }
+
+  .contact-widget {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+  }
+
+  .contact-widget h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-widget p {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .phone-link {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: var(--spacing-md) 0;
+  }
+
+  .contact-info {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+  }
+
+  .zones-widget h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .zones-widget ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .zones-widget li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .zones-widget li:last-child {
+    border-bottom: none;
+  }
+
+  .zones-widget a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .services-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .services-section h2 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .booking-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .booking-centered {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .booking-form-large {
+    margin-top: var(--spacing-lg);
+  }
+
+  .seo-content {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .seo-article {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .seo-article h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .seo-article h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .seo-article p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+  }
+
+  @media (max-width: 968px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-sidebar {
+      order: -1;
+    }
+
+    .routes-info {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

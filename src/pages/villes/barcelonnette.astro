@@ -1,0 +1,294 @@
+---
+/**
+ * Page Taxi Barcelonnette - Page locale optimisée SEO
+ * Sous-préfecture de la vallée de l'Ubaye - Stations de ski
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import ImageHero from '../../components/ImageHero.astro';
+import BookingForm from '../../components/BookingForm.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const title = "Taxi Barcelonnette 24h/24 - Stations de ski";
+const description = "Réservez votre taxi à Barcelonnette et vallée de l'Ubaye. Service professionnel 24h/24. Transfert stations de ski Pra-Loup, Le Sauze. Appelez le 01 23 45 67 89.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="taxi barcelonnette, taxi 04400, taxi pra-loup, taxi le sauze, taxi vallée ubaye, transfert station ski"
+>
+  <!-- Hero Section locale -->
+  <ImageHero
+    title="Taxi à Barcelonnette : service 24h/24 dans la vallée de l'Ubaye"
+    subtitle="Service de taxi professionnel pour Barcelonnette et les stations de ski. Transferts vers Pra-Loup, Le Sauze, Super-Sauze. Disponible hiver comme été."
+    image="/images/villes/alpes-haute-provence-paysage.webp"
+    imageAlt="Taxi professionnel à Barcelonnette, vallée de l'Ubaye, stations de ski"
+    ctaPrimary={{ text: "Appelez maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Réserver en ligne", href: "#booking" }}
+    variant="full"
+    height="medium"
+    overlay="dark"
+  />
+
+  <!-- Informations sur Barcelonnette -->
+  <section class="city-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-main">
+          <h2>Service de taxi à Barcelonnette et dans la vallée de l'Ubaye</h2>
+
+          <p>
+            <strong>Taxi Barcelonnette</strong> vous propose un service de transport professionnel dans toute la
+            <strong>vallée de l'Ubaye</strong>. Que vous soyez à <strong>Barcelonnette</strong>, aux stations de ski
+            de <strong>Pra-Loup</strong>, <strong>Le Sauze</strong> ou <strong>Super-Sauze</strong>, dans les villages
+            de <strong>Jausiers</strong>, <strong>Saint-Paul-sur-Ubaye</strong> ou <strong>Le Lauzet</strong>, nous
+            intervenons rapidement pour tous vos besoins de déplacement montagne.
+          </p>
+
+          <p>
+            Barcelonnette, sous-préfecture de 2 700 habitants, est la capitale de la vallée de l'Ubaye. Située à
+            1 135 mètres d'altitude, la ville est un pôle touristique majeur des Alpes du Sud, particulièrement prisée
+            pour ses <strong>stations de ski</strong> (Pra-Loup, Le Sauze) en hiver et ses activités de montagne en été.
+            Notre <strong>service de taxi à Barcelonnette</strong> est spécialisé dans les transferts stations de ski
+            et les liaisons montagne.
+          </p>
+
+          <h3>Nos services de taxi à Barcelonnette</h3>
+
+          <ul class="services-list">
+            <li>
+              <strong>Transfert stations de ski</strong> - Navette vers Pra-Loup, Le Sauze et Super-Sauze, transport
+              de matériel de ski inclus
+            </li>
+            <li>
+              <strong>Taxi aéroport depuis Barcelonnette</strong> - Transport vers les aéroports de Nice (2h30),
+              Marseille (2h30) et Grenoble (2h30)
+            </li>
+            <li>
+              <strong>Taxi vers Gap et Digne</strong> - Liaisons quotidiennes vers les préfectures (1h15 vers Gap,
+              1h45 vers Digne)
+            </li>
+            <li>
+              <strong>Courses locales vallée Ubaye</strong> - Déplacements dans Barcelonnette et tous les villages
+              de la vallée
+            </li>
+            <li>
+              <strong>Transport médical montagne</strong> - Service conventionné CPAM adapté au contexte montagnard,
+              transports vers Gap et Nice
+            </li>
+            <li>
+              <strong>Taxi randonneurs et cyclistes</strong> - Service spécial pour randonnées et cyclosport,
+              transport de vélos et matériel
+            </li>
+            <li>
+              <strong>Circuits touristiques montagne</strong> - Découverte des cols et villages de la vallée,
+              chauffeur-guide montagnard
+            </li>
+          </ul>
+
+          <h3>Points d'intérêt et destinations à Barcelonnette</h3>
+
+          <p>
+            Notre service de <strong>taxi à Barcelonnette</strong> dessert tous les sites remarquables de la
+            vallée de l'Ubaye :
+          </p>
+
+          <ul class="destinations-list">
+            <li><strong>Station de Pra-Loup</strong> - Domaine skiable 180 km de pistes, altitude 1 500-2 600 m</li>
+            <li><strong>Station du Sauze</strong> - Station village familiale, ski alpin et nordique</li>
+            <li><strong>Station de Super-Sauze</strong> - Ski freeride et freestyle</li>
+            <li><strong>Musée de la Vallée</strong> - Histoire de l'émigration mexicaine</li>
+            <li><strong>Col de la Bonette</strong> - Plus haute route d'Europe (2 802 m)</li>
+            <li><strong>Lac de Serre-Ponçon</strong> - Sports nautiques et plages (été)</li>
+            <li><strong>Fort de Tournoux</strong> - Fortifications Maginot</li>
+            <li><strong>Villages de la vallée</strong> - Jausiers, Saint-Paul, Meyronnes</li>
+          </ul>
+
+          <h3>Liaisons depuis Barcelonnette</h3>
+
+          <div class="routes-info">
+            <div class="route-card">
+              <h4>Vers les stations de ski</h4>
+              <ul>
+                <li>Taxi Barcelonnette → Pra-Loup 1500 : 15 min - à partir de 30€</li>
+                <li>Taxi Barcelonnette → Pra-Loup 1600 : 20 min - à partir de 35€</li>
+                <li>Taxi Barcelonnette → Le Sauze : 10 min - à partir de 25€</li>
+                <li>Taxi Barcelonnette → Super-Sauze : 15 min - à partir de 30€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Vers les aéroports</h4>
+              <ul>
+                <li>Taxi Barcelonnette → Aéroport Nice : 2h30 - à partir de 180€</li>
+                <li>Taxi Barcelonnette → Aéroport Marseille : 2h30 - à partir de 180€</li>
+                <li>Taxi Barcelonnette → Aéroport Grenoble : 2h30 - à partir de 175€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Vers les villes principales</h4>
+              <ul>
+                <li>Taxi Barcelonnette → Gap : 1h15 - à partir de 90€</li>
+                <li>Taxi Barcelonnette → Digne-les-Bains : 1h45 - à partir de 120€</li>
+                <li>Taxi Barcelonnette → Sisteron : 1h45 - à partir de 120€</li>
+                <li>Taxi Barcelonnette → Embrun : 1h - à partir de 80€</li>
+                <li>Taxi Barcelonnette → Guillestre : 45 min - à partir de 70€</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Service taxi spécialisé montagne et stations de ski</h3>
+
+          <p>
+            Notre <strong>service de taxi à Barcelonnette</strong> est spécialement adapté à l'environnement montagnard
+            et aux conditions hivernales. Nos véhicules sont équipés de pneus neige et nos chauffeurs connaissent
+            parfaitement les routes de montagne et les cols de la région. En hiver, nous assurons quotidiennement les
+            <strong>transferts vers les stations de ski</strong> de Pra-Loup, Le Sauze et Super-Sauze, avec transport
+            de matériel de ski et snowboard inclus.
+          </p>
+
+          <p>
+            En été, Barcelonnette et la vallée de l'Ubaye deviennent un paradis pour les randonneurs et cyclistes.
+            Nous proposons des services adaptés : déposes pour randonnées, récupération après raids VTT ou cyclosport,
+            transport vers les départs de sentiers (GR5, Tour de l'Ubaye) et les cols mythiques (Bonette, Vars, Restefond).
+          </p>
+        </div>
+
+        <aside class="info-sidebar">
+          <div class="booking-widget">
+            <BookingForm title="Réserver un taxi" compact={true} />
+          </div>
+
+          <div class="contact-widget">
+            <h3>Contactez-nous</h3>
+            <p>Service disponible 24h/24 et 7j/7</p>
+            <a href="tel:+33123456789" class="phone-link">01 23 45 67 89</a>
+            <p class="contact-info">
+              Réponse rapide garantie<br />
+              Devis gratuit sans engagement
+            </p>
+          </div>
+
+          <div class="zones-widget">
+            <h3>Autres villes desservies</h3>
+            <ul>
+              <li><a href="/villes/digne-les-bains">Taxi Digne-les-Bains</a></li>
+              <li><a href="/villes/sisteron">Taxi Sisteron</a></li>
+              <li><a href="/villes/manosque">Taxi Manosque</a></li>
+              <li><a href="/villes/forcalquier">Taxi Forcalquier</a></li>
+              <li><a href="/villes/chateau-arnoux">Taxi Château-Arnoux</a></li>
+              <li><a href="/villes">Voir toutes les villes</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services Cards -->
+  <section class="services-section bg-light">
+    <div class="container">
+      <h2 class="text-center">Nos services de taxi à Barcelonnette</h2>
+      <div class="services-grid">
+        <ServiceCard
+          title="Transfert stations de ski"
+          description="Navette vers Pra-Loup, Le Sauze et Super-Sauze. Transport matériel ski inclus."
+          price="30€"
+        />
+        <ServiceCard
+          title="Taxi aéroport Nice"
+          description="Transport vers l'aéroport de Nice Côte d'Azur. Véhicules adaptés montagne."
+          price="180€"
+        />
+        <ServiceCard
+          title="Circuits montagne"
+          description="Découverte de la vallée de l'Ubaye avec chauffeur-guide montagnard."
+          price="Sur devis"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de réservation -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="booking-centered">
+        <h2 class="text-center">Réservez votre taxi à Barcelonnette</h2>
+        <p class="text-center section-subtitle">
+          Remplissez le formulaire ci-dessous et recevez votre devis gratuit sous 15 minutes
+        </p>
+        <div class="booking-form-large">
+          <BookingForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    title="Besoin d'un taxi à Barcelonnette maintenant ?"
+    subtitle="Service rapide vers les stations de ski, Gap, Nice et toutes destinations montagne"
+    buttonText="Appeler maintenant"
+    phoneNumber="01 23 45 67 89"
+  />
+
+  <!-- Contenu SEO -->
+  <section class="seo-content">
+    <div class="container">
+      <article class="seo-article">
+        <h2>Pourquoi choisir notre service de taxi à Barcelonnette ?</h2>
+
+        <p>
+          Notre <strong>taxi à Barcelonnette</strong> est spécialisé dans le transport montagnard et connaît parfaitement
+          la <strong>vallée de l'Ubaye</strong> et ses <strong>stations de ski</strong>. Que vous ayez besoin d'un
+          <strong>transfert vers Pra-Loup</strong>, Le Sauze ou d'un transport vers l'aéroport de Nice, nos chauffeurs
+          professionnels, habitués des routes de montagne, sont à votre disposition <strong>24h/24 et 7j/7</strong>,
+          hiver comme été.
+        </p>
+
+        <h3>Un service adapté à la montagne et aux sports d'hiver</h3>
+
+        <p>
+          Barcelonnette et la vallée de l'Ubaye vivent au rythme des saisons. En hiver, les <strong>stations de ski</strong>
+          de Pra-Loup, Le Sauze et Super-Sauze attirent des milliers de skieurs. Notre <strong>service de taxi</strong>
+          assure quotidiennement les transferts depuis Barcelonnette vers les stations, avec des véhicules adaptés
+          (pneus neige, porte-skis) et des chauffeurs expérimentés en conduite hivernale. Le transport de matériel
+          (skis, snowboard, luges) est inclus sans supplément.
+        </p>
+
+        <p>
+          En été, la vallée se transforme en terrain de jeu pour randonneurs et cyclistes. Nous proposons des services
+          spécifiques : déposes pour randonnées en montagne, récupération après raids VTT, transport vers les cols
+          (Bonette, Vars, Restefond) et les départs de sentiers. Nos véhicules peuvent transporter vélos et équipement
+          de montagne en toute sécurité.
+        </p>
+
+        <h3>Réservation simple et tarifs transparents</h3>
+
+        <p>
+          Réserver un <strong>taxi à Barcelonnette</strong> est très simple. Contactez-nous par téléphone au
+          01 23 45 67 89 ou utilisez notre formulaire en ligne disponible 24h/24. Nous vous répondons rapidement
+          avec un <strong>devis gratuit</strong>. Tarifs fixes communiqués à l'avance, sans surprise. Tous moyens
+          de paiement acceptés. En haute saison hivernale, nous recommandons de réserver à l'avance pour garantir
+          votre place.
+        </p>
+
+        <h3>Transferts aéroport depuis Barcelonnette</h3>
+
+        <p>
+          Notre <strong>service de transfert aéroport</strong> vous emmène depuis Barcelonnette vers les trois
+          aéroports les plus proches : Nice Côte d'Azur (2h30), Marseille-Provence (2h30) et Grenoble-Alpes-Isère
+          (2h30). Service porte-à-porte avec suivi de vol en temps réel et assistance bagages. Idéal pour vos
+          départs en vacances ski ou vos retours après séjour en montagne.
+        </p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Styles identiques aux autres pages villes (déjà définis) */
+</style>

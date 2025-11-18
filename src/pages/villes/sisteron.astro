@@ -1,0 +1,513 @@
+---
+/**
+ * Page Taxi Sisteron - Page locale optimisée SEO
+ * Perle de la Haute-Provence - Sous-préfecture
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import ImageHero from '../../components/ImageHero.astro';
+import BookingForm from '../../components/BookingForm.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const title = "Taxi Sisteron 24h/24";
+const description = "Réservez votre taxi à Sisteron. Service professionnel disponible 24h/24. Transfert aéroport, gare, Gap, Grenoble. Devis gratuit. Appelez le 01 23 45 67 89.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="taxi sisteron, taxi 04200, réservation taxi sisteron, transport sisteron, VTC sisteron, taxi perle haute provence"
+>
+  <!-- Hero Section locale -->
+  <ImageHero
+    title="Taxi à Sisteron : service 24h/24 dans la Perle de la Haute-Provence"
+    subtitle="Service de taxi professionnel dans la ville carrefour entre Provence et Alpes. Réservation rapide pour tous vos déplacements vers Gap, Digne, Manosque et Grenoble."
+    image="/images/villes/alpes-haute-provence-paysage.webp"
+    imageAlt="Taxi professionnel à Sisteron, Perle de la Haute-Provence"
+    ctaPrimary={{ text: "Appelez maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Réserver en ligne", href: "#booking" }}
+    variant="full"
+    height="medium"
+    overlay="dark"
+  />
+
+  <!-- Informations sur Sisteron -->
+  <section class="city-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-main">
+          <h2>Service de taxi à Sisteron et dans la vallée de la Durance</h2>
+
+          <p>
+            <strong>Taxi Sisteron</strong> vous propose un service de transport professionnel dans toute la ville
+            et sa région. Que vous soyez dans le <strong>centre historique</strong>, au <strong>quartier de la gare</strong>,
+            aux <strong>Blaches</strong>, au <strong>Jabron</strong> ou dans les communes environnantes comme
+            <strong>Château-Arnoux</strong>, <strong>Les Mées</strong> ou <strong>Volonne</strong>, nous intervenons
+            rapidement pour tous vos besoins de déplacement.
+          </p>
+
+          <p>
+            Sisteron, la <strong>Perle de la Haute-Provence</strong>, est une ville stratégique de 7 500 habitants située
+            au carrefour des routes vers Gap, Digne, Manosque et Grenoble. Son positionnement géographique exceptionnel
+            en fait un point de passage obligé entre les Alpes et la Provence. Notre <strong>service de taxi à Sisteron</strong>
+            répond aux besoins des résidents, touristes et professionnels de passage.
+          </p>
+
+          <h3>Nos services de taxi à Sisteron</h3>
+
+          <ul class="services-list">
+            <li>
+              <strong>Transfert gare de Sisteron</strong> - Navette depuis et vers la gare SNCF, liaisons TER vers
+              Marseille, Aix, Gap et Grenoble
+            </li>
+            <li>
+              <strong>Transfert aéroport</strong> - Transport vers les aéroports de Marseille-Provence (1h30),
+              Nice (2h30) et Grenoble-Alpes-Isère (2h)
+            </li>
+            <li>
+              <strong>Taxi vers Gap</strong> - Liaison quotidienne vers la préfecture des Hautes-Alpes (45 min),
+              idéal pour rendez-vous administratifs ou professionnels
+            </li>
+            <li>
+              <strong>Taxi vers Digne et Manosque</strong> - Desserte régulière des deux principales villes du
+              département 04
+            </li>
+            <li>
+              <strong>Courses locales</strong> - Déplacements dans Sisteron et sa région : Les Mées, Château-Arnoux,
+              Volonne, Peyruis, Salignac
+            </li>
+            <li>
+              <strong>Transport médical</strong> - Service conventionné CPAM pour vos rendez-vous médicaux à
+              Sisteron, Gap ou Manosque
+            </li>
+            <li>
+              <strong>Taxi touristique</strong> - Visites guidées de la région, accès aux sites touristiques
+              (Citadelle, Rocher de la Baume, Gorges du Verdon)
+            </li>
+          </ul>
+
+          <h3>Points d'intérêt et destinations à Sisteron</h3>
+
+          <p>
+            Notre service de <strong>taxi à Sisteron</strong> vous emmène vers tous les sites remarquables de
+            la ville et de sa région :
+          </p>
+
+          <ul class="destinations-list">
+            <li><strong>Gare SNCF de Sisteron</strong> - Liaisons TER vers Marseille, Gap et Grenoble</li>
+            <li><strong>Citadelle de Sisteron</strong> - Monument historique majeur et site touristique</li>
+            <li><strong>Cathédrale Notre-Dame-et-Saint-Thyrse</strong> - Art roman provençal</li>
+            <li><strong>Rocher de la Baume</strong> - Site naturel remarquable</li>
+            <li><strong>Tours des Remparts</strong> - Fortifications médiévales</li>
+            <li><strong>Musée Terre et Temps</strong> - Cadrans solaires et mesure du temps</li>
+            <li><strong>Centre hospitalier de Sisteron</strong> - Établissement de santé</li>
+            <li><strong>Zone commerciale</strong> - Commerces et services</li>
+          </ul>
+
+          <h3>Liaisons depuis Sisteron</h3>
+
+          <div class="routes-info">
+            <div class="route-card">
+              <h4>Vers les aéroports</h4>
+              <ul>
+                <li>Taxi Sisteron → Aéroport Marseille : 1h30 - à partir de 110€</li>
+                <li>Taxi Sisteron → Aéroport Nice : 2h30 - à partir de 160€</li>
+                <li>Taxi Sisteron → Aéroport Grenoble : 2h - à partir de 140€</li>
+                <li>Taxi Sisteron → Aix TGV : 1h15 - à partir de 95€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Vers les villes principales</h4>
+              <ul>
+                <li>Taxi Sisteron → Gap : 45 min - à partir de 60€</li>
+                <li>Taxi Sisteron → Digne-les-Bains : 1h - à partir de 70€</li>
+                <li>Taxi Sisteron → Manosque : 50 min - à partir de 65€</li>
+                <li>Taxi Sisteron → Château-Arnoux : 15 min - à partir de 25€</li>
+                <li>Taxi Sisteron → Forcalquier : 45 min - à partir de 60€</li>
+                <li>Taxi Sisteron → Barcelonnette : 1h45 - à partir de 120€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Vers grandes villes régionales</h4>
+              <ul>
+                <li>Taxi Sisteron → Marseille : 1h45 - à partir de 120€</li>
+                <li>Taxi Sisteron → Aix-en-Provence : 1h15 - à partir de 95€</li>
+                <li>Taxi Sisteron → Grenoble : 2h - à partir de 140€</li>
+                <li>Taxi Sisteron → Avignon : 1h45 - à partir de 120€</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Sisteron, carrefour stratégique entre Provence et Alpes</h3>
+
+          <p>
+            Située sur la Route Napoléon (N85) et au bord de la Durance, <strong>Sisteron</strong> est une ville
+            de passage historique entre la Provence et les Alpes. Cette position stratégique en fait une étape
+            importante pour les voyageurs se rendant à Gap, Grenoble ou dans les stations de ski des Hautes-Alpes.
+            Notre <strong>service de taxi</strong> assure ces liaisons quotidiennement avec ponctualité et confort.
+          </p>
+
+          <p>
+            La ville est également un pôle touristique majeur avec sa célèbre Citadelle dominant la vallée, son
+            centre historique préservé et ses paysages remarquables. Nous proposons des services de taxi touristique
+            pour découvrir la région, avec la possibilité de circuits personnalisés vers les Gorges du Verdon, le
+            plateau de Valensole ou les stations de ski de la vallée de l'Ubaye.
+          </p>
+        </div>
+
+        <aside class="info-sidebar">
+          <div class="booking-widget">
+            <BookingForm title="Réserver un taxi à Sisteron" compact={true} />
+          </div>
+
+          <div class="contact-widget">
+            <h3>Contactez-nous</h3>
+            <p>Service disponible 24h/24 et 7j/7</p>
+            <a href="tel:+33123456789" class="phone-link">01 23 45 67 89</a>
+            <p class="contact-info">
+              Réponse rapide garantie<br />
+              Devis gratuit sans engagement
+            </p>
+          </div>
+
+          <div class="zones-widget">
+            <h3>Autres villes desservies</h3>
+            <ul>
+              <li><a href="/villes/digne-les-bains">Taxi Digne-les-Bains</a></li>
+              <li><a href="/villes/manosque">Taxi Manosque</a></li>
+              <li><a href="/villes/forcalquier">Taxi Forcalquier</a></li>
+              <li><a href="/villes/chateau-arnoux">Taxi Château-Arnoux</a></li>
+              <li><a href="/villes/barcelonnette">Taxi Barcelonnette</a></li>
+              <li><a href="/villes">Voir toutes les villes</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services Cards -->
+  <section class="services-section bg-light">
+    <div class="container">
+      <h2 class="text-center">Nos services de taxi à Sisteron</h2>
+      <div class="services-grid">
+        <ServiceCard
+          title="Taxi Sisteron - Gap"
+          description="Liaison quotidienne vers Gap, préfecture des Hautes-Alpes. Service pour rendez-vous administratifs."
+          price="60€"
+        />
+        <ServiceCard
+          title="Transfert gare Sisteron"
+          description="Navette depuis et vers la gare SNCF. Correspondances TER garanties."
+          price="20€"
+        />
+        <ServiceCard
+          title="Taxi touristique"
+          description="Découvrez la région avec notre service taxi touristique. Circuits personnalisés."
+          price="Sur devis"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de réservation -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="booking-centered">
+        <h2 class="text-center">Réservez votre taxi à Sisteron</h2>
+        <p class="text-center section-subtitle">
+          Remplissez le formulaire ci-dessous et recevez votre devis gratuit sous 15 minutes
+        </p>
+        <div class="booking-form-large">
+          <BookingForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    title="Besoin d'un taxi à Sisteron maintenant ?"
+    subtitle="Appelez-nous ou réservez en ligne pour un service rapide vers Gap, Digne, Manosque ou les aéroports"
+    buttonText="Appeler maintenant"
+    phoneNumber="01 23 45 67 89"
+  />
+
+  <!-- Contenu SEO -->
+  <section class="seo-content">
+    <div class="container">
+      <article class="seo-article">
+        <h2>Pourquoi choisir notre service de taxi à Sisteron ?</h2>
+
+        <p>
+          Notre entreprise de <strong>taxi à Sisteron</strong> est spécialisée dans les liaisons entre la
+          Haute-Provence et les Alpes depuis plus de 15 ans. Basés dans la région, nous connaissons parfaitement
+          <strong>Sisteron</strong>, la <strong>Perle de la Haute-Provence</strong>, et toutes les routes vers
+          Gap, Digne, Manosque et Grenoble. Que vous ayez besoin d'un <strong>taxi pour la gare de Sisteron</strong>,
+          d'un <strong>transfert vers Gap</strong> ou d'un transport vers l'aéroport, nos chauffeurs professionnels
+          sont à votre disposition <strong>24 heures sur 24 et 7 jours sur 7</strong>.
+        </p>
+
+        <h3>Sisteron, ville de passage stratégique</h3>
+
+        <p>
+          Située au confluent de plusieurs axes routiers majeurs, <strong>Sisteron</strong> occupe une position
+          géographique exceptionnelle. Surnommée la <strong>Perle de la Haute-Provence</strong>, la ville est un
+          point de passage obligé entre Provence et Alpes. Sa gare SNCF dessert Marseille, Gap et Grenoble, faisant
+          de Sisteron un véritable carrefour de transport. Notre <strong>service de taxi</strong> assure ces liaisons
+          quotidiennement avec ponctualité et fiabilité.
+        </p>
+
+        <p>
+          Notre flotte de véhicules récents et climatisés est adaptée aux longues distances comme aux courses locales.
+          Tous nos chauffeurs sont titulaires de la carte professionnelle et connaissent parfaitement les routes de
+          montagne vers Gap et les Hautes-Alpes. Nous desservons également toute la vallée de la Durance : Les Mées,
+          Château-Arnoux, Volonne, Peyruis et Salignac.
+        </p>
+
+        <h3>Réservation de taxi simple et rapide à Sisteron</h3>
+
+        <p>
+          Réserver un <strong>taxi à Sisteron</strong> est très simple. Vous pouvez nous contacter par
+          téléphone au 01 23 45 67 89 ou utiliser notre formulaire de réservation en ligne disponible 24h/24.
+          Nous vous répondons rapidement avec un <strong>devis gratuit et sans engagement</strong>. Vous recevrez
+          ensuite une confirmation par SMS et email avec toutes les informations de votre course.
+        </p>
+
+        <p>
+          Nos tarifs sont transparents et compétitifs. Pas de surprise à l'arrivée : le prix vous est communiqué
+          avant chaque course. Nous acceptons tous les modes de paiement : espèces, carte bancaire, chèque. Pour
+          les professionnels et entreprises, nous proposons une facturation mensuelle adaptée à vos besoins.
+        </p>
+
+        <h3>Transport touristique et découverte de la région</h3>
+
+        <p>
+          Sisteron et sa région offrent de nombreuses richesses touristiques : la Citadelle dominant la vallée,
+          les Gorges du Verdon à proximité, le plateau de Valensole et ses champs de lavande, ou encore les stations
+          de ski de la vallée de l'Ubaye. Notre <strong>service de taxi touristique</strong> vous permet de découvrir
+          ces merveilles en toute tranquillité. Nous proposons des circuits personnalisés avec chauffeur-guide pour
+          une expérience unique dans les Alpes de Haute-Provence.
+        </p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .city-info {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .info-main h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-main h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+  }
+
+  .info-main h4 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .info-main p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .services-list,
+  .destinations-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .services-list li,
+  .destinations-list li {
+    padding: var(--spacing-sm) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .services-list li::before,
+  .destinations-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .routes-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .route-card {
+    background-color: var(--color-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .route-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-sm);
+  }
+
+  .route-card li {
+    padding: 0.5rem 0;
+    color: var(--color-gray-dark);
+  }
+
+  .info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .booking-widget,
+  .contact-widget,
+  .zones-widget {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+  }
+
+  .contact-widget {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+  }
+
+  .contact-widget h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-widget p {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .phone-link {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: var(--spacing-md) 0;
+  }
+
+  .contact-info {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+  }
+
+  .zones-widget h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .zones-widget ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .zones-widget li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .zones-widget li:last-child {
+    border-bottom: none;
+  }
+
+  .zones-widget a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .services-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .services-section h2 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .booking-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .booking-centered {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .booking-form-large {
+    margin-top: var(--spacing-lg);
+  }
+
+  .seo-content {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .seo-article {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .seo-article h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .seo-article h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .seo-article p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+  }
+
+  @media (max-width: 968px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-sidebar {
+      order: -1;
+    }
+
+    .routes-info {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

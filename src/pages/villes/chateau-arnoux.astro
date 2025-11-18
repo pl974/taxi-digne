@@ -1,0 +1,252 @@
+---
+/**
+ * Page Taxi Château-Arnoux-Saint-Auban - Page locale optimisée SEO
+ * Commune dynamique avec zone d'activité importante
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import ImageHero from '../../components/ImageHero.astro';
+import BookingForm from '../../components/BookingForm.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const title = "Taxi Château-Arnoux-Saint-Auban 24h/24";
+const description = "Réservez votre taxi à Château-Arnoux-Saint-Auban. Service professionnel disponible 24h/24. Transfert zone industrielle, gare, aéroport. Appelez le 01 23 45 67 89.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="taxi château-arnoux, taxi saint-auban, taxi 04160, réservation taxi château-arnoux, transport château-arnoux, taxi zone industrielle"
+>
+  <!-- Hero Section locale -->
+  <ImageHero
+    title="Taxi à Château-Arnoux-Saint-Auban : service 24h/24"
+    subtitle="Service de taxi professionnel pour la zone industrielle et les quartiers de Château-Arnoux-Saint-Auban. Disponible jour et nuit pour tous vos déplacements."
+    image="/images/villes/alpes-haute-provence-paysage.webp"
+    imageAlt="Taxi professionnel à Château-Arnoux-Saint-Auban, Alpes-de-Haute-Provence"
+    ctaPrimary={{ text: "Appelez maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Réserver en ligne", href: "#booking" }}
+    variant="full"
+    height="medium"
+    overlay="dark"
+  />
+
+  <!-- Informations sur Château-Arnoux-Saint-Auban -->
+  <section class="city-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-main">
+          <h2>Service de taxi à Château-Arnoux-Saint-Auban</h2>
+
+          <p>
+            <strong>Taxi Château-Arnoux</strong> vous propose un service de transport professionnel dans toute la commune
+            et ses environs. Que vous soyez à <strong>Château-Arnoux</strong> ou à <strong>Saint-Auban</strong>, dans la
+            <strong>zone industrielle</strong>, au <strong>centre commercial</strong>, à <strong>L'Escale</strong> ou
+            <strong>Volonne</strong>, nous intervenons rapidement pour tous vos besoins de déplacement professionnel ou personnel.
+          </p>
+
+          <p>
+            Château-Arnoux-Saint-Auban est une commune de 5 400 habitants située entre Sisteron et Digne-les-Bains,
+            au bord de la Durance. La ville possède une importante <strong>zone d'activité industrielle</strong> qui en
+            fait un pôle économique significatif de la vallée de la Durance. Notre <strong>service de taxi</strong> répond
+            aux besoins des salariés, professionnels en déplacement et résidents de la commune.
+          </p>
+
+          <h3>Nos services de taxi à Château-Arnoux-Saint-Auban</h3>
+
+          <ul class="services-list">
+            <li>
+              <strong>Taxi zone industrielle</strong> - Navette vers la zone d'activité pour les salariés, service
+              régulier matin et soir
+            </li>
+            <li>
+              <strong>Transfert gare L'Escale</strong> - Transport depuis et vers la gare SNCF voisine de L'Escale,
+              correspondances TER garanties
+            </li>
+            <li>
+              <strong>Transfert aéroport</strong> - Transport vers les aéroports de Marseille-Provence (1h30),
+              Nice (2h30) et Grenoble (2h)
+            </li>
+            <li>
+              <strong>Taxi vers Sisteron et Digne</strong> - Liaisons quotidiennes vers les deux sous-préfectures
+              (15 min vers Sisteron, 35 min vers Digne)
+            </li>
+            <li>
+              <strong>Courses locales</strong> - Déplacements dans Château-Arnoux, Saint-Auban et communes proches :
+              L'Escale, Volonne, Malijai, Les Mées
+            </li>
+            <li>
+              <strong>Transport médical</strong> - Service conventionné CPAM pour vos rendez-vous médicaux
+            </li>
+            <li>
+              <strong>Taxi professionnel</strong> - Service dédié aux entreprises de la zone industrielle avec
+              facturation adaptée
+            </li>
+          </ul>
+
+          <h3>Points d'intérêt et destinations à Château-Arnoux</h3>
+
+          <p>
+            Notre service de <strong>taxi à Château-Arnoux</strong> dessert tous les points importants de la commune :
+          </p>
+
+          <ul class="destinations-list">
+            <li><strong>Zone industrielle</strong> - Entreprises et entrepôts logistiques</li>
+            <li><strong>Gare SNCF de L'Escale</strong> - Liaisons TER (commune limitrophe)</li>
+            <li><strong>Centre commercial</strong> - Galeries commerciales et supermarchés</li>
+            <li><strong>Lac de l'Escale</strong> - Base de loisirs et plage</li>
+            <li><strong>Centre-ville de Château-Arnoux</strong> - Commerces et services</li>
+            <li><strong>Saint-Auban</strong> - Quartier résidentiel</li>
+            <li><strong>Hôpital local</strong> - Centre médical</li>
+          </ul>
+
+          <h3>Liaisons depuis Château-Arnoux</h3>
+
+          <div class="routes-info">
+            <div class="route-card">
+              <h4>Vers les villes proches</h4>
+              <ul>
+                <li>Taxi Château-Arnoux → Sisteron : 15 min - à partir de 25€</li>
+                <li>Taxi Château-Arnoux → Digne-les-Bains : 35 min - à partir de 50€</li>
+                <li>Taxi Château-Arnoux → Manosque : 40 min - à partir de 55€</li>
+                <li>Taxi Château-Arnoux → Les Mées : 10 min - à partir de 20€</li>
+                <li>Taxi Château-Arnoux → Volonne : 5 min - à partir de 15€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Vers les aéroports</h4>
+              <ul>
+                <li>Taxi Château-Arnoux → Aéroport Marseille : 1h30 - à partir de 105€</li>
+                <li>Taxi Château-Arnoux → Aéroport Nice : 2h30 - à partir de 155€</li>
+                <li>Taxi Château-Arnoux → Aix TGV : 1h15 - à partir de 90€</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Service taxi pour la zone industrielle</h3>
+
+          <p>
+            La <strong>zone d'activité de Château-Arnoux-Saint-Auban</strong> accueille de nombreuses entreprises et
+            emploie des centaines de salariés. Notre <strong>service de taxi professionnel</strong> propose des navettes
+            régulières pour les trajets domicile-travail, ainsi qu'un service à la demande pour les rendez-vous
+            professionnels. Nous proposons aux entreprises locales des tarifs dégressifs et une facturation mensuelle
+            simplifiée.
+          </p>
+        </div>
+
+        <aside class="info-sidebar">
+          <div class="booking-widget">
+            <BookingForm title="Réserver un taxi" compact={true} />
+          </div>
+
+          <div class="contact-widget">
+            <h3>Contactez-nous</h3>
+            <p>Service disponible 24h/24 et 7j/7</p>
+            <a href="tel:+33123456789" class="phone-link">01 23 45 67 89</a>
+            <p class="contact-info">
+              Réponse rapide garantie<br />
+              Devis gratuit sans engagement
+            </p>
+          </div>
+
+          <div class="zones-widget">
+            <h3>Autres villes desservies</h3>
+            <ul>
+              <li><a href="/villes/digne-les-bains">Taxi Digne-les-Bains</a></li>
+              <li><a href="/villes/sisteron">Taxi Sisteron</a></li>
+              <li><a href="/villes/manosque">Taxi Manosque</a></li>
+              <li><a href="/villes/forcalquier">Taxi Forcalquier</a></li>
+              <li><a href="/villes/barcelonnette">Taxi Barcelonnette</a></li>
+              <li><a href="/villes">Voir toutes les villes</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services Cards -->
+  <section class="services-section bg-light">
+    <div class="container">
+      <h2 class="text-center">Nos services de taxi à Château-Arnoux</h2>
+      <div class="services-grid">
+        <ServiceCard
+          title="Taxi zone industrielle"
+          description="Navette domicile-travail pour la zone d'activité. Service régulier et ponctuel."
+          price="20€"
+        />
+        <ServiceCard
+          title="Taxi Château-Arnoux - Sisteron"
+          description="Liaison rapide vers Sisteron en 15 minutes. Service quotidien."
+          price="25€"
+        />
+        <ServiceCard
+          title="Transfert gare L'Escale"
+          description="Transport vers la gare SNCF. Correspondances TER garanties."
+          price="18€"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de réservation -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="booking-centered">
+        <h2 class="text-center">Réservez votre taxi</h2>
+        <p class="text-center section-subtitle">
+          Remplissez le formulaire ci-dessous et recevez votre devis gratuit sous 15 minutes
+        </p>
+        <div class="booking-form-large">
+          <BookingForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    title="Besoin d'un taxi à Château-Arnoux maintenant ?"
+    subtitle="Service rapide pour la zone industrielle, gare L'Escale et toutes destinations"
+    buttonText="Appeler maintenant"
+    phoneNumber="01 23 45 67 89"
+  />
+
+  <!-- Contenu SEO -->
+  <section class="seo-content">
+    <div class="container">
+      <article class="seo-article">
+        <h2>Pourquoi choisir notre service de taxi à Château-Arnoux-Saint-Auban ?</h2>
+
+        <p>
+          Notre <strong>taxi à Château-Arnoux-Saint-Auban</strong> connaît parfaitement la commune et ses deux entités,
+          Château-Arnoux et Saint-Auban. Nous desservons quotidiennement la <strong>zone industrielle</strong>, le
+          centre-ville et tous les quartiers. Disponibles <strong>24h/24 et 7j/7</strong>, nos chauffeurs professionnels
+          assurent vos déplacements vers Sisteron, Digne, la gare de L'Escale ou les aéroports.
+          </p>
+
+        <h3>Un service adapté aux besoins professionnels</h3>
+
+        <p>
+          La zone d'activité de Château-Arnoux-Saint-Auban nécessite des solutions de transport fiables. Notre
+          <strong>service de taxi professionnel</strong> propose des navettes régulières pour les salariés, ainsi
+          qu'un service dédié aux entreprises avec facturation mensuelle. Idéal pour les trajets domicile-travail
+          ou les déplacements professionnels vers Sisteron, Digne ou Manosque.
+        </p>
+
+        <h3>Réservation simple et tarifs transparents</h3>
+
+        <p>
+          Réservez votre <strong>taxi à Château-Arnoux</strong> par téléphone au 01 23 45 67 89 ou en ligne 24h/24.
+          Tarifs fixes communiqués à l'avance, sans surprise. Tous moyens de paiement acceptés.
+        </p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Styles identiques aux autres pages villes (déjà définis dans les fichiers précédents) */
+</style>
