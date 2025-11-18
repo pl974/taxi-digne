@@ -1,0 +1,254 @@
+---
+/**
+ * Page Index des villes desservies - Maillage interne optimisé SEO
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
+
+const title = "Toutes nos villes desservies";
+const description = "Notre service de taxi couvre Digne-les-Bains et toutes les principales villes des Alpes-de-Haute-Provence. Manosque, Sisteron, Forcalquier et plus encore.";
+---
+
+<Layout title={title} description={description}>
+  <section class="cities-hero">
+    <div class="container">
+      <h1>Nos zones d'intervention dans les Alpes-de-Haute-Provence</h1>
+      <p class="hero-text">
+        Service de taxi professionnel couvrant l'ensemble du département 04 et les communes environnantes
+      </p>
+    </div>
+  </section>
+
+  <section class="cities-main">
+    <div class="container">
+      <div class="cities-grid">
+        <article class="city-card">
+          <h2><a href="/villes/digne-les-bains">Taxi Digne-les-Bains</a></h2>
+          <p class="city-info">Préfecture - 04000 - 17 000 habitants</p>
+          <p>Service de taxi disponible 24h/24 dans la préfecture des Alpes-de-Haute-Provence. Transferts aéroport, gare, courses locales et transport médical.</p>
+          <a href="/villes/digne-les-bains" class="city-link">En savoir plus →</a>
+        </article>
+
+        <article class="city-card">
+          <h2><a href="/villes/manosque">Taxi Manosque</a></h2>
+          <p class="city-info">Sous-préfecture - 04100 - 23 000 habitants</p>
+          <p>Transport professionnel à Manosque et ses environs. Desserte de la zone industrielle, centre-ville, et liaisons vers Digne, Aix et Marseille.</p>
+          <a href="/villes/manosque" class="city-link">En savoir plus →</a>
+        </article>
+
+        <article class="city-card">
+          <h2><a href="/villes/sisteron">Taxi Sisteron</a></h2>
+          <p class="city-info">Sous-préfecture - 04200 - 7 500 habitants</p>
+          <p>Service de taxi à Sisteron, perle de la Haute-Provence. Transferts vers Gap, Manosque et toutes destinations locales et longue distance.</p>
+          <a href="/villes/sisteron" class="city-link">En savoir plus →</a>
+        </article>
+
+        <article class="city-card">
+          <h2><a href="/villes/forcalquier">Taxi Forcalquier</a></h2>
+          <p class="city-info">Chef-lieu de canton - 04300 - 5 000 habitants</p>
+          <p>Taxi à Forcalquier et ses villages environnants. Service régulier vers Manosque, Digne et les marchés locaux.</p>
+          <a href="/villes/forcalquier" class="city-link">En savoir plus →</a>
+        </article>
+
+        <article class="city-card">
+          <h2><a href="/villes/chateau-arnoux">Taxi Château-Arnoux-Saint-Auban</a></h2>
+          <p class="city-info">Commune - 04160 - 5 400 habitants</p>
+          <p>Transport à Château-Arnoux et Saint-Auban. Desserte de la zone industrielle et liaisons vers Sisteron et Manosque.</p>
+          <a href="/villes/chateau-arnoux" class="city-link">En savoir plus →</a>
+        </article>
+
+        <article class="city-card">
+          <h2><a href="/villes/barcelonnette">Taxi Barcelonnette</a></h2>
+          <p class="city-info">Sous-préfecture - 04400 - 2 700 habitants</p>
+          <p>Service de taxi à Barcelonnette et dans la vallée de l'Ubaye. Transferts vers les stations de ski et toutes destinations.</p>
+          <a href="/villes/barcelonnette" class="city-link">En savoir plus →</a>
+        </article>
+      </div>
+
+      <div class="other-cities">
+        <h2>Autres communes desservies</h2>
+        <div class="communes-grid">
+          <div class="commune-column">
+            <h3>Secteur Digne</h3>
+            <ul>
+              <li>Aiglun</li>
+              <li>Mallemoisson</li>
+              <li>Marcoux</li>
+              <li>Champtercier</li>
+              <li>Thoard</li>
+              <li>Barras</li>
+            </ul>
+          </div>
+
+          <div class="commune-column">
+            <h3>Secteur Manosque</h3>
+            <ul>
+              <li>Oraison</li>
+              <li>Pierrevert</li>
+              <li>Volx</li>
+              <li>Valensole</li>
+              <li>Gréoux-les-Bains</li>
+              <li>Vinon-sur-Verdon</li>
+            </ul>
+          </div>
+
+          <div class="commune-column">
+            <h3>Secteur Sisteron</h3>
+            <ul>
+              <li>Les Mées</li>
+              <li>Peyruis</li>
+              <li>Volonne</li>
+              <li>Malijai</li>
+              <li>L'Escale</li>
+              <li>Salignac</li>
+            </ul>
+          </div>
+
+          <div class="commune-column">
+            <h3>Secteur Forcalquier</h3>
+            <ul>
+              <li>Mane</li>
+              <li>Lurs</li>
+              <li>Niozelles</li>
+              <li>Saint-Michel-l'Observatoire</li>
+              <li>Reillanne</li>
+              <li>Banon</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Votre ville n'apparaît pas dans la liste ?"
+    subtitle="Nous desservons l'ensemble des Alpes-de-Haute-Provence et au-delà. Contactez-nous pour un devis gratuit."
+    buttonText="Nous contacter"
+    phoneNumber="01 23 45 67 89"
+  />
+</Layout>
+
+<style>
+  .cities-hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+  }
+
+  .cities-hero h1 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-text {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cities-main {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .city-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .city-card:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .city-card h2 {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .city-card h2 a {
+    color: var(--color-dark);
+    text-decoration: none;
+  }
+
+  .city-card h2 a:hover {
+    color: var(--color-primary);
+  }
+
+  .city-info {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .city-card p {
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .city-link {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+
+  .city-link:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .other-cities {
+    background-color: var(--color-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .other-cities h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .communes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .commune-column h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.125rem;
+  }
+
+  .commune-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .commune-column li {
+    padding: 0.375rem 0;
+    color: var(--color-gray-dark);
+  }
+
+  @media (max-width: 768px) {
+    .cities-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .communes-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+    }
+  }
+</style>

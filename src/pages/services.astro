@@ -1,0 +1,614 @@
+---
+/**
+ * Page Services - Détail de tous les services de taxi
+ * Optimisée SEO avec ancres et maillage interne
+ */
+
+import Layout from '../layouts/Layout.astro';
+import BookingForm from '../components/BookingForm.astro';
+import CTA from '../components/CTA.astro';
+
+const title = "Nos services de taxi";
+const description = "Découvrez tous nos services de taxi : transfert aéroport, gare, transport médical, courses locales, longue distance. Service 24h/24 dans les Alpes-de-Haute-Provence.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="services-hero">
+    <div class="container">
+      <h1>Nos services de taxi à Digne et dans les Alpes-de-Haute-Provence</h1>
+      <p class="hero-text">
+        Un service complet pour tous vos besoins de transport, disponible 24h/24 et 7j/7
+      </p>
+    </div>
+  </section>
+
+  <!-- Navigation rapide -->
+  <nav class="services-nav">
+    <div class="container">
+      <ul class="services-menu">
+        <li><a href="#transfert-aeroport">Transfert aéroport</a></li>
+        <li><a href="#transfert-gare">Transfert gare</a></li>
+        <li><a href="#taxi-longue-distance">Longue distance</a></li>
+        <li><a href="#taxi-medical">Transport médical</a></li>
+        <li><a href="#courses-locales">Courses locales</a></li>
+        <li><a href="#taxi-professionnel">Taxi professionnel</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Services détaillés -->
+  <section class="services-content">
+    <div class="container">
+      <div class="services-layout">
+        <div class="services-main">
+          <!-- Service 1: Transfert aéroport -->
+          <article id="transfert-aeroport" class="service-detail">
+            <div class="service-header">
+              <h2>Transfert aéroport depuis Digne-les-Bains</h2>
+              <span class="service-price">À partir de 90€</span>
+            </div>
+
+            <p class="service-intro">
+              Notre service de <strong>transfert aéroport</strong> vous emmène vers tous les aéroports
+              de la région PACA en toute sérénité. Service porte-à-porte avec suivi de vol et assistance bagages.
+            </p>
+
+            <h3>Aéroports desservis</h3>
+            <ul class="service-list">
+              <li>
+                <strong>Aéroport Marseille-Provence (MRS)</strong> - 1h30 de trajet depuis Digne - à partir de 120€
+              </li>
+              <li>
+                <strong>Aéroport Nice Côte d'Azur (NCE)</strong> - 2h de trajet depuis Digne - à partir de 150€
+              </li>
+              <li>
+                <strong>Aéroport Toulon-Hyères (TLN)</strong> - 2h de trajet depuis Digne - à partir de 140€
+              </li>
+            </ul>
+
+            <h3>Nos avantages pour les transferts aéroport</h3>
+            <div class="service-features">
+              <div class="feature">
+                <strong>Suivi de vol</strong>
+                <p>Nous suivons votre vol en temps réel pour adapter notre horaire en cas de retard</p>
+              </div>
+              <div class="feature">
+                <strong>Assistance bagages</strong>
+                <p>Notre chauffeur vous aide avec vos bagages du domicile jusqu'au terminal</p>
+              </div>
+              <div class="feature">
+                <strong>Véhicules spacieux</strong>
+                <p>Grande capacité de coffre pour tous vos bagages</p>
+              </div>
+              <div class="feature">
+                <strong>Réservation anticipée</strong>
+                <p>Garantissez votre place en réservant à l'avance</p>
+              </div>
+            </div>
+
+            <p class="service-note">
+              Disponible depuis <a href="/villes/digne-les-bains">Digne-les-Bains</a>,
+              <a href="/villes/manosque">Manosque</a>, <a href="/villes/sisteron">Sisteron</a> et
+              <a href="/villes">toutes nos villes</a>.
+            </p>
+          </article>
+
+          <!-- Service 2: Transfert gare -->
+          <article id="transfert-gare" class="service-detail">
+            <div class="service-header">
+              <h2>Transfert gare SNCF</h2>
+              <span class="service-price">À partir de 20€</span>
+            </div>
+
+            <p class="service-intro">
+              Service de <strong>navette gare</strong> pour tous vos trajets vers et depuis les gares SNCF
+              des Alpes-de-Haute-Provence. Ponctualité garantie pour vos correspondances.
+            </p>
+
+            <h3>Gares desservies</h3>
+            <ul class="service-list">
+              <li><strong>Gare de Digne-les-Bains</strong> - Boulevard Gassendi</li>
+              <li><strong>Gare de Manosque</strong> - Centre-ville</li>
+              <li><strong>Gare de Sisteron</strong> - Liaison TGV</li>
+              <li><strong>Gare de Château-Arnoux</strong> - Ligne Paris-Nice</li>
+              <li><strong>Gare d'Aix-en-Provence TGV</strong> - Depuis/vers Digne (1h15)</li>
+            </ul>
+
+            <h3>Service adapté aux voyageurs</h3>
+            <ul class="service-list">
+              <li>Dépose directe devant l'entrée de la gare</li>
+              <li>Assistance avec les bagages</li>
+              <li>Réservation avec horaire de train pour garantir votre correspondance</li>
+              <li>Service retour après votre arrivée en gare</li>
+            </ul>
+          </article>
+
+          <!-- Service 3: Longue distance -->
+          <article id="taxi-longue-distance" class="service-detail">
+            <div class="service-header">
+              <h2>Taxi longue distance</h2>
+              <span class="service-price">Sur devis</span>
+            </div>
+
+            <p class="service-intro">
+              Nos <strong>taxis longue distance</strong> vous emmènent partout en France et même au-delà.
+              Confort optimal pour vos déplacements professionnels ou personnels.
+            </p>
+
+            <h3>Destinations populaires</h3>
+            <div class="destinations-grid">
+              <div class="destination">
+                <strong>Vers Marseille</strong>
+                <p>1h45 - À partir de 130€</p>
+              </div>
+              <div class="destination">
+                <strong>Vers Nice</strong>
+                <p>2h15 - À partir de 160€</p>
+              </div>
+              <div class="destination">
+                <strong>Vers Aix-en-Provence</strong>
+                <p>1h30 - À partir de 110€</p>
+              </div>
+              <div class="destination">
+                <strong>Vers Gap</strong>
+                <p>1h30 - À partir de 100€</p>
+              </div>
+              <div class="destination">
+                <strong>Vers Avignon</strong>
+                <p>2h - À partir de 140€</p>
+              </div>
+              <div class="destination">
+                <strong>Vers Toulon</strong>
+                <p>2h - À partir de 150€</p>
+              </div>
+            </div>
+
+            <p class="service-note">
+              <strong>Trajets sur-mesure :</strong> Vous avez une destination spécifique ? Contactez-nous pour
+              un devis personnalisé. Nous couvrons toute la France et l'Europe.
+            </p>
+          </article>
+
+          <!-- Service 4: Transport médical -->
+          <article id="taxi-medical" class="service-detail">
+            <div class="service-header">
+              <h2>Transport médical conventionné</h2>
+              <span class="service-price">Remboursé CPAM</span>
+            </div>
+
+            <p class="service-intro">
+              Notre service de <strong>transport médical conventionné</strong> assure vos déplacements
+              pour raisons de santé. Remboursement par la Sécurité Sociale selon prescription médicale.
+            </p>
+
+            <h3>Types de transport médical</h3>
+            <ul class="service-list">
+              <li>Rendez-vous médicaux (spécialistes, consultations)</li>
+              <li>Hospitalisations et retours à domicile</li>
+              <li>Dialyse et chimiothérapie (trajets réguliers)</li>
+              <li>Examens médicaux (IRM, scanner, radiologie)</li>
+              <li>Transferts entre établissements de santé</li>
+            </ul>
+
+            <h3>Établissements de santé desservis</h3>
+            <ul class="service-list">
+              <li>Centre Hospitalier de Digne-les-Bains</li>
+              <li>Centre Hospitalier de Manosque</li>
+              <li>Centre Hospitalier de Sisteron</li>
+              <li>Cliniques et cabinets médicaux du département</li>
+              <li>CHU de Marseille, Nice et Gap (selon prescription)</li>
+            </ul>
+
+            <div class="medical-info">
+              <h4>Prise en charge et remboursement</h4>
+              <p>
+                Nous sommes <strong>conventionnés CPAM</strong>. Le transport peut être pris en charge
+                par l'Assurance Maladie sur prescription médicale. Nous gérons toutes les formalités
+                administratives pour vous faciliter la vie.
+              </p>
+            </div>
+          </article>
+
+          <!-- Service 5: Courses locales -->
+          <article id="courses-locales" class="service-detail">
+            <div class="service-header">
+              <h2>Courses locales et déplacements quotidiens</h2>
+              <span class="service-price">À partir de 15€</span>
+            </div>
+
+            <p class="service-intro">
+              Pour tous vos <strong>déplacements quotidiens</strong> à Digne-les-Bains et dans les
+              Alpes-de-Haute-Provence. Service rapide et efficace pour vos courses du quotidien.
+            </p>
+
+            <h3>Nos courses locales</h3>
+            <ul class="service-list">
+              <li>Déplacements en centre-ville</li>
+              <li>Courses vers les commerces et supermarchés</li>
+              <li>Rendez-vous professionnels et personnels</li>
+              <li>Sorties et retours de soirée</li>
+              <li>Déplacements vers les villages environnants</li>
+            </ul>
+
+            <h3>Secteurs couverts</h3>
+            <p>
+              Nous intervenons dans toute l'agglomération de
+              <a href="/villes/digne-les-bains">Digne-les-Bains</a> et ses communes :
+              Aiglun, Marcoux, Champtercier, Mallemoisson, Thoard, et toute la vallée de la Bléone.
+            </p>
+          </article>
+
+          <!-- Service 6: Taxi professionnel -->
+          <article id="taxi-professionnel" class="service-detail">
+            <div class="service-header">
+              <h2>Service taxi pour les professionnels et entreprises</h2>
+              <span class="service-price">Tarifs dégressifs</span>
+            </div>
+
+            <p class="service-intro">
+              Solution de <strong>transport professionnel</strong> dédiée aux entreprises des
+              Alpes-de-Haute-Provence. Disponibilité garantie et facturation simplifiée.
+            </p>
+
+            <h3>Notre offre professionnelle</h3>
+            <div class="service-features">
+              <div class="feature">
+                <strong>Facturation mensuelle</strong>
+                <p>Une seule facture mensuelle pour toutes vos courses</p>
+              </div>
+              <div class="feature">
+                <strong>Compte entreprise</strong>
+                <p>Gestion simplifiée de vos déplacements professionnels</p>
+              </div>
+              <div class="feature">
+                <strong>Disponibilité prioritaire</strong>
+                <p>Accès prioritaire à nos véhicules même en période de forte demande</p>
+              </div>
+              <div class="feature">
+                <strong>Suivi des courses</strong>
+                <p>Tableau de bord en ligne pour suivre toutes vos courses</p>
+              </div>
+            </div>
+
+            <h3>Services pour entreprises</h3>
+            <ul class="service-list">
+              <li>Transport de collaborateurs et visiteurs</li>
+              <li>Transferts aéroport et gare pour vos clients</li>
+              <li>Déplacements professionnels réguliers</li>
+              <li>Événements d'entreprise et séminaires</li>
+              <li>Mise à disposition de véhicule à la journée</li>
+            </ul>
+
+            <p class="service-note">
+              Contactez-nous pour établir un devis personnalisé adapté aux besoins de votre entreprise.
+            </p>
+          </article>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="services-sidebar">
+          <div class="sidebar-booking">
+            <h3>Réserver un service</h3>
+            <BookingForm compact={true} />
+          </div>
+
+          <div class="sidebar-contact">
+            <h3>Besoin d'informations ?</h3>
+            <p>Appelez-nous pour toute question sur nos services</p>
+            <a href="tel:+33123456789" class="sidebar-phone">01 23 45 67 89</a>
+            <p class="sidebar-info">Disponible 24h/24</p>
+          </div>
+
+          <div class="sidebar-cities">
+            <h3>Nos secteurs</h3>
+            <ul>
+              <li><a href="/villes/digne-les-bains">Digne-les-Bains</a></li>
+              <li><a href="/villes/manosque">Manosque</a></li>
+              <li><a href="/villes/sisteron">Sisteron</a></li>
+              <li><a href="/villes/forcalquier">Forcalquier</a></li>
+              <li><a href="/villes">Toutes les villes</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    title="Prêt à réserver votre course ?"
+    subtitle="Contactez-nous maintenant pour réserver votre taxi ou obtenir un devis personnalisé"
+    buttonText="Réserver maintenant"
+    phoneNumber="01 23 45 67 89"
+  />
+</Layout>
+
+<style>
+  .services-hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+  }
+
+  .services-hero h1 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-text {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .services-nav {
+    background-color: var(--color-white);
+    padding: var(--spacing-md) 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+  }
+
+  .services-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .services-menu a {
+    color: var(--color-dark);
+    font-weight: var(--font-weight-medium);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+
+  .services-menu a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .services-content {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .services-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .service-detail {
+    margin-bottom: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xxl);
+    border-bottom: 2px solid var(--color-gray-light);
+  }
+
+  .service-detail:last-child {
+    border-bottom: none;
+  }
+
+  .service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-header h2 {
+    margin: 0;
+  }
+
+  .service-price {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .service-intro {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-gray-dark);
+  }
+
+  .service-detail h3 {
+    color: var(--color-primary);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-detail h4 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .service-list li {
+    padding: var(--spacing-sm) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .service-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  .service-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .feature {
+    background-color: var(--color-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+  }
+
+  .feature strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .feature p {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .destination {
+    background-color: var(--color-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+  }
+
+  .destination strong {
+    display: block;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .destination p {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+  }
+
+  .medical-info {
+    background-color: var(--color-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--color-success);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .service-note {
+    background-color: var(--color-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-md);
+  }
+
+  .service-note a {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .services-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .sidebar-booking,
+  .sidebar-contact,
+  .sidebar-cities {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+  }
+
+  .sidebar-contact {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .sidebar-contact h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-contact p {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-phone {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: var(--spacing-md) 0;
+  }
+
+  .sidebar-info {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+  }
+
+  .sidebar-cities h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .sidebar-cities ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar-cities li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .sidebar-cities li:last-child {
+    border-bottom: none;
+  }
+
+  .sidebar-cities a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  @media (max-width: 968px) {
+    .services-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .services-sidebar {
+      order: -1;
+    }
+
+    .services-menu {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .services-menu a {
+      text-align: center;
+    }
+  }
+</style>

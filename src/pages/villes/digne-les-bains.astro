@@ -1,0 +1,491 @@
+---
+/**
+ * Page Taxi Digne-les-Bains - Page locale optimisée SEO
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import BookingForm from '../../components/BookingForm.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const title = "Taxi Digne-les-Bains 24h/24";
+const description = "Réservez votre taxi à Digne-les-Bains. Service professionnel disponible 24h/24. Transfert aéroport, gare, courses locales. Devis gratuit. Appelez le 01 23 45 67 89.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords="taxi digne les bains, taxi digne, réservation taxi digne, transport digne les bains, VTC digne, taxi 04000"
+>
+  <!-- Hero Section locale -->
+  <section class="hero-city">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Taxi à Digne-les-Bains : votre service disponible 24h/24</h1>
+        <p class="hero-subtitle">
+          Service de taxi professionnel dans la préfecture des Alpes-de-Haute-Provence.
+          Réservation rapide et tarifs transparents pour tous vos déplacements.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:+33123456789" class="btn btn-primary btn-large">Appelez maintenant</a>
+          <a href="#booking" class="btn btn-secondary btn-large">Réserver en ligne</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Informations sur Digne-les-Bains -->
+  <section class="city-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-main">
+          <h2>Service de taxi à Digne-les-Bains et ses quartiers</h2>
+
+          <p>
+            <strong>Taxi Digne-les-Bains</strong> vous propose un service de transport professionnel dans toute
+            la ville et ses quartiers. Que vous soyez dans le <strong>centre-ville</strong>, aux <strong>Thermes</strong>,
+            au <strong>quartier Saint-Christophe</strong>, aux <strong>Sièyes</strong> ou dans tout autre secteur de
+            Digne-les-Bains, nous intervenons rapidement pour tous vos besoins de déplacement.
+          </p>
+
+          <h3>Nos services de taxi à Digne-les-Bains</h3>
+
+          <ul class="services-list">
+            <li>
+              <strong>Transfert gare de Digne</strong> - Navette depuis et vers la gare SNCF, départs garantis
+              pour vos correspondances
+            </li>
+            <li>
+              <strong>Transfert aéroport</strong> - Transport vers les aéroports de Marseille-Provence,
+              Nice Côte d'Azur et Toulon-Hyères
+            </li>
+            <li>
+              <strong>Courses locales</strong> - Déplacements dans Digne et ses environs pour tous vos
+              rendez-vous quotidiens
+            </li>
+            <li>
+              <strong>Transport médical</strong> - Service conventionné CPAM pour vos rendez-vous médicaux
+              à l'hôpital de Digne ou chez vos praticiens
+            </li>
+            <li>
+              <strong>Taxi longue distance</strong> - Trajets vers Marseille, Nice, Gap, Aix-en-Provence
+              et toute la région PACA
+            </li>
+            <li>
+              <strong>Transferts professionnels</strong> - Service dédié aux entreprises dignoise avec
+              facturation mensuelle
+            </li>
+          </ul>
+
+          <h3>Points d'intérêt et destinations populaires depuis Digne-les-Bains</h3>
+
+          <p>
+            Notre service de <strong>taxi à Digne</strong> vous emmène vers toutes les destinations importantes :
+          </p>
+
+          <ul class="destinations-list">
+            <li><strong>Gare SNCF de Digne-les-Bains</strong> - Boulevard Gassendi</li>
+            <li><strong>Centre hospitalier de Digne</strong> - Route de Nice</li>
+            <li><strong>Thermes de Digne-les-Bains</strong> - Établissement thermal</li>
+            <li><strong>Préfecture des Alpes-de-Haute-Provence</strong> - Centre administratif</li>
+            <li><strong>Musée Gassendi</strong> - Culture et patrimoine</li>
+            <li><strong>Cathédrale Saint-Jérôme</strong> - Monument historique</li>
+            <li><strong>Zone commerciale Saint-Christophe</strong> - Shopping et commerces</li>
+          </ul>
+
+          <h3>Liaisons depuis Digne-les-Bains</h3>
+
+          <div class="routes-info">
+            <div class="route-card">
+              <h4>Vers les aéroports</h4>
+              <ul>
+                <li>Taxi Digne → Aéroport Marseille : 1h30 - à partir de 120€</li>
+                <li>Taxi Digne → Aéroport Nice : 2h - à partir de 150€</li>
+                <li>Taxi Digne → Aéroport Toulon : 2h - à partir de 140€</li>
+              </ul>
+            </div>
+
+            <div class="route-card">
+              <h4>Vers les villes principales</h4>
+              <ul>
+                <li>Taxi Digne → Manosque : 45 min - à partir de 60€</li>
+                <li>Taxi Digne → Sisteron : 1h - à partir de 70€</li>
+                <li>Taxi Digne → Marseille : 1h45 - à partir de 130€</li>
+                <li>Taxi Digne → Forcalquier : 50 min - à partir de 65€</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <aside class="info-sidebar">
+          <div class="booking-widget">
+            <BookingForm title="Réserver un taxi à Digne" compact={true} />
+          </div>
+
+          <div class="contact-widget">
+            <h3>Contactez-nous</h3>
+            <p>Service disponible 24h/24 et 7j/7</p>
+            <a href="tel:+33123456789" class="phone-link">01 23 45 67 89</a>
+            <p class="contact-info">
+              Réponse rapide garantie<br />
+              Devis gratuit sans engagement
+            </p>
+          </div>
+
+          <div class="zones-widget">
+            <h3>Autres villes desservies</h3>
+            <ul>
+              <li><a href="/villes/manosque">Taxi Manosque</a></li>
+              <li><a href="/villes/sisteron">Taxi Sisteron</a></li>
+              <li><a href="/villes/forcalquier">Taxi Forcalquier</a></li>
+              <li><a href="/villes/chateau-arnoux">Taxi Château-Arnoux</a></li>
+              <li><a href="/villes">Voir toutes les villes</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services Cards -->
+  <section class="services-section bg-light">
+    <div class="container">
+      <h2 class="text-center">Nos services de taxi à Digne-les-Bains</h2>
+      <div class="services-grid">
+        <ServiceCard
+          title="Transfert aéroport depuis Digne"
+          description="Transport vers tous les aéroports de la région PACA. Suivi de vol et assistance bagages inclus."
+          price="120€"
+        />
+        <ServiceCard
+          title="Taxi gare Digne-les-Bains"
+          description="Navette depuis et vers la gare SNCF. Ponctualité garantie pour vos trains."
+          price="20€"
+        />
+        <ServiceCard
+          title="Courses locales à Digne"
+          description="Déplacements dans Digne et ses quartiers pour tous vos rendez-vous."
+          price="15€"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de réservation -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="booking-centered">
+        <h2 class="text-center">Réservez votre taxi à Digne-les-Bains</h2>
+        <p class="text-center section-subtitle">
+          Remplissez le formulaire ci-dessous et recevez votre devis gratuit sous 15 minutes
+        </p>
+        <div class="booking-form-large">
+          <BookingForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    title="Besoin d'un taxi à Digne-les-Bains maintenant ?"
+    subtitle="Appelez-nous ou réservez en ligne pour un service rapide et professionnel dans toute la ville"
+    buttonText="Appeler maintenant"
+    phoneNumber="01 23 45 67 89"
+  />
+
+  <!-- Contenu SEO -->
+  <section class="seo-content">
+    <div class="container">
+      <article class="seo-article">
+        <h2>Pourquoi choisir notre service de taxi à Digne-les-Bains ?</h2>
+
+        <p>
+          Notre entreprise de <strong>taxi à Digne-les-Bains</strong> est à votre service depuis plus de 15 ans.
+          Basés dans la préfecture des Alpes-de-Haute-Provence, nous connaissons parfaitement la ville et ses
+          environs. Que vous ayez besoin d'un <strong>taxi pour la gare de Digne</strong>, d'un
+          <strong>transfert vers l'aéroport de Marseille</strong> ou d'un simple déplacement dans la ville,
+          nos chauffeurs professionnels sont à votre disposition <strong>24 heures sur 24 et 7 jours sur 7</strong>.
+        </p>
+
+        <h3>Un service de taxi complet à Digne et ses environs</h3>
+
+        <p>
+          Située au cœur des Alpes-de-Haute-Provence, <strong>Digne-les-Bains</strong> est une ville thermale
+          dynamique qui nécessite des solutions de transport fiables. Notre <strong>service de taxi</strong> couvre
+          l'ensemble de la commune et ses quartiers : centre-ville, Thermes, Saint-Christophe, Les Sièyes, et bien
+          d'autres. Nous assurons également les liaisons vers les communes environnantes comme Aiglun, Marcoux,
+          Champtercier et toute la vallée de la Bléone.
+        </p>
+
+        <p>
+          Notre flotte de véhicules récents et climatisés peut accueillir de 1 à 8 passagers selon vos besoins.
+          Tous nos chauffeurs sont titulaires de la carte professionnelle et parfaitement formés pour vous garantir
+          un trajet confortable et sécurisé.
+        </p>
+
+        <h3>Réservation de taxi simple et rapide à Digne</h3>
+
+        <p>
+          Réserver un <strong>taxi à Digne-les-Bains</strong> est très simple. Vous pouvez nous contacter par
+          téléphone au 01 23 45 67 89 ou utiliser notre formulaire de réservation en ligne disponible 24h/24.
+          Nous vous répondons rapidement avec un <strong>devis gratuit et sans engagement</strong>. Vous recevrez
+          ensuite une confirmation par SMS et email avec toutes les informations de votre course.
+        </p>
+
+        <p>
+          Nos tarifs sont transparents et compétitifs. Pas de surprise à l'arrivée : le prix vous est communiqué
+          avant chaque course. Nous acceptons tous les modes de paiement : espèces, carte bancaire, et pour les
+          professionnels, nous proposons une facturation mensuelle.
+        </p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-city {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+  }
+
+  .hero-city h1 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.95;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .city-info {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .info-main h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-main h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+  }
+
+  .info-main h4 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .info-main p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .services-list,
+  .destinations-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .services-list li,
+  .destinations-list li {
+    padding: var(--spacing-sm) 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .services-list li::before,
+  .destinations-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .routes-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .route-card {
+    background-color: var(--color-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .route-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-sm);
+  }
+
+  .route-card li {
+    padding: 0.5rem 0;
+    color: var(--color-gray-dark);
+  }
+
+  .info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .booking-widget,
+  .contact-widget,
+  .zones-widget {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+  }
+
+  .contact-widget {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+  }
+
+  .contact-widget h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-widget p {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .phone-link {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: var(--spacing-md) 0;
+  }
+
+  .contact-info {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+  }
+
+  .zones-widget h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .zones-widget ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .zones-widget li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .zones-widget li:last-child {
+    border-bottom: none;
+  }
+
+  .zones-widget a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .services-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .services-section h2 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .booking-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .booking-centered {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .booking-form-large {
+    margin-top: var(--spacing-lg);
+  }
+
+  .seo-content {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .seo-article {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .seo-article h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .seo-article h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .seo-article p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+  }
+
+  @media (max-width: 968px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-sidebar {
+      order: -1;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+    }
+  }
+</style>

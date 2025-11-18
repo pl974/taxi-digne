@@ -1,0 +1,139 @@
+---
+/**
+ * Composant CTA - Call To Action réutilisable
+ * Optimisé pour la conversion avec design attractif
+ */
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  variant?: 'primary' | 'secondary' | 'dark';
+  phoneNumber?: string;
+}
+
+const {
+  title,
+  subtitle,
+  buttonText = "Réserver maintenant",
+  buttonLink = "tel:+33123456789",
+  variant = 'primary',
+  phoneNumber = "01 23 45 67 89"
+} = Astro.props;
+---
+
+<section class={`cta-section cta-${variant}`}>
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">{title}</h2>
+      {subtitle && <p class="cta-subtitle">{subtitle}</p>}
+
+      <div class="cta-buttons">
+        <a href={buttonLink} class="btn btn-large cta-btn-primary">
+          {buttonText}
+        </a>
+        <a href={`tel:${phoneNumber.replace(/\s/g, '')}`} class="btn btn-large btn-secondary cta-btn-secondary">
+          {phoneNumber}
+        </a>
+      </div>
+
+      <p class="cta-info">Disponible 24h/24 et 7j/7 - Réponse rapide garantie</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+  }
+
+  .cta-secondary {
+    background-color: var(--color-light);
+  }
+
+  .cta-dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-md);
+    color: inherit;
+  }
+
+  .cta-primary .cta-title,
+  .cta-dark .cta-title {
+    color: var(--color-white);
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+  }
+
+  .cta-btn-primary:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-dark);
+  }
+
+  .cta-secondary .cta-btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .cta-secondary .cta-btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+  }
+
+  .cta-info {
+    font-size: 0.9375rem;
+    opacity: 0.85;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .cta-section {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+    }
+  }
+</style>

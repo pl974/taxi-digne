@@ -1,0 +1,767 @@
+---
+/**
+ * Page d'accueil - Optimisée conversion et SEO
+ * Landing page principale pour taxi-digne.fr
+ */
+
+import Layout from '../layouts/Layout.astro';
+import BookingForm from '../components/BookingForm.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTA from '../components/CTA.astro';
+
+const title = "Taxi à Digne-les-Bains et Alpes-de-Haute-Provence";
+const description = "Réservez votre taxi à Digne-les-Bains. Service professionnel disponible 24h/24 et 7j/7. Transfert aéroport, gare, courses locales et longue distance. Devis gratuit en ligne.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  schemaType="LocalBusiness"
+>
+  <!-- Hero Section - CTA au-dessus de la ligne de flottaison -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Votre taxi à <span class="highlight">Digne-les-Bains</span>
+          </h1>
+          <p class="hero-subtitle">
+            Service de taxi professionnel disponible 24h/24 et 7j/7 dans les Alpes-de-Haute-Provence.
+            Réservation en ligne simple et rapide avec devis immédiat.
+          </p>
+
+          <div class="hero-features">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Disponible 24h/24</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Devis gratuit</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Paiement sécurisé</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Chauffeurs expérimentés</span>
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="tel:+33123456789" class="btn btn-primary btn-large">
+              Appeler maintenant
+            </a>
+            <a href="#booking" class="btn btn-secondary btn-large">
+              Réserver en ligne
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-form">
+          <BookingForm compact={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services principaux -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos services de taxi à Digne-les-Bains</h2>
+        <p class="section-subtitle">
+          Des solutions de transport adaptées à tous vos besoins dans les Alpes-de-Haute-Provence
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <ServiceCard
+          title="Transfert aéroport"
+          description="Transport vers les aéroports de Marseille, Nice et Toulon. Service porte-à-porte avec suivi de vol et assistance bagages."
+          link="/services#transfert-aeroport"
+          price="90€"
+        />
+
+        <ServiceCard
+          title="Transfert gare"
+          description="Navette depuis et vers les gares SNCF de Digne, Manosque et Sisteron. Ponctualité garantie pour vos correspondances."
+          link="/services#transfert-gare"
+          price="30€"
+        />
+
+        <ServiceCard
+          title="Taxi longue distance"
+          description="Trajets longue distance vers toute la région PACA et au-delà. Confort assuré pour vos déplacements professionnels ou personnels."
+          link="/services#taxi-longue-distance"
+          price="Sur devis"
+        />
+
+        <ServiceCard
+          title="Transport médical"
+          description="Transport conventionné CPAM pour vos rendez-vous médicaux. Véhicule adapté et chauffeurs formés aux besoins spécifiques."
+          link="/services#taxi-medical"
+          price="Remboursé"
+        />
+
+        <ServiceCard
+          title="Courses locales"
+          description="Déplacements quotidiens dans Digne et alentours. Service rapide et efficace pour toutes vos courses du quotidien."
+          link="/services#courses-locales"
+          price="20€"
+        />
+
+        <ServiceCard
+          title="Taxi professionnel"
+          description="Service dédié aux entreprises avec facturation mensuelle. Disponibilité garantie pour vos collaborateurs et clients."
+          link="/services#taxi-professionnel"
+          price="Sur devis"
+        />
+      </div>
+
+      <div class="services-cta">
+        <a href="/services" class="btn btn-primary">Voir tous nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi nous choisir -->
+  <section class="why-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pourquoi choisir notre service de taxi à Digne ?</h2>
+        <p class="section-subtitle">
+          Plus de 15 ans d'expérience au service des habitants et visiteurs des Alpes-de-Haute-Provence
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card animate">
+          <div class="why-number">24/7</div>
+          <h3>Disponibilité totale</h3>
+          <p>
+            Notre service est disponible 24 heures sur 24 et 7 jours sur 7, y compris les jours fériés.
+            Réservez à tout moment pour vos urgences ou déplacements planifiés.
+          </p>
+        </div>
+
+        <div class="why-card animate">
+          <div class="why-number">100%</div>
+          <h3>Satisfaction garantie</h3>
+          <p>
+            Plus de 500 clients satisfaits chaque mois. Chauffeurs professionnels, véhicules récents
+            et climatisés. Votre satisfaction est notre priorité.
+          </p>
+        </div>
+
+        <div class="why-card animate">
+          <div class="why-number">€€</div>
+          <h3>Tarifs transparents</h3>
+          <p>
+            Pas de surprise à l'arrivée. Nos tarifs sont clairs et affichés à l'avance.
+            Devis gratuit en ligne ou par téléphone avant chaque course.
+          </p>
+        </div>
+
+        <div class="why-card animate">
+          <div class="why-number">5★</div>
+          <h3>Service de qualité</h3>
+          <p>
+            Véhicules confortables et bien entretenus. Chauffeurs courtois et professionnels
+            connaissant parfaitement la région et ses routes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Zones desservies -->
+  <section class="zones-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos secteurs d'intervention dans les Alpes-de-Haute-Provence</h2>
+        <p class="section-subtitle">
+          Service de taxi couvrant l'ensemble du département 04 et les communes environnantes
+        </p>
+      </div>
+
+      <div class="zones-content">
+        <div class="zones-main">
+          <h3>Principales villes desservies</h3>
+          <ul class="zones-list">
+            <li>
+              <a href="/villes/digne-les-bains">
+                <strong>Taxi Digne-les-Bains</strong> - Chef-lieu du département
+              </a>
+            </li>
+            <li>
+              <a href="/villes/manosque">
+                <strong>Taxi Manosque</strong> - Ville dynamique du 04
+              </a>
+            </li>
+            <li>
+              <a href="/villes/sisteron">
+                <strong>Taxi Sisteron</strong> - Perle de la Haute-Provence
+              </a>
+            </li>
+            <li>
+              <a href="/villes/forcalquier">
+                <strong>Taxi Forcalquier</strong> - Cité médiévale
+              </a>
+            </li>
+            <li>
+              <a href="/villes/chateau-arnoux">
+                <strong>Taxi Château-Arnoux-Saint-Auban</strong> - Zone industrielle
+              </a>
+            </li>
+            <li>
+              <a href="/villes/barcelonnette">
+                <strong>Taxi Barcelonnette</strong> - Station de ski
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="zones-secondary">
+          <h3>Autres communes desservies</h3>
+          <div class="zones-columns">
+            <ul>
+              <li><a href="/villes">Oraison</a></li>
+              <li><a href="/villes">Pierrevert</a></li>
+              <li><a href="/villes">Volx</a></li>
+              <li><a href="/villes">Les Mées</a></li>
+            </ul>
+            <ul>
+              <li><a href="/villes">Peyruis</a></li>
+              <li><a href="/villes">Mallemoisson</a></li>
+              <li><a href="/villes">Aiglun</a></li>
+              <li><a href="/villes">Malijai</a></li>
+            </ul>
+          </div>
+          <p class="zones-note">
+            <a href="/villes">Voir toutes les villes desservies →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Témoignages -->
+  <section class="testimonials-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ce que disent nos clients</h2>
+        <p class="section-subtitle">
+          Des centaines de clients satisfaits nous font confiance pour leurs déplacements
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <TestimonialCard
+          name="Marie Dupont"
+          rating={5}
+          comment="Service impeccable pour mon transfert vers l'aéroport de Marseille. Chauffeur à l'heure, véhicule propre et confortable. Je recommande vivement !"
+          city="Digne-les-Bains"
+          date="2024-01-15"
+        />
+
+        <TestimonialCard
+          name="Jean Martin"
+          rating={5}
+          comment="J'utilise régulièrement ce service de taxi pour mes déplacements professionnels. Toujours ponctuel, tarifs corrects et chauffeurs très professionnels."
+          city="Manosque"
+          date="2024-01-10"
+        />
+
+        <TestimonialCard
+          name="Sophie Bernard"
+          rating={5}
+          comment="Excellent service pour mes rendez-vous médicaux. Le chauffeur est patient et attentionné. Transport conventionné bien géré. Merci beaucoup !"
+          city="Sisteron"
+          date="2024-01-05"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section réservation -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="booking-content">
+        <div class="booking-info">
+          <h2>Réservez votre taxi à Digne en quelques clics</h2>
+          <p>
+            Remplissez notre formulaire de réservation et recevez votre devis gratuit sous 15 minutes.
+            Notre équipe vous recontacte rapidement pour confirmer votre course.
+          </p>
+
+          <div class="booking-advantages">
+            <h3>Avantages de la réservation en ligne</h3>
+            <ul>
+              <li>Devis gratuit et sans engagement</li>
+              <li>Réponse rapide garantie sous 15 minutes</li>
+              <li>Tarif fixe connu à l'avance</li>
+              <li>Paiement sécurisé en ligne ou à bord</li>
+              <li>Confirmation par SMS et email</li>
+            </ul>
+          </div>
+
+          <div class="booking-contact">
+            <h3>Besoin d'un taxi immédiatement ?</h3>
+            <p>Appelez-nous directement au</p>
+            <a href="tel:+33123456789" class="phone-number">01 23 45 67 89</a>
+            <p class="contact-note">Disponible 24h/24 et 7j/7</p>
+          </div>
+        </div>
+
+        <div class="booking-form-wrapper">
+          <BookingForm title="Demander un devis gratuit" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <CTA
+    title="Besoin d'un taxi à Digne-les-Bains ?"
+    subtitle="Contactez-nous dès maintenant pour réserver votre course ou obtenir un devis gratuit. Service professionnel disponible 24h/24."
+    buttonText="Réserver maintenant"
+    phoneNumber="01 23 45 67 89"
+    variant="primary"
+  />
+
+  <!-- Section SEO - Contenu textuel riche -->
+  <section class="seo-content">
+    <div class="container">
+      <article class="seo-article">
+        <h2>Taxi à Digne-les-Bains : votre partenaire de confiance pour tous vos déplacements</h2>
+
+        <p>
+          Vous recherchez un <strong>taxi à Digne-les-Bains</strong> ou dans les <strong>Alpes-de-Haute-Provence</strong> ?
+          Notre service de taxi professionnel vous accompagne pour tous vos déplacements, qu'ils soient personnels ou professionnels.
+          Disponibles <strong>24h/24 et 7j/7</strong>, nos chauffeurs expérimentés vous garantissent un service de qualité,
+          ponctuel et sécurisé.
+        </p>
+
+        <h3>Un service de taxi complet dans le département 04</h3>
+
+        <p>
+          Notre flotte de véhicules récents et climatisés est à votre disposition pour tous types de trajets :
+          <strong>transfert aéroport</strong> vers Marseille, Nice ou Toulon, <strong>transfert gare</strong> SNCF,
+          <strong>courses locales</strong> dans Digne et ses environs, <strong>transport médical conventionné</strong>,
+          ou encore <strong>trajets longue distance</strong> vers toute la région PACA.
+        </p>
+
+        <p>
+          Que vous soyez un particulier, un professionnel ou que vous ayez besoin d'un <strong>transport médical</strong>,
+          nous adaptons notre service à vos besoins spécifiques. Nos tarifs transparents et compétitifs vous sont communiqués
+          avant chaque course, sans surprise à l'arrivée.
+        </p>
+
+        <h3>Réservation de taxi simple et rapide à Digne</h3>
+
+        <p>
+          Réserver votre <strong>taxi à Digne-les-Bains</strong> n'a jamais été aussi simple. Utilisez notre formulaire
+          de réservation en ligne disponible 24h/24, ou contactez-nous directement par téléphone au 01 23 45 67 89.
+          Vous recevrez un <strong>devis gratuit</strong> sous 15 minutes et une confirmation de votre réservation
+          par SMS et email.
+        </p>
+
+        <p>
+          Notre service couvre l'ensemble des <strong>Alpes-de-Haute-Provence</strong> : Manosque, Sisteron, Forcalquier,
+          Château-Arnoux, Barcelonnette, et de nombreuses autres communes du département 04. Pour vos déplacements
+          professionnels, nous proposons également un service dédié aux entreprises avec facturation mensuelle.
+        </p>
+
+        <h3>Des chauffeurs professionnels et expérimentés</h3>
+
+        <p>
+          Tous nos chauffeurs sont des <strong>professionnels qualifiés</strong>, titulaires de la carte professionnelle
+          de taxi et parfaitement formés. Ils connaissent parfaitement la région des Alpes-de-Haute-Provence et ses routes,
+          vous garantissant ainsi un trajet optimal et sécurisé. Courtois et discrets, ils sauront répondre à toutes
+          vos demandes avec professionnalisme.
+        </p>
+
+        <p>
+          Faites confiance à notre expérience de plus de 15 ans dans le <strong>transport de personnes à Digne</strong>
+          et ses environs. Rejoignez les centaines de clients qui nous font déjà confiance pour leurs déplacements
+          quotidiens dans les Alpes-de-Haute-Provence.
+        </p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/taxi-pattern.svg') repeat;
+    opacity: 0.05;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+    color: var(--color-white);
+  }
+
+  .highlight {
+    color: var(--color-secondary);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+
+  .hero-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .feature-icon {
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .hero-form {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sections communes */
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .services-cta {
+    text-align: center;
+  }
+
+  /* Why Section */
+  .why-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .why-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+  }
+
+  .why-number {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .why-card h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .why-card p {
+    line-height: 1.6;
+  }
+
+  /* Zones Section */
+  .zones-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .zones-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .zones-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .zones-list li {
+    padding: var(--spacing-sm);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+
+  .zones-list li:hover {
+    background-color: var(--color-primary-light);
+    transform: translateX(8px);
+  }
+
+  .zones-list li:hover a {
+    color: var(--color-white);
+  }
+
+  .zones-list a {
+    color: var(--color-dark);
+    text-decoration: none;
+  }
+
+  .zones-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .zones-columns ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .zones-columns li {
+    padding: 0.5rem 0;
+  }
+
+  .zones-note {
+    text-align: center;
+    margin-top: var(--spacing-md);
+  }
+
+  .zones-note a {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Testimonials Section */
+  .testimonials-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  /* Booking Section */
+  .booking-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .booking-info h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .booking-info > p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .booking-advantages {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .booking-advantages h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .booking-advantages ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .booking-advantages li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .booking-advantages li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  .booking-contact {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+  }
+
+  .booking-contact h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .booking-contact p {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .phone-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: var(--spacing-sm) 0;
+  }
+
+  .contact-note {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+  }
+
+  /* SEO Content Section */
+  .seo-content {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-white);
+  }
+
+  .seo-article {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .seo-article h2 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+  }
+
+  .seo-article h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+  }
+
+  .seo-article p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-dark);
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .hero-content,
+    .zones-content,
+    .booking-content {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+
+    .hero-cta {
+      justify-content: center;
+    }
+
+    .hero-features {
+      grid-template-columns: 1fr;
+    }
+
+    .services-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+</style>

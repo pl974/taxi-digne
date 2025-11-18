@@ -1,0 +1,686 @@
+---
+/**
+ * Page Tarifs - Grille tarifaire transparente optimisée conversion
+ */
+
+import Layout from '../layouts/Layout.astro';
+import BookingForm from '../components/BookingForm.astro';
+import CTA from '../components/CTA.astro';
+
+const title = "Nos tarifs de taxi";
+const description = "Tarifs transparents pour tous nos services de taxi à Digne et dans les Alpes-de-Haute-Provence. Devis gratuit en ligne. Réservez au meilleur prix.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="tarifs-hero">
+    <div class="container">
+      <h1>Nos tarifs de taxi à Digne-les-Bains</h1>
+      <p class="hero-text">
+        Tarifs transparents et compétitifs. Pas de surprise à l'arrivée, le prix vous est communiqué avant chaque course.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tarifs principaux -->
+  <section class="tarifs-main">
+    <div class="container">
+      <div class="tarifs-intro">
+        <h2>Grille tarifaire indicative</h2>
+        <p>
+          Nos tarifs sont calculés en fonction de la distance, de l'horaire et du type de service.
+          Les prix ci-dessous sont donnés à titre indicatif. Pour un <strong>devis précis et gratuit</strong>,
+          utilisez notre formulaire de réservation ou contactez-nous directement.
+        </p>
+      </div>
+
+      <!-- Tarifs par trajet -->
+      <div class="tarifs-section">
+        <h3>Transferts aéroport depuis Digne-les-Bains</h3>
+        <div class="tarifs-grid">
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Aéroport Marseille-Provence</strong>
+              <span class="tarif-distance">150 km - 1h30</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">120€</span>
+              <span class="price-note">1-4 passagers</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Aéroport Nice Côte d'Azur</strong>
+              <span class="tarif-distance">180 km - 2h</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">150€</span>
+              <span class="price-note">1-4 passagers</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Aéroport Toulon-Hyères</strong>
+              <span class="tarif-distance">170 km - 2h</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">140€</span>
+              <span class="price-note">1-4 passagers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarifs gares -->
+      <div class="tarifs-section">
+        <h3>Transferts gare depuis Digne-les-Bains</h3>
+        <div class="tarifs-grid">
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Gare de Digne (centre-ville)</strong>
+              <span class="tarif-distance">Selon quartier</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">15-25€</span>
+              <span class="price-note">Trajet local</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Gare de Manosque</strong>
+              <span class="tarif-distance">60 km - 45 min</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">60€</span>
+              <span class="price-note">1-4 passagers</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Gare Aix-en-Provence TGV</strong>
+              <span class="tarif-distance">100 km - 1h15</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">100€</span>
+              <span class="price-note">1-4 passagers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarifs villes -->
+      <div class="tarifs-section">
+        <h3>Liaisons entre villes</h3>
+        <div class="tarifs-grid">
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Digne → Manosque</strong>
+              <span class="tarif-distance">60 km - 45 min</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">60€</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Digne → Sisteron</strong>
+              <span class="tarif-distance">70 km - 1h</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">70€</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Digne → Forcalquier</strong>
+              <span class="tarif-distance">65 km - 50 min</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">65€</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Digne → Marseille</strong>
+              <span class="tarif-distance">150 km - 1h45</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">130€</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Digne → Gap</strong>
+              <span class="tarif-distance">90 km - 1h30</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">90€</span>
+            </div>
+          </div>
+
+          <div class="tarif-card">
+            <div class="tarif-destination">
+              <strong>Digne → Barcelonnette</strong>
+              <span class="tarif-distance">85 km - 1h30</span>
+            </div>
+            <div class="tarif-price">
+              <span class="price-amount">85€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarifs horaires -->
+      <div class="tarifs-section">
+        <h3>Courses locales et mise à disposition</h3>
+        <div class="tarifs-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Tarif</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Course locale Digne</td>
+                <td><strong>15-30€</strong></td>
+                <td>Déplacements dans la ville et proches environs</td>
+              </tr>
+              <tr>
+                <td>Mise à disposition 1h</td>
+                <td><strong>45€</strong></td>
+                <td>Véhicule et chauffeur à votre disposition</td>
+              </tr>
+              <tr>
+                <td>Mise à disposition demi-journée</td>
+                <td><strong>200€</strong></td>
+                <td>4 heures consécutives</td>
+              </tr>
+              <tr>
+                <td>Mise à disposition journée</td>
+                <td><strong>350€</strong></td>
+                <td>8 heures consécutives</td>
+              </tr>
+              <tr>
+                <td>Transport médical</td>
+                <td><strong>Remboursé</strong></td>
+                <td>Selon prescription CPAM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Informations tarifaires -->
+      <div class="tarifs-info">
+        <h3>Informations importantes sur nos tarifs</h3>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h4>Suppléments éventuels</h4>
+            <ul>
+              <li>Nuit (20h-7h) : +20%</li>
+              <li>Dimanche et jours fériés : +20%</li>
+              <li>Bagages volumineux : +5€ par pièce</li>
+              <li>Péage autoroutier : au réel</li>
+              <li>Temps d'attente : 30€/heure</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4>Inclus dans nos tarifs</h4>
+            <ul>
+              <li>Prise en charge à domicile</li>
+              <li>Bagages standards</li>
+              <li>Véhicule propre et climatisé</li>
+              <li>Chauffeur professionnel</li>
+              <li>Suivi de vol (aéroport)</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4>Modes de paiement</h4>
+            <ul>
+              <li>Espèces</li>
+              <li>Carte bancaire</li>
+              <li>Chèques</li>
+              <li>Facturation entreprise</li>
+              <li>Tiers payant (transport médical)</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h4>Nos garanties</h4>
+            <ul>
+              <li>Prix fixe annoncé à l'avance</li>
+              <li>Pas de surprise à l'arrivée</li>
+              <li>Devis gratuit et sans engagement</li>
+              <li>Annulation gratuite 24h avant</li>
+              <li>Facture détaillée fournie</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section réservation -->
+  <section class="booking-section bg-light">
+    <div class="container">
+      <div class="booking-content">
+        <div class="booking-text">
+          <h2>Demandez votre devis gratuit</h2>
+          <p>
+            Remplissez notre formulaire pour obtenir un <strong>devis précis et personnalisé</strong>
+            pour votre trajet. Réponse garantie sous 15 minutes.
+          </p>
+
+          <div class="booking-benefits">
+            <h3>Avantages de la réservation anticipée</h3>
+            <ul>
+              <li>Tarif garanti sans surprise</li>
+              <li>Disponibilité assurée même en période de forte affluence</li>
+              <li>Choix du véhicule selon vos besoins (berline, monospace)</li>
+              <li>Possibilité de demandes spécifiques (siège bébé, etc.)</li>
+            </ul>
+          </div>
+
+          <div class="urgent-contact">
+            <h3>Besoin urgent d'un taxi ?</h3>
+            <p>Appelez-nous directement :</p>
+            <a href="tel:+33123456789" class="urgent-phone">01 23 45 67 89</a>
+            <p class="urgent-note">Disponible 24h/24 et 7j/7</p>
+          </div>
+        </div>
+
+        <div class="booking-form-wrapper">
+          <BookingForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    title="Besoin d'un devis personnalisé ?"
+    subtitle="Chaque trajet est unique. Contactez-nous pour obtenir un tarif adapté à vos besoins spécifiques."
+    buttonText="Demander un devis"
+    phoneNumber="01 23 45 67 89"
+  />
+
+  <!-- SEO Content -->
+  <section class="seo-content">
+    <div class="container">
+      <article class="seo-article">
+        <h2>Tarifs de taxi transparents et compétitifs à Digne-les-Bains</h2>
+
+        <p>
+          Chez <strong>Taxi Digne</strong>, nous croyons en la transparence tarifaire. Tous nos
+          <strong>tarifs de taxi</strong> vous sont communiqués avant chaque course, sans surprise à l'arrivée.
+          Que vous ayez besoin d'un <strong>transfert vers l'aéroport de Marseille</strong>, d'un
+          <strong>taxi pour la gare</strong> ou d'une simple course locale à Digne-les-Bains, vous connaissez
+          le prix à l'avance.
+        </p>
+
+        <h3>Comment sont calculés nos tarifs de taxi ?</h3>
+
+        <p>
+          Nos <strong>tarifs de taxi à Digne</strong> sont calculés de manière juste et équitable, en fonction
+          de plusieurs critères : la distance du trajet, l'horaire (jour, nuit, week-end), le type de véhicule
+          nécessaire et d'éventuels suppléments (péages, bagages volumineux). Nous appliquons les tarifs réglementés
+          par la préfecture des Alpes-de-Haute-Provence et nous nous engageons à vous proposer les meilleurs prix
+          du marché.
+        </p>
+
+        <p>
+          Pour obtenir un <strong>devis précis et gratuit</strong>, il vous suffit de nous contacter par téléphone
+          ou d'utiliser notre formulaire de réservation en ligne. Nous vous répondons rapidement avec un tarif
+          ferme et définitif, valable pour votre course.
+        </p>
+
+        <h3>Réservez au meilleur tarif</h3>
+
+        <p>
+          En réservant à l'avance, vous bénéficiez d'un <strong>tarif garanti</strong> et de la certitude
+          d'avoir un véhicule disponible, même en période de forte demande. Notre service de réservation
+          en ligne est simple, rapide et sécurisé. Vous pouvez également nous appeler 24h/24 au 01 23 45 67 89
+          pour toute demande urgente ou question sur nos tarifs.
+        </p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .tarifs-hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+  }
+
+  .tarifs-hero h1 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-text {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tarifs-main {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .tarifs-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xxl);
+  }
+
+  .tarifs-intro h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .tarifs-intro p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-dark);
+  }
+
+  .tarifs-section {
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .tarifs-section h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .tarifs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .tarif-card {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray-light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+  }
+
+  .tarif-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-2px);
+  }
+
+  .tarif-destination {
+    flex: 1;
+  }
+
+  .tarif-destination strong {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-dark);
+  }
+
+  .tarif-distance {
+    font-size: 0.9375rem;
+    color: var(--color-gray);
+  }
+
+  .tarif-price {
+    text-align: right;
+  }
+
+  .price-amount {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+  }
+
+  .price-note {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+  }
+
+  .tarifs-table {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  th {
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:hover {
+    background-color: var(--color-light);
+  }
+
+  .tarifs-info {
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-xl);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .tarifs-info h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .info-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+  }
+
+  .info-card h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .info-card li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .info-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .booking-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .booking-text h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .booking-text > p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .booking-benefits {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+  }
+
+  .booking-benefits h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .booking-benefits ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .booking-benefits li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .booking-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  .urgent-contact {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+  }
+
+  .urgent-contact h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .urgent-contact p {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .urgent-phone {
+    display: block;
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: var(--spacing-md) 0;
+  }
+
+  .urgent-note {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+  }
+
+  .seo-content {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .seo-article {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .seo-article h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .seo-article h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .seo-article p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+  }
+
+  @media (max-width: 968px) {
+    .booking-content {
+      grid-template-columns: 1fr;
+    }
+
+    .tarifs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    table {
+      font-size: 0.875rem;
+    }
+
+    th, td {
+      padding: var(--spacing-sm);
+    }
+  }
+</style>

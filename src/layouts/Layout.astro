@@ -1,0 +1,199 @@
+---
+/**
+ * Layout principal du site - Optimisé SEO et performances
+ * Inclut tous les meta tags, schema markup et optimisations
+ */
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonical?: string;
+  noindex?: boolean;
+  schemaType?: 'WebPage' | 'LocalBusiness' | 'Service';
+}
+
+const {
+  title,
+  description,
+  keywords = "taxi digne, taxi digne-les-bains, réservation taxi digne, transport digne, VTC digne, taxi 04, taxi alpes de haute provence",
+  ogImage = "/images/og-image.jpg",
+  ogType = "website",
+  canonical,
+  noindex = false,
+  schemaType = 'WebPage'
+} = Astro.props;
+
+const siteUrl = 'https://taxi-digne.fr';
+const fullTitle = `${title} | Taxi Digne - Service de taxi professionnel`;
+const canonicalUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
+
+// Schema.org JSON-LD pour LocalBusiness
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "name": "Taxi Digne",
+  "description": "Service de taxi professionnel à Digne-les-Bains et dans les Alpes-de-Haute-Provence. Disponible 24h/24 et 7j/7.",
+  "url": siteUrl,
+  "telephone": "+33123456789",
+  "email": "contact@taxi-digne.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Place du Général de Gaulle",
+    "addressLocality": "Digne-les-Bains",
+    "postalCode": "04000",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "44.0922",
+    "longitude": "6.2361"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Digne-les-Bains"
+    },
+    {
+      "@type": "City",
+      "name": "Manosque"
+    },
+    {
+      "@type": "City",
+      "name": "Sisteron"
+    },
+    {
+      "@type": "City",
+      "name": "Forcalquier"
+    }
+  ],
+  "priceRange": "€€",
+  "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+  "sameAs": [
+    "https://www.facebook.com/taxidigne"
+  ]
+};
+
+// Schema.org JSON-LD pour la page
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": schemaType,
+  "name": fullTitle,
+  "description": description,
+  "url": canonicalUrl
+};
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Meta tags SEO essentiels -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Taxi Digne" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Preconnect pour performances -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+    <!-- Meta tags additionnels -->
+    <meta name="author" content="Taxi Digne" />
+    <meta name="theme-color" content="#0066cc" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <!-- Geo tags pour SEO local -->
+    <meta name="geo.region" content="FR-04" />
+    <meta name="geo.placename" content="Digne-les-Bains" />
+    <meta name="geo.position" content="44.0922;6.2361" />
+    <meta name="ICBM" content="44.0922, 6.2361" />
+  </head>
+
+  <body>
+    <a href="#main-content" class="sr-only">Aller au contenu principal</a>
+
+    <Header />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Script pour améliorer l'expérience utilisateur -->
+    <script>
+      // Smooth scroll pour les ancres
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href && href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+
+      // Animation au scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observer tous les éléments avec la classe 'animate'
+      document.querySelectorAll('.animate').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

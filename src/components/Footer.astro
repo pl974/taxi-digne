@@ -1,0 +1,198 @@
+---
+/**
+ * Composant Footer - Pied de page avec maillage interne optimisé SEO
+ * Contient liens importants, informations contact et liens vers villes
+ */
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Colonne 1: À propos -->
+      <div class="footer-column">
+        <h3 class="footer-title">Taxi Digne</h3>
+        <p class="footer-text">
+          Votre service de taxi professionnel à Digne-les-Bains et dans les Alpes-de-Haute-Provence.
+          Disponible 24h/24 et 7j/7 pour tous vos déplacements.
+        </p>
+        <div class="footer-contact">
+          <a href="tel:+33123456789" class="contact-link">
+            <strong>Téléphone:</strong> 01 23 45 67 89
+          </a>
+          <a href="mailto:contact@taxi-digne.fr" class="contact-link">
+            <strong>Email:</strong> contact@taxi-digne.fr
+          </a>
+        </div>
+      </div>
+
+      <!-- Colonne 2: Nos services -->
+      <div class="footer-column">
+        <h4 class="footer-subtitle">Nos services</h4>
+        <ul class="footer-links">
+          <li><a href="/services#transfert-gare">Transfert gare</a></li>
+          <li><a href="/services#transfert-aeroport">Transfert aéroport</a></li>
+          <li><a href="/services#taxi-longue-distance">Longue distance</a></li>
+          <li><a href="/services#taxi-medical">Transport médical</a></li>
+          <li><a href="/services#taxi-professionnel">Taxi professionnel</a></li>
+          <li><a href="/tarifs">Nos tarifs</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 3: Nos secteurs -->
+      <div class="footer-column">
+        <h4 class="footer-subtitle">Nos secteurs</h4>
+        <ul class="footer-links">
+          <li><a href="/villes/digne-les-bains">Taxi Digne-les-Bains</a></li>
+          <li><a href="/villes/manosque">Taxi Manosque</a></li>
+          <li><a href="/villes/sisteron">Taxi Sisteron</a></li>
+          <li><a href="/villes/forcalquier">Taxi Forcalquier</a></li>
+          <li><a href="/villes/chateau-arnoux">Taxi Château-Arnoux</a></li>
+          <li><a href="/villes">Toutes nos villes</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 4: Informations légales -->
+      <div class="footer-column">
+        <h4 class="footer-subtitle">Informations</h4>
+        <ul class="footer-links">
+          <li><a href="/contact">Nous contacter</a></li>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/politique-confidentialite">Politique de confidentialité</a></li>
+          <li><a href="/cgv">Conditions générales</a></li>
+        </ul>
+        <div class="footer-social">
+          <p><strong>Disponible 24h/24</strong></p>
+          <a href="tel:+33123456789" class="btn btn-secondary btn-small">
+            Appelez maintenant
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Taxi Digne. Tous droits réservés.</p>
+      <p class="footer-seo-text">
+        Service de taxi professionnel à Digne-les-Bains et dans les Alpes-de-Haute-Provence -
+        Réservation taxi Digne - Transport VTC - Transfert aéroport - Taxi conventionné
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0 var(--spacing-lg);
+    margin-top: var(--spacing-xxl);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+    color: var(--color-primary-light);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .footer-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .footer-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-link {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .contact-link:hover {
+    color: var(--color-primary-light);
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary-light);
+    transform: translateX(5px);
+  }
+
+  .footer-social {
+    margin-top: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .btn-small {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-seo-text {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+
+    .footer {
+      padding: var(--spacing-xl) 0 var(--spacing-md);
+    }
+  }
+</style>
