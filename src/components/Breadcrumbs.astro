@@ -1,0 +1,138 @@
+---
+/**
+ * Composant Breadcrumbs - Fil d'Ariane avec schema.org BreadcrumbList
+ *
+ * Composant réutilisable pour afficher le chemin de navigation
+ * Améliore le SEO et l'expérience utilisateur
+ *
+ * @param items - Array de {label: string, url?: string}
+ * @param separator - Séparateur visuel (default: '>')
+ * @param addSchema - Ajouter le schema.org BreadcrumbList (default: true)
+ *
+ * Usage:
+ * <Breadcrumbs items={[
+ *   {label: 'Accueil', url: '/'},
+ *   {label: 'Villes', url: '/villes'},
+ *   {label: 'Digne-les-Bains'}
+ * ]} />
+ */
+
+interface BreadcrumbItem {
+  label: string;
+  url?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  separator?: string;
+  addSchema?: boolean;
+}
+
+const {
+  items,
+  separator = '>',
+  addSchema = true
+} = Astro.props;
+
+const siteUrl = 'https://taxi-digne.fr';
+
+// Génération du schema.org BreadcrumbList
+const breadcrumbSchema = addSchema ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.url && { "item": `${siteUrl}${item.url}` })
+  }))
+} : null;
+---
+
+<nav class="breadcrumbs" aria-label="Fil d'Ariane">
+  <div class="container">
+    <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+      {items.map((item, index) => (
+        <li
+          class="breadcrumb-item"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          {item.url ? (
+            <a href={item.url} itemprop="item">
+              <span itemprop="name">{item.label}</span>
+            </a>
+          ) : (
+            <span itemprop="name" class="current">{item.label}</span>
+          )}
+          <meta itemprop="position" content={String(index + 1)} />
+          {index < items.length - 1 && (
+            <span class="separator" aria-hidden="true">{separator}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}
+
+<style>
+  .breadcrumbs {
+    background-color: var(--color-light);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .breadcrumb-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .breadcrumb-item a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
+
+  .breadcrumb-item .current {
+    color: var(--color-gray-dark);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .separator {
+    color: var(--color-gray);
+    font-weight: normal;
+    user-select: none;
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      padding: var(--spacing-sm) 0;
+    }
+
+    .breadcrumb-item {
+      font-size: 0.875rem;
+    }
+  }
+</style>

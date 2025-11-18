@@ -8,9 +8,61 @@ import ImageHero from '../components/ImageHero.astro';
 import TrustSection from '../components/TrustSection.astro';
 import BookingForm from '../components/BookingForm.astro';
 import CTA from '../components/CTA.astro';
+import FAQSection from '../components/FAQSection.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 
 const title = "Nos tarifs de taxi";
 const description = "Tarifs transparents pour tous nos services de taxi à Digne et dans les Alpes-de-Haute-Provence. Devis gratuit en ligne. Réservez au meilleur prix.";
+
+// FAQ Tarifs
+const tarifsFAQ = [
+  {
+    question: "Comment est calculé le tarif de nuit pour un taxi à Digne ?",
+    answer: "<p>Le <strong>tarif de nuit</strong> s'applique de 20h à 7h du matin et entraîne une <strong>majoration de 20%</strong> sur le prix de base. Cette majoration est réglementée par la préfecture et couvre les frais supplémentaires liés au service nocturne : disponibilité réduite des chauffeurs, sécurité renforcée et charges d'exploitation plus élevées. Lors de votre réservation, nous vous indiquons systématiquement le <strong>tarif total incluant cette majoration</strong>, sans surprise à l'arrivée.</p>"
+  },
+  {
+    question: "Y a-t-il des frais cachés dans vos tarifs de taxi ?",
+    answer: "<p><strong>Absolument aucun frais caché</strong>. Nous croyons en la transparence totale. Le prix annoncé lors de la réservation est le prix final que vous payez. Les seuls suppléments possibles sont clairement indiqués à l'avance : majoration de nuit (+20%), dimanche et jours fériés (+20%), bagages volumineux (+5€/pièce) et péages autoroutiers au tarif réel. Tous ces éléments vous sont communiqués lors du <strong>devis gratuit</strong> avant la course.</p>"
+  },
+  {
+    question: "Puis-je obtenir un devis avant de réserver ma course ?",
+    answer: "<p>Bien sûr ! Nous fournissons systématiquement un <strong>devis gratuit et sans engagement</strong> pour toute demande. Vous pouvez nous contacter par téléphone au 01 23 45 67 89 ou utiliser notre formulaire de réservation en ligne. Nous vous répondons sous 15 minutes avec un tarif précis et définitif basé sur votre trajet, l'horaire et vos besoins spécifiques. Ce devis reste valable et le prix ne change pas, même si les conditions de circulation varient.</p>"
+  },
+  {
+    question: "Comment puis-je annuler ma réservation de taxi ?",
+    answer: "<p>Vous pouvez annuler votre réservation <strong>gratuitement jusqu'à 24 heures avant</strong> l'heure prévue de prise en charge. Il suffit de nous appeler au 01 23 45 67 89 ou d'envoyer un email. Pour les annulations de dernière minute (moins de 24h), des frais d'annulation de 20% du montant peuvent s'appliquer pour compenser l'immobilisation du véhicule et du chauffeur. Nous restons néanmoins flexibles en cas de circonstances exceptionnelles.</p>"
+  },
+  {
+    question: "Quels sont les moyens de paiement acceptés dans vos taxis ?",
+    answer: "<p>Nous acceptons <strong>tous les moyens de paiement courants</strong> pour votre confort : espèces, carte bancaire (Visa, Mastercard, American Express), chèques bancaires, et facturation pour les entreprises avec compte client. Pour le <strong>transport médical conventionné</strong>, nous gérons directement le tiers payant avec votre caisse d'assurance maladie. Tous nos véhicules sont équipés de terminaux de paiement électronique modernes et sécurisés.</p>"
+  },
+  {
+    question: "Vos tarifs incluent-ils les bagages et le suivi de vol ?",
+    answer: "<p>Oui, nos tarifs incluent le <strong>transport de bagages standards</strong> sans supplément (valises cabine et bagages enregistrés classiques). Pour les transferts aéroport, le <strong>suivi de vol en temps réel</strong> est également inclus : nous ajustons automatiquement l'heure de prise en charge en cas de retard ou d'avance de votre vol. Seuls les bagages particulièrement volumineux ou encombrants (matériel sportif, instruments de musique) peuvent entraîner un supplément de 5€ par pièce.</p>"
+  }
+];
+
+// Pages connexes
+const relatedPages = [
+  {
+    title: "Nos services de taxi",
+    url: "/services",
+    description: "Découvrez tous nos services : transferts aéroport, gare, courses locales, mise à disposition et transport médical.",
+    image: "/images/services/transfert-aeroport.webp"
+  },
+  {
+    title: "Villes desservies",
+    url: "/villes",
+    description: "Nous desservons Digne-les-Bains et toutes les communes des Alpes-de-Haute-Provence : Manosque, Sisteron, Forcalquier...",
+    image: "/images/villes/digne-les-bains.webp"
+  },
+  {
+    title: "Réserver un taxi",
+    url: "/contact",
+    description: "Contactez-nous pour réserver votre taxi ou obtenir un devis gratuit. Réponse garantie sous 15 minutes.",
+    image: "/images/about/satisfaction-client.webp"
+  }
+];
 ---
 
 <Layout title={title} description={description}>
@@ -307,6 +359,77 @@ const description = "Tarifs transparents pour tous nos services de taxi à Digne
     bgColor="white"
   />
 
+  <!-- Section comparaison modes de transport -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2>Pourquoi choisir un taxi professionnel plutôt qu'un VTC ou les transports en commun ?</h2>
+
+      <div class="comparison-intro">
+        <p>
+          Face à la diversité des options de transport disponibles dans les Alpes-de-Haute-Provence,
+          il est légitime de comparer les différentes solutions. Voici pourquoi le <strong>taxi professionnel</strong>
+          reste le meilleur choix pour vos déplacements à Digne et dans le département.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-card highlight">
+          <h3>Taxi professionnel</h3>
+          <div class="comparison-content">
+            <ul class="advantages">
+              <li><strong>Tarifs réglementés</strong> par la préfecture</li>
+              <li><strong>Disponibilité immédiate</strong> 24h/24 sans réservation</li>
+              <li><strong>Chauffeurs agréés</strong> avec carte professionnelle</li>
+              <li><strong>Prise en charge garantie</strong> même en cas d'affluence</li>
+              <li><strong>Connaissance locale</strong> parfaite du territoire</li>
+              <li><strong>Stations dédiées</strong> dans toute la ville</li>
+              <li><strong>Tarif fixe annoncé</strong> avant la course</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <h3>VTC (Uber, etc.)</h3>
+          <div class="comparison-content">
+            <ul class="disadvantages">
+              <li>Tarifs variables selon la demande (surge pricing)</li>
+              <li>Disponibilité limitée en zone rurale</li>
+              <li>Réservation obligatoire via application</li>
+              <li>Pas de prise en charge en station</li>
+              <li>Chauffeurs souvent non-locaux</li>
+              <li>Service absent ou rare à Digne</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <h3>Transports en commun</h3>
+          <div class="comparison-content">
+            <ul class="disadvantages">
+              <li>Horaires fixes et limités</li>
+              <li>Pas de service nocturne</li>
+              <li>Correspondances nécessaires</li>
+              <li>Temps de trajet très long</li>
+              <li>Difficile avec bagages</li>
+              <li>Réseau limité en zone rurale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="comparison-conclusion">
+        <h3>Le meilleur rapport qualité-prix pour vos déplacements</h3>
+        <p>
+          Le <strong>taxi professionnel à Digne</strong> offre le meilleur compromis entre flexibilité, confort,
+          sécurité et prix. Contrairement aux VTC avec leurs tarifs fluctuants, nos prix sont <strong>transparents
+          et réglementés</strong>. Contrairement aux transports en commun, nous vous offrons une <strong>disponibilité
+          totale</strong> et un service porte-à-porte. Pour vos trajets vers l'aéroport, la gare ou vos courses
+          locales, le taxi reste la solution la plus fiable et la plus économique dans les Alpes-de-Haute-Provence.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Section réservation -->
   <section class="booking-section bg-light">
     <div class="container">
@@ -392,6 +515,22 @@ const description = "Tarifs transparents pour tous nos services de taxi à Digne
       </article>
     </div>
   </section>
+
+  <!-- FAQ Tarifs -->
+  <FAQSection
+    title="Questions fréquentes sur nos tarifs de taxi"
+    subtitle="Tout ce que vous devez savoir sur nos prix, paiements et conditions"
+    questions={tarifsFAQ}
+    variant="list"
+    bgColor="light"
+  />
+
+  <!-- Pages connexes -->
+  <RelatedPages
+    title="Découvrez nos autres pages"
+    pages={relatedPages}
+    columns={3}
+  />
 </Layout>
 
 <style>
@@ -695,6 +834,136 @@ const description = "Tarifs transparents pour tous nos services de taxi à Digne
     margin-bottom: var(--spacing-md);
   }
 
+  /* Comparison Section */
+  .comparison-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .comparison-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .comparison-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .comparison-intro p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-dark);
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .comparison-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+
+  .comparison-card.highlight {
+    border: 3px solid var(--color-primary);
+    position: relative;
+  }
+
+  .comparison-card.highlight::before {
+    content: 'Recommandé';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.25rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .comparison-card:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .comparison-card h3 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-gray-light);
+  }
+
+  .comparison-card.highlight h3 {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+  }
+
+  .comparison-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .comparison-content li {
+    padding: 0.625rem 0;
+    padding-left: 1.75rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .advantages li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .disadvantages li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--color-gray);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .comparison-conclusion {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .comparison-conclusion h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+
+  .comparison-conclusion p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-gray-dark);
+    text-align: center;
+  }
+
   @media (max-width: 968px) {
     .booking-content {
       grid-template-columns: 1fr;
@@ -706,6 +975,14 @@ const description = "Tarifs transparents pour tous nos services de taxi à Digne
 
     .info-grid {
       grid-template-columns: 1fr;
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-section h2 {
+      font-size: 1.5rem;
     }
 
     table {

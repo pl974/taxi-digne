@@ -14,6 +14,7 @@ import StatsCounter from '../components/StatsCounter.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import BookingForm from '../components/BookingForm.astro';
 import CTA from '../components/CTA.astro';
+import FAQSection from '../components/FAQSection.astro';
 
 import {
   fleetVehicles,
@@ -24,6 +25,30 @@ import {
   servicesData,
   testimonials
 } from '../data/siteData';
+
+// FAQ essentielles pour homepage
+const homepageFAQ = [
+  {
+    question: "Combien coûte un taxi de Digne-les-Bains à l'aéroport de Marseille ?",
+    answer: "<p>Le tarif pour un <strong>transfert taxi Digne → Aéroport Marseille-Provence</strong> est de <strong>120€ pour 1-4 passagers</strong>. Le trajet dure environ 1h30. Ce tarif fixe inclut la prise en charge à domicile, l'assistance bagages et le suivi de vol en temps réel. <a href='/tarifs'>Voir tous nos tarifs</a></p>"
+  },
+  {
+    question: "Acceptez-vous les réservations de nuit et le week-end ?",
+    answer: "<p>Oui, notre service de taxi est disponible <strong>24 heures sur 24 et 7 jours sur 7</strong>, y compris les nuits, week-ends et jours fériés. Vous pouvez réserver en ligne à tout moment ou nous appeler au <strong>01 23 45 67 89</strong>. Un supplément de 20% s'applique pour les courses entre 20h et 7h.</p>"
+  },
+  {
+    question: "Comment payer ma course de taxi ?",
+    answer: "<p>Nous acceptons tous les modes de paiement : <strong>espèces, carte bancaire, chèques</strong> et pour les professionnels, la <strong>facturation mensuelle</strong>. Le paiement par carte bancaire est disponible directement dans le véhicule. Pour le transport médical conventionné, nous gérons le tiers payant avec la CPAM.</p>"
+  },
+  {
+    question: "Puis-je réserver un taxi pour plusieurs personnes avec bagages ?",
+    answer: "<p>Absolument ! Notre flotte comprend des <strong>véhicules de 4 à 8 places</strong> avec une grande capacité de coffre. Pour les groupes, nous proposons des monospaces et minibus. Précisez le nombre de passagers et de bagages lors de votre réservation pour que nous vous attribuions le véhicule adapté.</p>"
+  },
+  {
+    question: "Quel est le délai de réservation nécessaire ?",
+    answer: "<p>Pour une <strong>course immédiate</strong>, comptez 10-15 minutes en moyenne à Digne-les-Bains. Pour une <strong>réservation à l'avance</strong> (transfert aéroport, gare), nous recommandons de réserver au moins 24h avant. En haute saison, une réservation anticipée garantit votre place.</p>"
+  }
+];
 
 const title = "Taxi à Digne-les-Bains et Alpes-de-Haute-Provence";
 const description = "Réservez votre taxi à Digne-les-Bains. Service professionnel disponible 24h/24 et 7j/7. Transfert aéroport, gare, courses locales et longue distance. Devis gratuit en ligne.";
@@ -97,6 +122,51 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
     variant="image"
   />
 
+  <!-- Section Expertise et expérience -->
+  <section class="expertise-section">
+    <div class="container">
+      <div class="expertise-content">
+        <div class="expertise-text">
+          <h2>Plus de 15 ans d'expertise dans le transport de personnes</h2>
+          <p>
+            Depuis plus de 15 ans, notre entreprise de <strong>taxi à Digne-les-Bains</strong> s'est imposée comme
+            une référence dans le transport de personnes dans les Alpes-de-Haute-Provence. Notre longue expérience
+            nous a permis de développer une connaissance approfondie de la région, de ses routes et de ses spécificités.
+          </p>
+          <p>
+            Tous nos chauffeurs sont <strong>titulaires de la carte professionnelle de taxi</strong>, obligatoire pour
+            exercer ce métier. Ils suivent régulièrement des formations continues pour garantir votre sécurité et votre
+            confort. Notre flotte de véhicules récents est entretenue selon les normes les plus strictes et fait l'objet
+            de contrôles techniques réguliers.
+          </p>
+          <p>
+            Nous sommes fiers d'avoir transporté des milliers de clients satisfaits, des habitants locaux aux touristes
+            visitant notre belle région. Notre engagement envers la qualité de service et la ponctualité nous a valu
+            une excellente réputation dans tout le département des Alpes-de-Haute-Provence.
+          </p>
+        </div>
+        <div class="expertise-highlights">
+          <div class="highlight-item">
+            <h3>Certifications professionnelles</h3>
+            <p>Tous nos chauffeurs sont titulaires de la carte professionnelle délivrée par la préfecture</p>
+          </div>
+          <div class="highlight-item">
+            <h3>Formation continue</h3>
+            <p>Formations régulières sur la sécurité, l'accueil client et la conduite défensive</p>
+          </div>
+          <div class="highlight-item">
+            <h3>Flotte moderne</h3>
+            <p>Véhicules récents, climatisés, entretenus et contrôlés régulièrement</p>
+          </div>
+          <div class="highlight-item">
+            <h3>Assurance complète</h3>
+            <p>Couverture maximale pour votre sécurité et votre tranquillité d'esprit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section Process - Comment ça marche -->
   <section class="bg-light">
     <ProcessSteps
@@ -121,6 +191,92 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
     stats={keyStats}
     variant="primary"
   />
+
+  <!-- Section Nos engagements qualité -->
+  <section class="commitments-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos engagements pour votre satisfaction</h2>
+        <p class="section-subtitle">
+          Des promesses tenues au quotidien pour vous garantir le meilleur service de taxi à Digne
+        </p>
+      </div>
+
+      <div class="commitments-grid">
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <img src="/images/features/ponctualite-garantie.webp" alt="Ponctualité garantie" loading="lazy" />
+          </div>
+          <h3>Ponctualité garantie</h3>
+          <p>
+            Nous nous engageons à être à l'heure pour chaque prise en charge. Pour vos transferts aéroport et gare,
+            nous suivons les horaires de vol et de train en temps réel pour adapter notre arrivée en cas de retard.
+            Votre temps est précieux, nous le respectons.
+          </p>
+        </div>
+
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <img src="/images/features/tarifs-transparents.webp" alt="Tarifs transparents" loading="lazy" />
+          </div>
+          <h3>Tarifs transparents</h3>
+          <p>
+            Le prix vous est communiqué avant la course et reste fixe, sans surprise à l'arrivée. Pas de frais cachés,
+            pas de détours inutiles. Nous privilégions toujours l'itinéraire le plus court et le plus rapide pour votre
+            trajet. Tous nos tarifs sont consultables en ligne.
+          </p>
+        </div>
+
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <img src="/images/features/confort-securite.webp" alt="Confort et sécurité" loading="lazy" />
+          </div>
+          <h3>Confort et sécurité</h3>
+          <p>
+            Nos véhicules sont récents, climatisés, parfaitement entretenus et nettoyés après chaque course.
+            Tous nos chauffeurs sont formés à la conduite défensive et connaissent parfaitement la région.
+            Votre sécurité est notre priorité absolue.
+          </p>
+        </div>
+
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <img src="/images/features/disponibilite-totale.webp" alt="Disponibilité 24h/24" loading="lazy" />
+          </div>
+          <h3>Disponibilité totale</h3>
+          <p>
+            Notre service est disponible 24h/24 et 7j/7, y compris les jours fériés. Besoin d'un taxi en urgence
+            à 3h du matin ? Transfert aéroport un dimanche ? Nous sommes là. Notre équipe de chauffeurs assure
+            une couverture permanente sur Digne et les Alpes-de-Haute-Provence.
+          </p>
+        </div>
+
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <img src="/images/about/satisfaction-client.webp" alt="Satisfaction client" loading="lazy" />
+          </div>
+          <h3>Service client réactif</h3>
+          <p>
+            Une question ? Un problème ? Notre service client vous répond rapidement par téléphone, SMS ou email.
+            Nous traitons chaque demande avec attention et nous engageons à trouver une solution adaptée à vos besoins.
+            Votre satisfaction est notre meilleure publicité.
+          </p>
+        </div>
+
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <img src="/images/about/certifications-licences.webp" alt="Professionnalisme" loading="lazy" />
+          </div>
+          <h3>Professionnalisme</h3>
+          <p>
+            Courtoisie, discrétion et respect sont les maîtres-mots de nos chauffeurs. Nous adaptons notre service
+            à vos besoins : besoin de silence pour travailler ? Conversation agréable ? Aide avec les bagages ?
+            Nous sommes à votre écoute pour un service personnalisé.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Section Zones desservies -->
   <section class="zones-section">
@@ -253,6 +409,15 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
       </div>
     </div>
   </section>
+
+  <!-- Section FAQ essentielles -->
+  <FAQSection
+    title="Questions fréquentes sur nos services de taxi à Digne"
+    subtitle="Réponses rapides aux questions les plus posées par nos clients"
+    questions={homepageFAQ}
+    variant="list"
+    bgColor="white"
+  />
 
   <!-- CTA Final -->
   <CTA
@@ -639,6 +804,108 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
     color: var(--color-gray-dark);
   }
 
+  /* Expertise Section */
+  .expertise-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-white);
+  }
+
+  .expertise-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .expertise-text h2 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+  }
+
+  .expertise-text p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-dark);
+  }
+
+  .expertise-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .highlight-item {
+    background-color: var(--color-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .highlight-item h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+
+  .highlight-item p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-dark);
+    margin: 0;
+  }
+
+  /* Commitments Section */
+  .commitments-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .commitment-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+
+  .commitment-card:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .commitment-icon {
+    width: 100%;
+    height: 150px;
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  .commitment-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .commitment-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+
+  .commitment-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-dark);
+    margin: 0;
+  }
+
   /* Responsive */
   @media (max-width: 968px) {
     .zones-content,
@@ -648,6 +915,14 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
 
     .services-grid,
     .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .expertise-content {
+      grid-template-columns: 1fr;
+    }
+
+    .commitments-grid {
       grid-template-columns: 1fr;
     }
   }

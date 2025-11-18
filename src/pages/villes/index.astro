@@ -7,9 +7,32 @@ import Layout from '../../layouts/Layout.astro';
 import ImageHero from '../../components/ImageHero.astro';
 import MapSection from '../../components/MapSection.astro';
 import CTA from '../../components/CTA.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 
 const title = "Toutes nos villes desservies";
 const description = "Notre service de taxi couvre Digne-les-Bains et toutes les principales villes des Alpes-de-Haute-Provence. Manosque, Sisteron, Forcalquier et plus encore.";
+
+// Pages connexes
+const relatedPages = [
+  {
+    title: "Nos tarifs transparents",
+    url: "/tarifs",
+    description: "Consultez tous nos tarifs pour les trajets entre villes, transferts aéroport et courses locales dans le département.",
+    image: "/images/features/tarifs-transparents.webp"
+  },
+  {
+    title: "Tous nos services",
+    url: "/services",
+    description: "Transferts aéroport, gare, courses locales, transport médical, mise à disposition. Service adapté à chaque besoin.",
+    image: "/images/services/transfert-aeroport.webp"
+  },
+  {
+    title: "Nous contacter",
+    url: "/contact",
+    description: "Réservez votre taxi ou demandez un devis gratuit pour votre trajet. Réponse sous 15 minutes garantie.",
+    image: "/images/about/satisfaction-client.webp"
+  }
+];
 ---
 
 <Layout title={title} description={description}>
@@ -42,6 +65,112 @@ const description = "Notre service de taxi couvre Digne-les-Bains et toutes les 
     ]}
     variant="side"
   />
+
+  <!-- Introduction département -->
+  <section class="department-intro">
+    <div class="container">
+      <h2>Les Alpes-de-Haute-Provence : un territoire unique nécessitant un service de taxi adapté</h2>
+
+      <div class="intro-content">
+        <p>
+          Les <strong>Alpes-de-Haute-Provence</strong> (département 04) constituent un territoire vaste et contrasté de 6 925 km²,
+          s'étendant des contreforts des Alpes du Sud jusqu'aux portes de la Provence méditerranéenne. Avec seulement
+          165 000 habitants répartis sur 198 communes, le département présente une <strong>densité de population très faible</strong>
+          (24 hab/km²), rendant les transports en commun limités et le recours à un taxi professionnel souvent indispensable.
+        </p>
+
+        <p>
+          Le relief montagneux, avec des altitudes variant de 400 mètres dans la vallée de la Durance à plus de 3 000 mètres
+          dans l'Ubaye, impose des <strong>contraintes spécifiques de déplacement</strong>. Les routes sinueuses, les cols parfois
+          enneigés en hiver, et les distances importantes entre les communes exigent une <strong>expertise locale approfondie</strong>
+          que seuls des chauffeurs de taxi professionnels du territoire peuvent garantir. Notre connaissance parfaite des itinéraires,
+          des conditions météorologiques et des spécificités de chaque secteur assure votre sécurité et votre ponctualité.
+        </p>
+
+        <p>
+          Le département se caractérise également par une économie touristique forte : <strong>stations thermales</strong>
+          (Digne-les-Bains, Gréoux-les-Bains), <strong>stations de ski</strong> (Pra-Loup, Super-Sauze, Le Sauze), sites naturels
+          exceptionnels (Gorges du Verdon, Réserve géologique de Haute-Provence) et patrimoine historique remarquable.
+          Cette diversité d'activités génère des besoins de transport variés tout au long de l'année, auxquels notre service
+          de <strong>taxi professionnel disponible 24h/24</strong> répond avec flexibilité et réactivité, que vous soyez résident,
+          touriste ou professionnel en déplacement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sections géographiques détaillées -->
+  <section class="geographic-sectors">
+    <div class="container">
+      <h2>Nos quatre grandes zones de service dans les Alpes-de-Haute-Provence</h2>
+
+      <div class="sectors-grid">
+        <article class="sector-card">
+          <h3>Secteur Vallée de la Durance</h3>
+          <p>
+            La <strong>vallée de la Durance</strong> constitue l'axe de développement économique principal du département,
+            reliant Sisteron au sud à Manosque au nord. Ce secteur regroupe les principales zones industrielles et commerciales :
+            Château-Arnoux-Saint-Auban avec ses industries chimiques et papetières, Les Mées et ses installations photovoltaïques,
+            Manosque et son pôle nucléaire du CEA-Cadarache. Notre service de taxi assure les <strong>déplacements professionnels</strong>
+            quotidiens dans ces zones d'activité, avec des solutions de transport adaptées aux horaires décalés (équipes 3×8)
+            et aux besoins spécifiques des entreprises. Nous proposons également des <strong>liaisons régulières vers la gare
+            de Manosque</strong> et les axes autoroutiers A51 permettant de rejoindre rapidement Aix-en-Provence et Marseille.
+            La proximité de l'aéroport de Marseille-Provence (120€ depuis Manosque) fait de notre service de transfert aéroport
+            une solution privilégiée pour les voyageurs d'affaires et touristes de ce secteur dynamique.
+          </p>
+        </article>
+
+        <article class="sector-card">
+          <h3>Secteur Haute-Provence et Préalpes</h3>
+          <p>
+            Le secteur de <strong>Haute-Provence</strong>, centré autour de Digne-les-Bains et Forcalquier, se caractérise
+            par son relief de moyennes montagnes et ses villages perchés authentiques. Digne, préfecture du département avec
+            17 000 habitants, concentre les services administratifs (préfecture, tribunal, hôpital) nécessitant des déplacements
+            réguliers depuis les communes environnantes. Notre <strong>service de taxi médical conventionné</strong> assure
+            les transferts vers l'hôpital et les consultations spécialisées. Le secteur bénéficie d'une économie touristique
+            forte grâce aux <strong>thermes de Digne-les-Bains</strong>, à la Réserve géologique classée UNESCO, et au Train
+            des Pignes (ligne pittoresque Digne-Nice). Forcalquier et son pays attire les amateurs de lavande, d'astronomie
+            (Observatoire de Saint-Michel) et de patrimoine médiéval. Nos chauffeurs connaissent parfaitement les routes de
+            montagne souvent sinueuses de ce secteur et adaptent leur conduite aux conditions météorologiques changeantes,
+            particulièrement en hiver lorsque la neige peut rendre certains accès délicats.
+          </p>
+        </article>
+
+        <article class="sector-card">
+          <h3>Secteur Vallée de l'Ubaye et Barcelonnette</h3>
+          <p>
+            La <strong>vallée de l'Ubaye</strong>, dominée par Barcelonnette (2 700 habitants), représente le secteur le plus
+            alpin et touristique du département. Cette vallée isolée, accessible par la D900 et le col de la Cayolle en été,
+            vit au rythme des saisons touristiques. L'hiver, les <strong>stations de ski de Pra-Loup, Le Sauze et Super-Sauze</strong>
+            accueillent des milliers de vacanciers nécessitant des transferts depuis les gares de Gap, Embrun ou les aéroports
+            de Marseille et Nice. Notre service de <strong>taxi montagne spécialisé</strong> assure ces transferts en toute
+            sécurité, avec des véhicules équipés pour les conditions hivernales (pneus neige, chaînes). L'été, la vallée attire
+            les randonneurs, vététistes et amateurs de sports d'eau vive sur l'Ubaye. Nous organisons des <strong>déplacements
+            sur mesure</strong> vers les points de départ de randonnées, avec possibilité de récupération en fin de journée.
+            Barcelonnette elle-même, avec son architecture mexicaine unique et ses villas remarquables, justifie également
+            notre présence pour les visiteurs culturels et les curistes se rendant aux thermes de la vallée.
+          </p>
+        </article>
+
+        <article class="sector-card">
+          <h3>Secteur Plateau de Valensole et Verdon</h3>
+          <p>
+            Le <strong>plateau de Valensole</strong> et le secteur du <strong>Verdon</strong> constituent la zone la plus
+            méridionale et méditerranéenne du département, offrant des paysages spectaculaires de champs de lavande et de gorges
+            vertigineuses. Ce secteur touristique majeur s'articule autour de Gréoux-les-Bains, importante station thermale
+            (40 000 curistes/an), et des villages des lacs de Sainte-Croix et d'Esparron. Notre service de taxi répond aux
+            besoins variés de cette zone : <strong>transferts de curistes</strong> depuis les gares de Manosque et Aix TGV,
+            <strong>déplacements touristiques</strong> vers les points de vue des Gorges du Verdon (impossible d'accès sans
+            véhicule), visites des distilleries de lavande autour de Valensole, et accès aux activités nautiques des lacs.
+            Nous proposons également des <strong>circuits découverte sur mesure</strong> combinant plusieurs sites naturels
+            et villages perchés (Moustiers-Sainte-Marie, Riez). La proximité relative d'Aix-en-Provence (60 km depuis Manosque)
+            fait de ce secteur un point de transit important, avec une forte demande de taxis pour rejoindre la gare TGV ou
+            l'aéroport de Marseille-Provence, particulièrement en période estivale.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section class="cities-main">
     <div class="container">
@@ -87,6 +216,38 @@ const description = "Notre service de taxi couvre Digne-les-Bains et toutes les 
           <p>Service de taxi à Barcelonnette et dans la vallée de l'Ubaye. Transferts vers les stations de ski et toutes destinations.</p>
           <a href="/villes/barcelonnette" class="city-link">En savoir plus →</a>
         </article>
+      </div>
+
+      <!-- Section destinations et attraits -->
+      <div class="attractions-section">
+        <h2>Destinations et attraits touristiques des Alpes-de-Haute-Provence</h2>
+
+        <div class="attractions-content">
+          <p>
+            Les <strong>Alpes-de-Haute-Provence</strong> offrent une diversité exceptionnelle de destinations touristiques
+            accessibles grâce à notre service de taxi. Côté <strong>thermalisme et bien-être</strong>, les stations de
+            Digne-les-Bains et Gréoux-les-Bains accueillent chaque année des dizaines de milliers de curistes bénéficiant
+            des eaux thermales reconnues pour leurs vertus thérapeutiques. Nous assurons les transferts réguliers depuis
+            les gares et aéroports vers ces établissements.
+          </p>
+
+          <p>
+            L'hiver, les <strong>stations de ski</strong> du département attirent les amateurs de sports d'hiver :
+            <strong>Pra-Loup</strong> (160 km de pistes reliées à La Foux d'Allos), <strong>Le Sauze-Super Sauze</strong>,
+            et <strong>Chabanon-Selonnet</strong>. Notre service de transfert montagne spécialisé vous conduit en toute
+            sécurité depuis les points d'arrivée ferroviaires ou aéroportuaires jusqu'aux pieds des pistes, avec véhicules
+            équipés pour les conditions hivernales.
+          </p>
+
+          <p>
+            Parmi les <strong>sites naturels et patrimoniaux incontournables</strong>, les Gorges du Verdon (canyon le plus
+            profond d'Europe), la Réserve géologique de Haute-Provence classée UNESCO, les routes de la lavande sur le plateau
+            de Valensole, et le Train des Pignes offrent des expériences uniques. Les villages perchés comme
+            <strong>Moustiers-Sainte-Marie</strong>, <strong>Lurs</strong>, ou <strong>Entrevaux</strong> méritent également
+            le détour. Notre connaissance approfondie du territoire nous permet de vous conseiller les meilleurs itinéraires
+            et de vous organiser des circuits découverte personnalisés, impossibles à réaliser en transports en commun.
+          </p>
+        </div>
       </div>
 
       <div class="other-cities">
@@ -150,9 +311,112 @@ const description = "Notre service de taxi couvre Digne-les-Bains et toutes les 
     buttonText="Nous contacter"
     phoneNumber="01 23 45 67 89"
   />
+
+  <!-- Pages connexes -->
+  <RelatedPages
+    title="En savoir plus sur nos services"
+    pages={relatedPages}
+    columns={3}
+  />
 </Layout>
 
 <style>
+  /* Department Introduction */
+  .department-intro {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-white);
+  }
+
+  .department-intro h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .intro-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .intro-content p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-dark);
+    text-align: justify;
+  }
+
+  /* Geographic Sectors */
+  .geographic-sectors {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .geographic-sectors h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-primary);
+  }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sector-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+
+  .sector-card:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .sector-card h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.375rem;
+  }
+
+  .sector-card p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-gray-dark);
+    text-align: justify;
+  }
+
+  /* Attractions Section */
+  .attractions-section {
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-xl);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .attractions-section h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .attractions-content p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-dark);
+    text-align: justify;
+  }
+
   .cities-main {
     padding: var(--spacing-xxl) 0;
   }
@@ -245,6 +509,24 @@ const description = "Notre service de taxi couvre Digne-les-Bains et toutes les 
     color: var(--color-gray-dark);
   }
 
+  @media (max-width: 968px) {
+    .sectors-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sector-card p {
+      text-align: left;
+    }
+
+    .intro-content p {
+      text-align: left;
+    }
+
+    .attractions-content p {
+      text-align: left;
+    }
+  }
+
   @media (max-width: 768px) {
     .cities-grid {
       grid-template-columns: 1fr;
@@ -253,6 +535,14 @@ const description = "Notre service de taxi couvre Digne-les-Bains et toutes les 
     .communes-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-md);
+    }
+
+    .department-intro {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .geographic-sectors {
+      padding: var(--spacing-xl) 0;
     }
   }
 </style>

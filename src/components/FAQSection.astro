@@ -1,0 +1,202 @@
+---
+/**
+ * Composant FAQSection - Section FAQ avec schema.org FAQPage
+ *
+ * Composant réutilisable pour afficher des questions/réponses avec markup structuré
+ * pour améliorer le SEO et capturer les featured snippets (position 0)
+ *
+ * @param title - Titre de la section FAQ
+ * @param subtitle - Sous-titre optionnel
+ * @param questions - Array de {question: string, answer: string}
+ * @param addSchema - Ajouter le schema.org FAQPage (default: true)
+ * @param variant - Style d'affichage: 'accordion' | 'list' (default: 'list')
+ * @param bgColor - Couleur de fond: 'light' | 'white' (default: 'light')
+ */
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  questions: FAQItem[];
+  addSchema?: boolean;
+  variant?: 'accordion' | 'list';
+  bgColor?: 'light' | 'white';
+}
+
+const {
+  title,
+  subtitle,
+  questions,
+  addSchema = true,
+  variant = 'list',
+  bgColor = 'light'
+} = Astro.props;
+
+// Génération du schema.org FAQPage
+const faqSchema = addSchema ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": questions.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+} : null;
+---
+
+<section class={`faq-section bg-${bgColor}`}>
+  <div class="container">
+    <div class="faq-header">
+      <h2>{title}</h2>
+      {subtitle && <p class="faq-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class={`faq-container faq-${variant}`}>
+      {questions.map((item, index) => (
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 class="faq-question" itemprop="name">
+            {item.question}
+          </h3>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text" set:html={item.answer} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}
+
+<style>
+  .faq-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .faq-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .faq-header h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .faq-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+  }
+
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Style List (default) */
+  .faq-list .faq-item {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    margin-bottom: var(--spacing-lg);
+    transition: var(--transition);
+  }
+
+  .faq-list .faq-item:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .faq-list .faq-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-question {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .faq-answer {
+    color: var(--color-gray-dark);
+    line-height: 1.7;
+    font-size: 1.0625rem;
+  }
+
+  .faq-answer :global(p) {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .faq-answer :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .faq-answer :global(strong) {
+    color: var(--color-dark);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .faq-answer :global(a) {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+  }
+
+  .faq-answer :global(a:hover) {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
+
+  /* Style Accordion */
+  .faq-accordion .faq-item {
+    border-bottom: 2px solid var(--color-gray-light);
+    padding: var(--spacing-lg) 0;
+  }
+
+  .faq-accordion .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-accordion .faq-question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Background colors */
+  .bg-light {
+    background-color: var(--color-light);
+  }
+
+  .bg-white {
+    background-color: var(--color-white);
+  }
+
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+    }
+
+    .faq-answer {
+      font-size: 1rem;
+    }
+  }
+</style>

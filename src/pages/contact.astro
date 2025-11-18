@@ -8,9 +8,77 @@ import ImageHero from '../components/ImageHero.astro';
 import MapSection from '../components/MapSection.astro';
 import TrustSection from '../components/TrustSection.astro';
 import BookingForm from '../components/BookingForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 
 const title = "Nous contacter";
 const description = "Contactez Taxi Digne pour toute question ou réservation. Disponible 24h/24 au 01 23 45 67 89. Devis gratuit en ligne.";
+
+// FAQ Contact étendue
+const contactFAQ = [
+  {
+    question: "Comment réserver un taxi à Digne rapidement ?",
+    answer: "<p>Vous avez trois moyens simples de <strong>réserver un taxi à Digne</strong> : par téléphone au <strong>01 23 45 67 89</strong> (disponible 24h/24), via notre <strong>formulaire de réservation en ligne</strong> sur cette page, ou par email à contact@taxi-digne.fr. La réservation téléphonique est la plus rapide pour une prise en charge immédiate (10-15 minutes en moyenne). Pour une course planifiée, le formulaire en ligne vous permet de recevoir une confirmation automatique par SMS et email.</p>"
+  },
+  {
+    question: "Comment contacter votre service en cas d'urgence ?",
+    answer: "<p>Pour toute <strong>urgence taxi</strong> ou besoin de transport immédiat, appelez directement notre <strong>ligne d'urgence 24h/24 au 01 23 45 67 89</strong>. Nous disposons d'une permanence téléphonique jour et nuit, tous les jours de l'année y compris dimanches et jours fériés. En cas d'urgence médicale nécessitant un transport conventionné, précisez-le dès votre appel pour une prise en charge prioritaire. Notre temps de réponse moyen est de moins de 2 minutes, et nous garantissons une disponibilité immédiate d'un véhicule dans un rayon de 10 km autour de Digne.</p>"
+  },
+  {
+    question: "Où se trouve votre station de taxi principale à Digne ?",
+    answer: "<p>Notre <strong>station de taxi principale</strong> est située <strong>Place du Général de Gaulle à Digne-les-Bains</strong>, en plein centre-ville. C'est un emplacement stratégique facilement accessible à pied depuis tous les commerces du centre. Nous disposons également de stations secondaires à la <strong>gare de Digne</strong>, à l'<strong>hôpital</strong> et au <strong>centre commercial</strong>. Vous pouvez trouver un taxi disponible à ces emplacements aux heures de forte affluence, ou nous appeler pour une prise en charge à l'adresse de votre choix partout dans la ville.</p>"
+  },
+  {
+    question: "Intervenez-vous en dehors de Digne-les-Bains ?",
+    answer: "<p>Absolument ! Nous intervenons dans <strong>tout le département des Alpes-de-Haute-Provence</strong> et les départements limitrophes. Notre zone de service couvre Manosque, Sisteron, Forcalquier, Château-Arnoux, Barcelonnette et toutes les communes environnantes. Nous assurons également les <strong>transferts longue distance</strong> vers les aéroports de Marseille, Nice et Toulon, les gares TGV d'Aix-en-Provence et Avignon, ainsi que les stations de ski des Alpes du Sud. Pour les trajets hors département, nous proposons des tarifs forfaitaires avantageux communiqués lors de votre devis gratuit.</p>"
+  },
+  {
+    question: "Comment puis-je suivre ma réservation de taxi ?",
+    answer: "<p>Dès que vous réservez un taxi, vous recevez un <strong>SMS de confirmation</strong> avec les détails de votre course : heure de prise en charge, lieu, prix et numéro de réservation. Pour les réservations anticipées, nous vous envoyons un <strong>rappel 24h avant</strong> puis un nouveau SMS 30 minutes avant l'arrivée du taxi avec les informations du chauffeur (nom, numéro de téléphone direct). Vous pouvez également nous appeler à tout moment au 01 23 45 67 89 pour vérifier le statut de votre réservation ou contacter directement votre chauffeur une fois qu'il est en route.</p>"
+  },
+  {
+    question: "Quels sont vos délais de prise en charge ?",
+    answer: "<p>Pour une <strong>course immédiate</strong> depuis le centre de Digne-les-Bains, comptez <strong>10 à 15 minutes</strong> en moyenne. Dans les zones périphériques ou les communes voisines, le délai peut être de 20 à 30 minutes selon la disponibilité des véhicules. Pour une <strong>réservation à l'avance</strong>, nous garantissons votre prise en charge à l'heure exacte convenue. Pour les transferts aéroport, nous arrivons systématiquement 5 minutes avant l'heure prévue pour éviter tout stress de dernière minute.</p>"
+  },
+  {
+    question: "Acceptez-vous tous les moyens de paiement ?",
+    answer: "<p>Oui, nous acceptons <strong>tous les moyens de paiement courants</strong> : espèces, carte bancaire (Visa, Mastercard, American Express), chèques bancaires. Pour les <strong>entreprises et professionnels</strong>, nous proposons la facturation mensuelle avec paiement différé. Les <strong>transports médicaux conventionnés</strong> sont gérés en tiers payant directement avec votre caisse d'assurance maladie (CPAM). Tous nos véhicules sont équipés de terminaux de paiement électronique modernes et sécurisés.</p>"
+  },
+  {
+    question: "Proposez-vous des tarifs spéciaux pour les professionnels et entreprises ?",
+    answer: "<p>Oui, nous avons développé une <strong>offre dédiée aux professionnels et entreprises</strong>. Nous proposons des <strong>tarifs dégressifs</strong> en fonction du volume de courses, une <strong>facturation mensuelle centralisée</strong>, et un compte client pour simplifier vos déplacements professionnels. Vous pouvez réserver au nom de votre société, demander des factures détaillées avec TVA, et bénéficier d'un interlocuteur dédié pour gérer vos besoins réguliers. Contactez-nous pour établir un <strong>devis personnalisé</strong> adapté à votre activité.</p>"
+  },
+  {
+    question: "Puis-je annuler ou modifier ma réservation ?",
+    answer: "<p>Vous pouvez <strong>annuler ou modifier gratuitement</strong> votre réservation jusqu'à <strong>24 heures avant</strong> l'heure prévue de prise en charge. Il suffit de nous appeler au 01 23 45 67 89 ou d'envoyer un email avec votre numéro de réservation. Pour les annulations de dernière minute (moins de 24h), des <strong>frais d'annulation de 20%</strong> peuvent s'appliquer. Nous restons toutefois flexibles en cas de circonstances exceptionnelles (maladie, problème de santé, annulation de vol). Pour modifier l'heure ou l'adresse de prise en charge, contactez-nous dès que possible.</p>"
+  },
+  {
+    question: "Effectuez-vous des transferts vers les aéroports et gares ?",
+    answer: "<p>Oui, les <strong>transferts aéroport et gare</strong> sont l'une de nos spécialités ! Nous assurons des liaisons régulières vers l'<strong>aéroport de Marseille-Provence</strong> (120€), l'<strong>aéroport de Nice Côte d'Azur</strong> (150€), la <strong>gare TGV Aix-en-Provence</strong> (100€) et toutes les gares de la région. Notre service inclut le <strong>suivi de vol en temps réel</strong> pour ajuster automatiquement l'heure de prise en charge en cas de retard, l'accueil personnalisé avec pancarte à l'aéroport, et l'assistance avec les bagages. Réservez 24h à l'avance pour garantir votre disponibilité.</p>"
+  }
+];
+
+// Pages connexes
+const relatedPages = [
+  {
+    title: "Nos tarifs transparents",
+    url: "/tarifs",
+    description: "Consultez nos grilles tarifaires pour tous les trajets. Devis gratuit et prix fixe garanti sans surprise.",
+    image: "/images/features/tarifs-transparents.webp"
+  },
+  {
+    title: "Tous nos services",
+    url: "/services",
+    description: "Transferts aéroport, gare, courses locales, transport médical, mise à disposition. Découvrez notre gamme complète.",
+    image: "/images/services/transfert-aeroport.webp"
+  },
+  {
+    title: "Villes desservies",
+    url: "/villes",
+    description: "Service disponible dans tout le département : Digne, Manosque, Sisteron, Forcalquier, Barcelonnette...",
+    image: "/images/villes/digne-les-bains.webp"
+  }
+];
 ---
 
 <Layout title={title} description={description}>
@@ -124,61 +192,62 @@ const description = "Contactez Taxi Digne pour toute question ou réservation. D
     bgColor="white"
   />
 
-  <section class="faq-section bg-light">
+  <!-- Section Nous trouver -->
+  <section class="location-section">
     <div class="container">
-      <h2 class="text-center">Questions fréquentes</h2>
+      <h2>Comment nous trouver à Digne-les-Bains</h2>
 
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h3>Comment réserver un taxi à Digne ?</h3>
+      <div class="location-content">
+        <div class="location-text">
+          <h3>Notre station principale en centre-ville</h3>
           <p>
-            Vous pouvez réserver par téléphone au 01 23 45 67 89 (24h/24) ou via notre formulaire
-            en ligne. Vous recevrez une confirmation rapide par SMS et email.
+            Notre <strong>station de taxi principale</strong> est idéalement située <strong>Place du Général de Gaulle</strong>,
+            en plein cœur du centre-ville de Digne-les-Bains. Cet emplacement stratégique vous permet d'accéder
+            facilement à nos services à pied depuis tous les commerces, restaurants et hôtels du centre historique.
           </p>
-        </div>
 
-        <div class="faq-item">
-          <h3>Quels sont vos délais de prise en charge ?</h3>
+          <h4>Points de repère pour nous trouver</h4>
+          <ul class="landmarks-list">
+            <li>À 100 mètres de la <strong>Mairie de Digne-les-Bains</strong></li>
+            <li>Face à l'<strong>Office de Tourisme</strong></li>
+            <li>À proximité immédiate du <strong>Boulevard Gassendi</strong> (rue commerçante principale)</li>
+            <li>À 5 minutes à pied de la <strong>Cathédrale Saint-Jérôme</strong></li>
+          </ul>
+
+          <h4>Accès et parking</h4>
           <p>
-            Pour une course immédiate, comptez 10-15 minutes en moyenne à Digne-les-Bains.
-            Pour une réservation à l'avance, nous garantissons votre prise en charge à l'heure convenue.
+            La Place du Général de Gaulle dispose d'un <strong>parking public gratuit</strong> avec plusieurs places disponibles.
+            Vous pouvez également accéder facilement à notre station en bus (lignes 1, 2 et 3 - arrêt "Centre-Ville").
+            Pour les personnes à mobilité réduite, la place est entièrement accessible et notre station dispose d'un espace
+            dédié pour faciliter l'embarquement dans nos véhicules adaptés.
           </p>
-        </div>
 
-        <div class="faq-item">
-          <h3>Acceptez-vous les paiements par carte ?</h3>
+          <h4>Autres points de prise en charge</h4>
           <p>
-            Oui, nous acceptons les paiements en espèces, par carte bancaire, chèque, et proposons
-            également la facturation pour les entreprises.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Proposez-vous des tarifs pour les professionnels ?</h3>
-          <p>
-            Oui, nous proposons des tarifs dégressifs et une facturation mensuelle pour les entreprises.
-            Contactez-nous pour établir un devis personnalisé.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Puis-je annuler ma réservation ?</h3>
-          <p>
-            L'annulation est gratuite jusqu'à 24 heures avant la course. En deçà, des frais
-            d'annulation peuvent s'appliquer.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Effectuez-vous des transferts aéroport ?</h3>
-          <p>
-            Oui, nous assurons les transferts vers tous les aéroports de la région : Marseille,
-            Nice, Toulon. Service porte-à-porte avec suivi de vol.
+            Si vous préférez, nous disposons également de <strong>stations secondaires</strong> à la gare de Digne,
+            à l'hôpital et au centre commercial. Vous pouvez bien sûr nous appeler pour une <strong>prise en charge
+            à domicile</strong> partout dans Digne et les environs, sans frais supplémentaires.
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FAQ Contact -->
+  <FAQSection
+    title="Questions fréquentes sur nos services de contact"
+    subtitle="Tout ce que vous devez savoir pour nous joindre et réserver facilement"
+    questions={contactFAQ}
+    variant="list"
+    bgColor="light"
+  />
+
+  <!-- Pages connexes -->
+  <RelatedPages
+    title="Découvrez également"
+    pages={relatedPages}
+    columns={3}
+  />
 </Layout>
 
 <style>
@@ -297,36 +366,74 @@ const description = "Contactez Taxi Digne pour toute question ou réservation. D
     line-height: 1.6;
   }
 
-  .faq-section {
+  /* Location Section */
+  .location-section {
     padding: var(--spacing-xxl) 0;
-  }
-
-  .faq-section h2 {
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-lg);
-  }
-
-  .faq-item {
     background-color: var(--color-white);
-    padding: var(--spacing-lg);
+  }
+
+  .location-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+  }
+
+  .location-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .location-text {
+    background-color: var(--color-light);
+    padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--box-shadow);
   }
 
-  .faq-item h3 {
+  .location-text h3 {
     color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+  }
+
+  .location-text h4 {
+    color: var(--color-dark);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     font-size: 1.125rem;
   }
 
-  .faq-item p {
-    line-height: 1.7;
-    margin: 0;
+  .location-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-gray-dark);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .landmarks-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+  }
+
+  .landmarks-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .landmarks-list li:last-child {
+    border-bottom: none;
+  }
+
+  .landmarks-list li::before {
+    content: '📍';
+    position: absolute;
+    left: 0;
+    font-size: 1.25rem;
   }
 
   @media (max-width: 968px) {
