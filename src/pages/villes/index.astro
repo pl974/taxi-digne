@@ -4,6 +4,8 @@
  */
 
 import Layout from '../../layouts/Layout.astro';
+import ImageHero from '../../components/ImageHero.astro';
+import MapSection from '../../components/MapSection.astro';
 import CTA from '../../components/CTA.astro';
 
 const title = "Toutes nos villes desservies";
@@ -11,14 +13,35 @@ const description = "Notre service de taxi couvre Digne-les-Bains et toutes les 
 ---
 
 <Layout title={title} description={description}>
-  <section class="cities-hero">
-    <div class="container">
-      <h1>Nos zones d'intervention dans les Alpes-de-Haute-Provence</h1>
-      <p class="hero-text">
-        Service de taxi professionnel couvrant l'ensemble du département 04 et les communes environnantes
-      </p>
-    </div>
-  </section>
+  <!-- Hero avec image des Alpes -->
+  <ImageHero
+    title="Nos zones d'intervention dans les Alpes-de-Haute-Provence"
+    subtitle="Service de taxi professionnel couvrant l'ensemble du département 04 et les communes environnantes. Disponible 24h/24 dans toutes les villes."
+    image="/images/villes/alpes-haute-provence-paysage.webp"
+    imageAlt="Paysage des Alpes-de-Haute-Provence - Zone d'intervention taxi Digne"
+    ctaPrimary={{ text: "Appeler maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Voir les tarifs", href: "/tarifs" }}
+    variant="full"
+    height="large"
+    overlay="gradient"
+  />
+
+  <!-- Section carte interactive des zones -->
+  <MapSection
+    title="Carte de nos zones d'intervention"
+    subtitle="Nous couvrons l'ensemble des Alpes-de-Haute-Provence et les départements limitrophes"
+    mapImage="/images/about/zone-intervention-alpes.webp"
+    mapAlt="Carte zone intervention taxi Alpes-de-Haute-Provence 04 Digne Manosque Sisteron"
+    cities={[
+      { name: "Digne-les-Bains", link: "/villes/digne-les-bains", description: "Préfecture - 17 000 habitants" },
+      { name: "Manosque", link: "/villes/manosque", description: "Sous-préfecture - 23 000 habitants" },
+      { name: "Sisteron", link: "/villes/sisteron", description: "Sous-préfecture - 7 500 habitants" },
+      { name: "Forcalquier", link: "/villes/forcalquier", description: "Chef-lieu de canton - 5 000 habitants" },
+      { name: "Château-Arnoux", link: "/villes/chateau-arnoux", description: "Commune - 5 400 habitants" },
+      { name: "Barcelonnette", link: "/villes/barcelonnette", description: "Sous-préfecture - 2 700 habitants" }
+    ]}
+    variant="side"
+  />
 
   <section class="cities-main">
     <div class="container">
@@ -130,25 +153,6 @@ const description = "Notre service de taxi couvre Digne-les-Bains et toutes les 
 </Layout>
 
 <style>
-  .cities-hero {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    color: var(--color-white);
-    padding: var(--spacing-xxl) 0;
-    text-align: center;
-  }
-
-  .cities-hero h1 {
-    color: var(--color-white);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .hero-text {
-    font-size: 1.25rem;
-    opacity: 0.95;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
   .cities-main {
     padding: var(--spacing-xxl) 0;
   }

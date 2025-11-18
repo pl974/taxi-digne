@@ -6,6 +6,8 @@
 
 import Layout from '../layouts/Layout.astro';
 import ImageHero from '../components/ImageHero.astro';
+import ServiceDetailCard from '../components/ServiceDetailCard.astro';
+import TrustSection from '../components/TrustSection.astro';
 import BookingForm from '../components/BookingForm.astro';
 import CTA from '../components/CTA.astro';
 
@@ -47,16 +49,23 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
       <div class="services-layout">
         <div class="services-main">
           <!-- Service 1: Transfert aéroport -->
-          <article id="transfert-aeroport" class="service-detail">
-            <div class="service-header">
-              <h2>Transfert aéroport depuis Digne-les-Bains</h2>
-              <span class="service-price">À partir de 90€</span>
-            </div>
+          <div id="transfert-aeroport">
+            <ServiceDetailCard
+              title="Transfert aéroport depuis Digne-les-Bains"
+              description="Notre service de transfert aéroport vous emmène vers tous les aéroports de la région PACA en toute sérénité. Service porte-à-porte avec suivi de vol et assistance bagages inclus."
+              image="/images/services/service-transfert-aeroport.webp"
+              imageAlt="Transfert aéroport taxi Digne Marseille Nice Toulon"
+              price="À partir de 90€"
+              variant="left"
+              features={[
+                "Suivi de vol en temps réel - Adaptation en cas de retard",
+                "Assistance bagages du domicile au terminal",
+                "Véhicules spacieux avec grande capacité de coffre",
+                "Réservation anticipée pour garantir votre place"
+              ]}
+            />
 
-            <p class="service-intro">
-              Notre service de <strong>transfert aéroport</strong> vous emmène vers tous les aéroports
-              de la région PACA en toute sérénité. Service porte-à-porte avec suivi de vol et assistance bagages.
-            </p>
+            <div class="service-extra-content">
 
             <h3>Aéroports desservis</h3>
             <ul class="service-list">
@@ -71,32 +80,13 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
               </li>
             </ul>
 
-            <h3>Nos avantages pour les transferts aéroport</h3>
-            <div class="service-features">
-              <div class="feature">
-                <strong>Suivi de vol</strong>
-                <p>Nous suivons votre vol en temps réel pour adapter notre horaire en cas de retard</p>
-              </div>
-              <div class="feature">
-                <strong>Assistance bagages</strong>
-                <p>Notre chauffeur vous aide avec vos bagages du domicile jusqu'au terminal</p>
-              </div>
-              <div class="feature">
-                <strong>Véhicules spacieux</strong>
-                <p>Grande capacité de coffre pour tous vos bagages</p>
-              </div>
-              <div class="feature">
-                <strong>Réservation anticipée</strong>
-                <p>Garantissez votre place en réservant à l'avance</p>
-              </div>
-            </div>
-
             <p class="service-note">
               Disponible depuis <a href="/villes/digne-les-bains">Digne-les-Bains</a>,
               <a href="/villes/manosque">Manosque</a>, <a href="/villes/sisteron">Sisteron</a> et
               <a href="/villes">toutes nos villes</a>.
             </p>
-          </article>
+            </div>
+          </div>
 
           <!-- Service 2: Transfert gare -->
           <article id="transfert-gare" class="service-detail">

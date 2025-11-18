@@ -1,0 +1,199 @@
+---
+/**
+ * ServiceDetailCard - Carte de service détaillée avec image
+ * Composant réutilisable pour afficher un service avec image, description et fonctionnalités
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  features?: string[];
+  price?: string;
+  variant?: 'left' | 'right' | 'full';
+  link?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  features = [],
+  price,
+  variant = 'left',
+  link
+} = Astro.props;
+---
+
+<article class={`service-detail-card service-detail-card--${variant}`}>
+  <div class="service-detail-image">
+    <img src={image} alt={imageAlt} loading="lazy" />
+  </div>
+
+  <div class="service-detail-content">
+    <div class="service-detail-header">
+      <h3>{title}</h3>
+      {price && <span class="service-detail-price">{price}</span>}
+    </div>
+
+    <p class="service-detail-description">{description}</p>
+
+    {features.length > 0 && (
+      <ul class="service-detail-features">
+        {features.map(feature => (
+          <li>{feature}</li>
+        ))}
+      </ul>
+    )}
+
+    {link && (
+      <a href={link} class="service-detail-link">En savoir plus →</a>
+    )}
+  </div>
+</article>
+
+<style>
+  .service-detail-card {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+  }
+
+  .service-detail-card--left,
+  .service-detail-card--right {
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+
+  .service-detail-card--right {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .service-detail-card--right .service-detail-image {
+    order: 2;
+  }
+
+  .service-detail-card--full {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .service-detail-card--left .service-detail-image,
+  .service-detail-card--right .service-detail-image {
+    height: 100%;
+    min-height: 280px;
+  }
+
+  .service-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .service-detail-card:hover .service-detail-image img {
+    transform: scale(1.05);
+  }
+
+  .service-detail-content {
+    padding: var(--spacing-lg);
+  }
+
+  .service-detail-card--full .service-detail-content {
+    padding: var(--spacing-xl);
+  }
+
+  .service-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-detail-header h3 {
+    margin: 0;
+    color: var(--color-dark);
+    font-size: 1.5rem;
+  }
+
+  .service-detail-price {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.125rem;
+  }
+
+  .service-detail-description {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-dark);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-detail-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-detail-features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .service-detail-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  .service-detail-link {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+
+  .service-detail-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  @media (max-width: 968px) {
+    .service-detail-card--left,
+    .service-detail-card--right {
+      grid-template-columns: 1fr;
+    }
+
+    .service-detail-card--right .service-detail-image {
+      order: 1;
+    }
+
+    .service-detail-image {
+      height: 250px;
+    }
+  }
+</style>

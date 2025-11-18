@@ -1,0 +1,258 @@
+---
+/**
+ * MapSection - Section avec carte géographique et liste des villes
+ * Affiche une image de carte avec overlay des villes principales
+ */
+
+interface City {
+  name: string;
+  link: string;
+  description?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  mapImage: string;
+  mapAlt: string;
+  cities: City[];
+  variant?: 'overlay' | 'side' | 'full';
+}
+
+const {
+  title,
+  subtitle,
+  mapImage,
+  mapAlt,
+  cities,
+  variant = 'side'
+} = Astro.props;
+---
+
+<section class={`map-section map-section--${variant}`}>
+  <div class="container">
+    <div class="map-header">
+      <h2>{title}</h2>
+      {subtitle && <p class="map-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class={`map-content map-content--${variant}`}>
+      <div class="map-image-wrapper">
+        <img src={mapImage} alt={mapAlt} class="map-image" loading="lazy" />
+        {variant === 'overlay' && (
+          <div class="map-overlay">
+            <div class="map-cities-overlay">
+              {cities.slice(0, 4).map(city => (
+                <a href={city.link} class="map-city-badge">
+                  {city.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {(variant === 'side' || variant === 'full') && (
+        <div class="map-cities-list">
+          <h3>Principales villes desservies</h3>
+          <ul>
+            {cities.map(city => (
+              <li>
+                <a href={city.link}>
+                  <strong>{city.name}</strong>
+                  {city.description && <span class="city-description">{city.description}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .map-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .map-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .map-header h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .map-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-gray-dark);
+  }
+
+  .map-content--side {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+
+  .map-content--full {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .map-content--overlay {
+    position: relative;
+  }
+
+  .map-image-wrapper {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-lg);
+  }
+
+  .map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .map-image-wrapper:hover .map-image {
+    transform: scale(1.02);
+  }
+
+  .map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-cities-overlay {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    padding: var(--spacing-lg);
+  }
+
+  .map-city-badge {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-lg);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+  }
+
+  .map-city-badge:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .map-cities-list {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+  }
+
+  .map-content--full .map-cities-list {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .map-cities-list h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+  }
+
+  .map-cities-list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--spacing-sm);
+  }
+
+  .map-content--side .map-cities-list ul {
+    grid-template-columns: 1fr;
+  }
+
+  .map-content--full .map-cities-list ul {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .map-cities-list li {
+    padding: var(--spacing-sm);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+
+  .map-cities-list li:hover {
+    background-color: var(--color-primary-light);
+    transform: translateX(8px);
+  }
+
+  .map-cities-list a {
+    text-decoration: none;
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map-cities-list li:hover a {
+    color: var(--color-white);
+  }
+
+  .map-cities-list strong {
+    font-size: 1.0625rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .city-description {
+    font-size: 0.9375rem;
+    color: var(--color-gray);
+  }
+
+  .map-cities-list li:hover .city-description {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  @media (max-width: 968px) {
+    .map-content--side {
+      grid-template-columns: 1fr;
+    }
+
+    .map-cities-overlay {
+      flex-direction: column;
+    }
+
+    .map-content--full .map-cities-list ul {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
