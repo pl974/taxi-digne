@@ -5,6 +5,7 @@
 
 import Layout from '../layouts/Layout.astro';
 import ImageHero from '../components/ImageHero.astro';
+import TrustSection from '../components/TrustSection.astro';
 import BookingForm from '../components/BookingForm.astro';
 import CTA from '../components/CTA.astro';
 
@@ -277,6 +278,34 @@ const description = "Tarifs transparents pour tous nos services de taxi à Digne
       </div>
     </div>
   </section>
+
+  <!-- Section confiance avec garanties visuelles -->
+  <TrustSection
+    title="Nos garanties tarifaires"
+    subtitle="Des tarifs transparents, un service de qualité, une disponibilité totale"
+    items={[
+      {
+        src: "/images/features/tarifs-transparents.webp",
+        alt: "Tarifs transparents taxi Digne pas de frais cachés",
+        caption: "Prix fixe annoncé à l'avance",
+        description: "Pas de surprise à l'arrivée. Le tarif vous est communiqué avant la course et reste identique."
+      },
+      {
+        src: "/images/about/certifications-licences.webp",
+        alt: "Certifications professionnelles taxi agréé Digne",
+        caption: "Chauffeurs professionnels agréés",
+        description: "Tous nos chauffeurs sont titulaires de la carte professionnelle et respectent les tarifs réglementés."
+      },
+      {
+        src: "/images/hero/hero-urgence-24h.webp",
+        alt: "Service taxi disponible 24h/24 et 7j/7 Digne",
+        caption: "Disponible 24h/24 et 7j/7",
+        description: "Service d'urgence disponible jour et nuit, tous les jours de l'année, sans majoration excessive."
+      }
+    ]}
+    variant="grid"
+    bgColor="white"
+  />
 
   <!-- Section réservation -->
   <section class="booking-section bg-light">

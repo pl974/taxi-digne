@@ -1,7 +1,8 @@
 ---
 /**
  * Page Services - Détail de tous les services de taxi
- * Optimisée SEO avec ancres et maillage interne
+ * Optimisée SEO avec ancres, images et maillage interne
+ * Version améliorée avec composants visuels
  */
 
 import Layout from '../layouts/Layout.astro';
@@ -43,11 +44,12 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
     </div>
   </nav>
 
-  <!-- Services détaillés -->
+  <!-- Services détaillés avec images -->
   <section class="services-content">
     <div class="container">
       <div class="services-layout">
         <div class="services-main">
+
           <!-- Service 1: Transfert aéroport -->
           <div id="transfert-aeroport">
             <ServiceDetailCard
@@ -64,220 +66,154 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
                 "Réservation anticipée pour garantir votre place"
               ]}
             />
-
-            <div class="service-extra-content">
-
-            <h3>Aéroports desservis</h3>
-            <ul class="service-list">
-              <li>
-                <strong>Aéroport Marseille-Provence (MRS)</strong> - 1h30 de trajet depuis Digne - à partir de 120€
-              </li>
-              <li>
-                <strong>Aéroport Nice Côte d'Azur (NCE)</strong> - 2h de trajet depuis Digne - à partir de 150€
-              </li>
-              <li>
-                <strong>Aéroport Toulon-Hyères (TLN)</strong> - 2h de trajet depuis Digne - à partir de 140€
-              </li>
-            </ul>
-
-            <p class="service-note">
-              Disponible depuis <a href="/villes/digne-les-bains">Digne-les-Bains</a>,
-              <a href="/villes/manosque">Manosque</a>, <a href="/villes/sisteron">Sisteron</a> et
-              <a href="/villes">toutes nos villes</a>.
-            </p>
+            <div class="service-destinations">
+              <h3>Aéroports desservis</h3>
+              <ul>
+                <li><strong>Aéroport Marseille-Provence (MRS)</strong> - 1h30 - à partir de 120€</li>
+                <li><strong>Aéroport Nice Côte d'Azur (NCE)</strong> - 2h - à partir de 150€</li>
+                <li><strong>Aéroport Toulon-Hyères (TLN)</strong> - 2h - à partir de 140€</li>
+              </ul>
             </div>
           </div>
 
           <!-- Service 2: Transfert gare -->
-          <article id="transfert-gare" class="service-detail">
-            <div class="service-header">
-              <h2>Transfert gare SNCF</h2>
-              <span class="service-price">À partir de 20€</span>
+          <div id="transfert-gare">
+            <ServiceDetailCard
+              title="Transfert gare SNCF"
+              description="Service de navette gare pour tous vos trajets vers et depuis les gares SNCF des Alpes-de-Haute-Provence. Ponctualité garantie pour vos correspondances ferroviaires."
+              image="/images/services/service-transfert-gare.webp"
+              imageAlt="Transfert gare SNCF taxi Digne Manosque Sisteron"
+              price="À partir de 20€"
+              variant="right"
+              features={[
+                "Dépose directe devant l'entrée de la gare",
+                "Assistance avec les bagages",
+                "Réservation avec horaire de train",
+                "Service retour après arrivée"
+              ]}
+            />
+            <div class="service-destinations">
+              <h3>Gares principales desservies</h3>
+              <ul>
+                <li><strong>Gare de Digne-les-Bains</strong> - Boulevard Gassendi</li>
+                <li><strong>Gare de Manosque</strong> - Centre-ville</li>
+                <li><strong>Gare de Sisteron</strong> - Liaison TGV</li>
+                <li><strong>Gare d'Aix-en-Provence TGV</strong> - 1h15 depuis Digne</li>
+              </ul>
             </div>
-
-            <p class="service-intro">
-              Service de <strong>navette gare</strong> pour tous vos trajets vers et depuis les gares SNCF
-              des Alpes-de-Haute-Provence. Ponctualité garantie pour vos correspondances.
-            </p>
-
-            <h3>Gares desservies</h3>
-            <ul class="service-list">
-              <li><strong>Gare de Digne-les-Bains</strong> - Boulevard Gassendi</li>
-              <li><strong>Gare de Manosque</strong> - Centre-ville</li>
-              <li><strong>Gare de Sisteron</strong> - Liaison TGV</li>
-              <li><strong>Gare de Château-Arnoux</strong> - Ligne Paris-Nice</li>
-              <li><strong>Gare d'Aix-en-Provence TGV</strong> - Depuis/vers Digne (1h15)</li>
-            </ul>
-
-            <h3>Service adapté aux voyageurs</h3>
-            <ul class="service-list">
-              <li>Dépose directe devant l'entrée de la gare</li>
-              <li>Assistance avec les bagages</li>
-              <li>Réservation avec horaire de train pour garantir votre correspondance</li>
-              <li>Service retour après votre arrivée en gare</li>
-            </ul>
-          </article>
+          </div>
 
           <!-- Service 3: Longue distance -->
-          <article id="taxi-longue-distance" class="service-detail">
-            <div class="service-header">
-              <h2>Taxi longue distance</h2>
-              <span class="service-price">Sur devis</span>
+          <div id="taxi-longue-distance">
+            <ServiceDetailCard
+              title="Taxi longue distance"
+              description="Nos taxis longue distance vous emmènent partout en France et même au-delà. Confort optimal pour vos déplacements professionnels ou personnels sur de longues distances."
+              image="/images/services/service-taxi-longue-distance.webp"
+              imageAlt="Taxi longue distance Digne Marseille Nice Gap Avignon"
+              price="Sur devis"
+              variant="left"
+              features={[
+                "Confort maximal pour les longs trajets",
+                "Véhicules récents et climatisés",
+                "Chauffeurs expérimentés longue distance",
+                "Tarifs dégressifs selon la distance"
+              ]}
+            />
+            <div class="service-destinations destinations-grid">
+              <div><strong>Marseille</strong><span>1h45 - 130€</span></div>
+              <div><strong>Nice</strong><span>2h15 - 160€</span></div>
+              <div><strong>Aix-en-Provence</strong><span>1h30 - 110€</span></div>
+              <div><strong>Gap</strong><span>1h30 - 100€</span></div>
+              <div><strong>Avignon</strong><span>2h - 140€</span></div>
+              <div><strong>Toulon</strong><span>2h - 150€</span></div>
             </div>
-
-            <p class="service-intro">
-              Nos <strong>taxis longue distance</strong> vous emmènent partout en France et même au-delà.
-              Confort optimal pour vos déplacements professionnels ou personnels.
-            </p>
-
-            <h3>Destinations populaires</h3>
-            <div class="destinations-grid">
-              <div class="destination">
-                <strong>Vers Marseille</strong>
-                <p>1h45 - À partir de 130€</p>
-              </div>
-              <div class="destination">
-                <strong>Vers Nice</strong>
-                <p>2h15 - À partir de 160€</p>
-              </div>
-              <div class="destination">
-                <strong>Vers Aix-en-Provence</strong>
-                <p>1h30 - À partir de 110€</p>
-              </div>
-              <div class="destination">
-                <strong>Vers Gap</strong>
-                <p>1h30 - À partir de 100€</p>
-              </div>
-              <div class="destination">
-                <strong>Vers Avignon</strong>
-                <p>2h - À partir de 140€</p>
-              </div>
-              <div class="destination">
-                <strong>Vers Toulon</strong>
-                <p>2h - À partir de 150€</p>
-              </div>
-            </div>
-
-            <p class="service-note">
-              <strong>Trajets sur-mesure :</strong> Vous avez une destination spécifique ? Contactez-nous pour
-              un devis personnalisé. Nous couvrons toute la France et l'Europe.
-            </p>
-          </article>
+          </div>
 
           <!-- Service 4: Transport médical -->
-          <article id="taxi-medical" class="service-detail">
-            <div class="service-header">
-              <h2>Transport médical conventionné</h2>
-              <span class="service-price">Remboursé CPAM</span>
+          <div id="taxi-medical">
+            <ServiceDetailCard
+              title="Transport médical conventionné"
+              description="Notre service de transport médical conventionné assure vos déplacements pour raisons de santé. Remboursement par la Sécurité Sociale selon prescription médicale."
+              image="/images/services/service-transport-medical.webp"
+              imageAlt="Transport médical conventionné CPAM taxi Digne hôpital"
+              price="Remboursé CPAM"
+              variant="right"
+              features={[
+                "Conventionné CPAM - Remboursement assuré",
+                "Gestion des formalités administratives",
+                "Chauffeurs formés au transport médical",
+                "Ponctualité garantie pour vos rendez-vous"
+              ]}
+            />
+            <div class="service-destinations">
+              <h3>Types de transport médical</h3>
+              <ul>
+                <li>Rendez-vous médicaux et consultations spécialistes</li>
+                <li>Hospitalisations et retours à domicile</li>
+                <li>Dialyse et chimiothérapie (trajets réguliers)</li>
+                <li>Examens médicaux (IRM, scanner, radiologie)</li>
+              </ul>
+              <h3>Établissements desservis</h3>
+              <ul>
+                <li>Centre Hospitalier de Digne-les-Bains</li>
+                <li>Centre Hospitalier de Manosque</li>
+                <li>CHU de Marseille, Nice et Gap</li>
+              </ul>
             </div>
-
-            <p class="service-intro">
-              Notre service de <strong>transport médical conventionné</strong> assure vos déplacements
-              pour raisons de santé. Remboursement par la Sécurité Sociale selon prescription médicale.
-            </p>
-
-            <h3>Types de transport médical</h3>
-            <ul class="service-list">
-              <li>Rendez-vous médicaux (spécialistes, consultations)</li>
-              <li>Hospitalisations et retours à domicile</li>
-              <li>Dialyse et chimiothérapie (trajets réguliers)</li>
-              <li>Examens médicaux (IRM, scanner, radiologie)</li>
-              <li>Transferts entre établissements de santé</li>
-            </ul>
-
-            <h3>Établissements de santé desservis</h3>
-            <ul class="service-list">
-              <li>Centre Hospitalier de Digne-les-Bains</li>
-              <li>Centre Hospitalier de Manosque</li>
-              <li>Centre Hospitalier de Sisteron</li>
-              <li>Cliniques et cabinets médicaux du département</li>
-              <li>CHU de Marseille, Nice et Gap (selon prescription)</li>
-            </ul>
-
-            <div class="medical-info">
-              <h4>Prise en charge et remboursement</h4>
-              <p>
-                Nous sommes <strong>conventionnés CPAM</strong>. Le transport peut être pris en charge
-                par l'Assurance Maladie sur prescription médicale. Nous gérons toutes les formalités
-                administratives pour vous faciliter la vie.
-              </p>
-            </div>
-          </article>
+          </div>
 
           <!-- Service 5: Courses locales -->
-          <article id="courses-locales" class="service-detail">
-            <div class="service-header">
-              <h2>Courses locales et déplacements quotidiens</h2>
-              <span class="service-price">À partir de 15€</span>
+          <div id="courses-locales">
+            <ServiceDetailCard
+              title="Courses locales et déplacements quotidiens"
+              description="Pour tous vos déplacements quotidiens à Digne-les-Bains et dans les Alpes-de-Haute-Provence. Service rapide et efficace pour vos courses du quotidien."
+              image="/images/services/service-courses-locales.webp"
+              imageAlt="Courses locales taxi Digne déplacements quotidiens"
+              price="À partir de 15€"
+              variant="left"
+              features={[
+                "Déplacements en centre-ville rapides",
+                "Courses vers commerces et supermarchés",
+                "Rendez-vous professionnels et personnels",
+                "Service dans tous les quartiers de Digne"
+              ]}
+            />
+            <div class="service-destinations">
+              <p class="service-note">
+                Nous intervenons dans toute l'agglomération de
+                <a href="/villes/digne-les-bains">Digne-les-Bains</a> et ses communes :
+                Aiglun, Marcoux, Champtercier, Mallemoisson, Thoard et toute la vallée de la Bléone.
+              </p>
             </div>
-
-            <p class="service-intro">
-              Pour tous vos <strong>déplacements quotidiens</strong> à Digne-les-Bains et dans les
-              Alpes-de-Haute-Provence. Service rapide et efficace pour vos courses du quotidien.
-            </p>
-
-            <h3>Nos courses locales</h3>
-            <ul class="service-list">
-              <li>Déplacements en centre-ville</li>
-              <li>Courses vers les commerces et supermarchés</li>
-              <li>Rendez-vous professionnels et personnels</li>
-              <li>Sorties et retours de soirée</li>
-              <li>Déplacements vers les villages environnants</li>
-            </ul>
-
-            <h3>Secteurs couverts</h3>
-            <p>
-              Nous intervenons dans toute l'agglomération de
-              <a href="/villes/digne-les-bains">Digne-les-Bains</a> et ses communes :
-              Aiglun, Marcoux, Champtercier, Mallemoisson, Thoard, et toute la vallée de la Bléone.
-            </p>
-          </article>
+          </div>
 
           <!-- Service 6: Taxi professionnel -->
-          <article id="taxi-professionnel" class="service-detail">
-            <div class="service-header">
-              <h2>Service taxi pour les professionnels et entreprises</h2>
-              <span class="service-price">Tarifs dégressifs</span>
+          <div id="taxi-professionnel">
+            <ServiceDetailCard
+              title="Service taxi pour les professionnels et entreprises"
+              description="Solution de transport professionnel dédiée aux entreprises des Alpes-de-Haute-Provence. Disponibilité garantie et facturation simplifiée pour vos déplacements d'affaires."
+              image="/images/services/service-taxi-professionnel.webp"
+              imageAlt="Taxi professionnel entreprises Digne transport affaires"
+              price="Tarifs dégressifs"
+              variant="right"
+              features={[
+                "Facturation mensuelle groupée",
+                "Compte entreprise dédié",
+                "Disponibilité prioritaire",
+                "Suivi des courses en ligne"
+              ]}
+            />
+            <div class="service-destinations">
+              <h3>Services pour entreprises</h3>
+              <ul>
+                <li>Transport de collaborateurs et visiteurs</li>
+                <li>Transferts aéroport pour vos clients</li>
+                <li>Événements d'entreprise et séminaires</li>
+                <li>Mise à disposition de véhicule à la journée</li>
+              </ul>
             </div>
+          </div>
 
-            <p class="service-intro">
-              Solution de <strong>transport professionnel</strong> dédiée aux entreprises des
-              Alpes-de-Haute-Provence. Disponibilité garantie et facturation simplifiée.
-            </p>
-
-            <h3>Notre offre professionnelle</h3>
-            <div class="service-features">
-              <div class="feature">
-                <strong>Facturation mensuelle</strong>
-                <p>Une seule facture mensuelle pour toutes vos courses</p>
-              </div>
-              <div class="feature">
-                <strong>Compte entreprise</strong>
-                <p>Gestion simplifiée de vos déplacements professionnels</p>
-              </div>
-              <div class="feature">
-                <strong>Disponibilité prioritaire</strong>
-                <p>Accès prioritaire à nos véhicules même en période de forte demande</p>
-              </div>
-              <div class="feature">
-                <strong>Suivi des courses</strong>
-                <p>Tableau de bord en ligne pour suivre toutes vos courses</p>
-              </div>
-            </div>
-
-            <h3>Services pour entreprises</h3>
-            <ul class="service-list">
-              <li>Transport de collaborateurs et visiteurs</li>
-              <li>Transferts aéroport et gare pour vos clients</li>
-              <li>Déplacements professionnels réguliers</li>
-              <li>Événements d'entreprise et séminaires</li>
-              <li>Mise à disposition de véhicule à la journée</li>
-            </ul>
-
-            <p class="service-note">
-              Contactez-nous pour établir un devis personnalisé adapté aux besoins de votre entreprise.
-            </p>
-          </article>
         </div>
 
         <!-- Sidebar -->
@@ -289,7 +225,7 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
 
           <div class="sidebar-contact">
             <h3>Besoin d'informations ?</h3>
-            <p>Appelez-nous pour toute question sur nos services</p>
+            <p>Appelez-nous pour toute question</p>
             <a href="tel:+33123456789" class="sidebar-phone">01 23 45 67 89</a>
             <p class="sidebar-info">Disponible 24h/24</p>
           </div>
@@ -309,6 +245,34 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
     </div>
   </section>
 
+  <!-- Section confiance avec certifications et satisfaction -->
+  <TrustSection
+    title="Pourquoi nous faire confiance ?"
+    subtitle="Plus de 15 ans d'expérience et des centaines de clients satisfaits"
+    items={[
+      {
+        src: "/images/about/certifications-licences.webp",
+        alt: "Certifications professionnelles taxi Digne-les-Bains",
+        caption: "Certifications professionnelles",
+        description: "Tous nos chauffeurs sont titulaires de la carte professionnelle de taxi et parfaitement formés aux normes de sécurité."
+      },
+      {
+        src: "/images/about/satisfaction-client.webp",
+        alt: "Clients satisfaits service taxi Digne avis 5 étoiles",
+        caption: "Satisfaction client garantie",
+        description: "Des centaines de clients nous font confiance chaque mois. Note moyenne de 4.8/5 basée sur plus de 500 avis vérifiés."
+      },
+      {
+        src: "/images/about/zone-intervention-alpes.webp",
+        alt: "Couverture complète Alpes-de-Haute-Provence taxi Digne",
+        caption: "Couverture complète du 04",
+        description: "Service disponible dans tout le département des Alpes-de-Haute-Provence et départements limitrophes."
+      }
+    ]}
+    variant="grid"
+    bgColor="light"
+  />
+
   <!-- CTA -->
   <CTA
     title="Prêt à réserver votre course ?"
@@ -319,25 +283,6 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
 </Layout>
 
 <style>
-  .services-hero {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    color: var(--color-white);
-    padding: var(--spacing-xxl) 0;
-    text-align: center;
-  }
-
-  .services-hero h1 {
-    color: var(--color-white);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .hero-text {
-    font-size: 1.25rem;
-    opacity: 0.95;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
   .services-nav {
     background-color: var(--color-white);
     padding: var(--spacing-md) 0;
@@ -363,6 +308,7 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
     transition: var(--transition);
+    text-decoration: none;
   }
 
   .services-menu a:hover {
@@ -380,68 +326,41 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
     gap: var(--spacing-xl);
   }
 
-  .service-detail {
+  .services-main > div {
     margin-bottom: var(--spacing-xxl);
-    padding-bottom: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xl);
     border-bottom: 2px solid var(--color-gray-light);
   }
 
-  .service-detail:last-child {
+  .services-main > div:last-child {
     border-bottom: none;
   }
 
-  .service-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .service-header h2 {
-    margin: 0;
-  }
-
-  .service-price {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  .service-intro {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-gray-dark);
-  }
-
-  .service-detail h3 {
-    color: var(--color-primary);
+  .service-destinations {
     margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .service-destinations h3 {
+    color: var(--color-primary);
     margin-bottom: var(--spacing-md);
   }
 
-  .service-detail h4 {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .service-list {
+  .service-destinations ul {
     list-style: none;
     padding: 0;
-    margin-bottom: var(--spacing-lg);
   }
 
-  .service-list li {
-    padding: var(--spacing-sm) 0;
+  .service-destinations li {
+    padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
     line-height: 1.6;
   }
 
-  .service-list li::before {
+  .service-destinations li::before {
     content: '✓';
     position: absolute;
     left: 0;
@@ -449,80 +368,52 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
     font-weight: bold;
   }
 
-  .service-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
-  }
-
-  .feature {
-    background-color: var(--color-light);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-  }
-
-  .feature strong {
-    display: block;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .feature p {
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    margin: 0;
-  }
-
   .destinations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
   }
 
-  .destination {
-    background-color: var(--color-light);
+  .destinations-grid > div {
+    background-color: var(--color-white);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .destination strong {
-    display: block;
+  .destinations-grid strong {
     color: var(--color-dark);
-    margin-bottom: 0.5rem;
+    font-size: 1.0625rem;
   }
 
-  .destination p {
+  .destinations-grid span {
     color: var(--color-primary);
     font-weight: var(--font-weight-semibold);
-    margin: 0;
-  }
-
-  .medical-info {
-    background-color: var(--color-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-lg);
-    border-left: 4px solid var(--color-success);
-    margin: var(--spacing-lg) 0;
   }
 
   .service-note {
-    background-color: var(--color-light);
     padding: var(--spacing-md);
+    background-color: var(--color-white);
     border-radius: var(--border-radius);
     margin-top: var(--spacing-md);
+    line-height: 1.7;
   }
 
   .service-note a {
     font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
   }
 
   .services-sidebar {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    position: sticky;
+    top: 140px;
   }
 
   .sidebar-booking,
@@ -585,6 +476,11 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
   .sidebar-cities a {
     color: var(--color-primary);
     font-weight: var(--font-weight-medium);
+    text-decoration: none;
+  }
+
+  .sidebar-cities a:hover {
+    color: var(--color-primary-dark);
   }
 
   @media (max-width: 968px) {
@@ -594,6 +490,7 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
 
     .services-sidebar {
       order: -1;
+      position: static;
     }
 
     .services-menu {
@@ -603,6 +500,10 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
 
     .services-menu a {
       text-align: center;
+    }
+
+    .destinations-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

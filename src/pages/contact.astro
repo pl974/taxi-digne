@@ -5,6 +5,8 @@
 
 import Layout from '../layouts/Layout.astro';
 import ImageHero from '../components/ImageHero.astro';
+import MapSection from '../components/MapSection.astro';
+import TrustSection from '../components/TrustSection.astro';
 import BookingForm from '../components/BookingForm.astro';
 
 const title = "Nous contacter";
@@ -66,20 +68,6 @@ const description = "Contactez Taxi Digne pour toute question ou réservation. D
             </div>
           </div>
 
-          <div class="info-block">
-            <h2>Zone d'intervention</h2>
-            <p>
-              Nous couvrons l'ensemble du département des Alpes-de-Haute-Provence (04)
-              ainsi que les départements limitrophes.
-            </p>
-            <ul class="zones-list">
-              <li><a href="/villes/digne-les-bains">Digne-les-Bains</a></li>
-              <li><a href="/villes/manosque">Manosque</a></li>
-              <li><a href="/villes/sisteron">Sisteron</a></li>
-              <li><a href="/villes/forcalquier">Forcalquier</a></li>
-              <li><a href="/villes">Voir toutes nos villes</a></li>
-            </ul>
-          </div>
         </div>
 
         <div class="contact-form">
@@ -90,6 +78,51 @@ const description = "Contactez Taxi Digne pour toute question ou réservation. D
       </div>
     </div>
   </section>
+
+  <!-- Zone d'intervention avec carte -->
+  <MapSection
+    title="Notre zone d'intervention"
+    subtitle="Service disponible dans tout le département des Alpes-de-Haute-Provence et départements limitrophes"
+    mapImage="/images/about/zone-intervention-alpes.webp"
+    mapAlt="Zone intervention taxi Digne Alpes-de-Haute-Provence 04"
+    cities={[
+      { name: "Digne-les-Bains", link: "/villes/digne-les-bains", description: "Service 24h/24" },
+      { name: "Manosque", link: "/villes/manosque", description: "Zone industrielle et centre" },
+      { name: "Sisteron", link: "/villes/sisteron", description: "Perle de la Haute-Provence" },
+      { name: "Forcalquier", link: "/villes/forcalquier", description: "Cité médiévale" },
+      { name: "Château-Arnoux", link: "/villes/chateau-arnoux", description: "Zone d'activité" },
+      { name: "Barcelonnette", link: "/villes/barcelonnette", description: "Stations de ski" }
+    ]}
+    variant="full"
+  />
+
+  <!-- Section confiance et disponibilité -->
+  <TrustSection
+    title="Pourquoi nous contacter ?"
+    subtitle="Un service professionnel, réactif et disponible à tout moment"
+    items={[
+      {
+        src: "/images/hero/hero-urgence-24h.webp",
+        alt: "Service urgence disponible 24h/24 7j/7 taxi Digne",
+        caption: "Disponible 24h/24 et 7j/7",
+        description: "Service d'urgence disponible jour et nuit pour tous vos besoins de transport immédiats."
+      },
+      {
+        src: "/images/hero/hero-reservation-rapide.webp",
+        alt: "Réservation rapide taxi Digne en ligne téléphone",
+        caption: "Réponse rapide garantie",
+        description: "Nous vous répondons sous 15 minutes par téléphone, SMS ou email. Confirmation immédiate de votre réservation."
+      },
+      {
+        src: "/images/about/satisfaction-client.webp",
+        alt: "Satisfaction clients taxi Digne avis positifs",
+        caption: "Clients satisfaits",
+        description: "Des centaines de clients nous font confiance. Note moyenne de 4.8/5 étoiles."
+      }
+    ]}
+    variant="grid"
+    bgColor="white"
+  />
 
   <section class="faq-section bg-light">
     <div class="container">
