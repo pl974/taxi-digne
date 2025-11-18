@@ -15,7 +15,21 @@ const { title = "Réservez votre taxi", compact = false } = Astro.props;
 <div class={`booking-form-container ${compact ? 'compact' : ''}`}>
   {!compact && <h2 class="form-title">{title}</h2>}
 
-  <form class="booking-form" id="bookingForm" action="/merci" method="POST">
+  <form
+    class="booking-form"
+    id="bookingForm"
+    name="booking"
+    method="POST"
+    action="/merci"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
+    <!-- Champ honeypot anti-spam (caché) -->
+    <input type="hidden" name="form-name" value="booking" />
+    <div class="form-group" style="display: none;">
+      <label>Ne pas remplir ce champ <input name="bot-field" /></label>
+    </div>
+
     <div class="form-row">
       <div class="form-group">
         <label for="pickup">Lieu de départ</label>
@@ -176,22 +190,6 @@ const { title = "Réservez votre taxi", compact = false } = Astro.props;
     dateInput.value = today;
   }
 
-  // Validation du formulaire
-  const form = document.getElementById('bookingForm') as HTMLFormElement;
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Récupérer les données du formulaire
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      // Ici vous pouvez ajouter l'envoi vers votre backend
-      console.log('Données de réservation:', data);
-
-      // Pour l'instant, on simule un envoi réussi
-      alert('Merci pour votre demande ! Nous vous recontactons dans les plus brefs délais.');
-      form.reset();
-    });
-  }
+  // Note: Pas de e.preventDefault() pour permettre à Netlify Forms de gérer la soumission
+  // Le formulaire sera soumis nativement et redirigera vers /merci après traitement par Netlify
 </script>
