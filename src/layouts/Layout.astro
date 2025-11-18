@@ -6,6 +6,7 @@
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import StickyPhone from '../components/StickyPhone.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -155,6 +156,9 @@ const pageSchema = {
     </main>
 
     <Footer />
+
+    <!-- Bouton téléphone sticky pour mobile/tablette -->
+    <StickyPhone phoneNumber="+33123456789" displayNumber="01 23 45 67 89" />
 
     <!-- Script pour améliorer l'expérience utilisateur -->
     <script>

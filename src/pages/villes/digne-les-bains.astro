@@ -4,6 +4,7 @@
  */
 
 import Layout from '../../layouts/Layout.astro';
+import ImageHero from '../../components/ImageHero.astro';
 import BookingForm from '../../components/BookingForm.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import CTA from '../../components/CTA.astro';
@@ -18,21 +19,17 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
   keywords="taxi digne les bains, taxi digne, réservation taxi digne, transport digne les bains, VTC digne, taxi 04000"
 >
   <!-- Hero Section locale -->
-  <section class="hero-city">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Taxi à Digne-les-Bains : votre service disponible 24h/24</h1>
-        <p class="hero-subtitle">
-          Service de taxi professionnel dans la préfecture des Alpes-de-Haute-Provence.
-          Réservation rapide et tarifs transparents pour tous vos déplacements.
-        </p>
-        <div class="hero-actions">
-          <a href="tel:+33123456789" class="btn btn-primary btn-large">Appelez maintenant</a>
-          <a href="#booking" class="btn btn-secondary btn-large">Réserver en ligne</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ImageHero
+    title="Taxi à Digne-les-Bains : votre service disponible 24h/24"
+    subtitle="Service de taxi professionnel dans la préfecture des Alpes-de-Haute-Provence. Réservation rapide et tarifs transparents pour tous vos déplacements."
+    image="/images/villes/digne-les-bains-ville.svg"
+    imageAlt="Taxi professionnel à Digne-les-Bains, Alpes-de-Haute-Provence"
+    ctaPrimary={{ text: "Appelez maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Réserver en ligne", href: "#booking" }}
+    variant="full"
+    height="medium"
+    overlay="dark"
+  />
 
   <!-- Informations sur Digne-les-Bains -->
   <section class="city-info">
@@ -244,34 +241,6 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
 </Layout>
 
 <style>
-  .hero-city {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: var(--color-white);
-    padding: var(--spacing-xxl) 0;
-    text-align: center;
-  }
-
-  .hero-city h1 {
-    color: var(--color-white);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-lg);
-    opacity: 0.95;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
   .city-info {
     padding: var(--spacing-xxl) 0;
   }
@@ -478,14 +447,6 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
 
     .info-sidebar {
       order: -1;
-    }
-
-    .hero-actions {
-      flex-direction: column;
-    }
-
-    .hero-actions .btn {
-      width: 100%;
     }
   }
 </style>

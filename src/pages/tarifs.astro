@@ -4,6 +4,7 @@
  */
 
 import Layout from '../layouts/Layout.astro';
+import ImageHero from '../components/ImageHero.astro';
 import BookingForm from '../components/BookingForm.astro';
 import CTA from '../components/CTA.astro';
 
@@ -12,15 +13,18 @@ const description = "Tarifs transparents pour tous nos services de taxi à Digne
 ---
 
 <Layout title={title} description={description}>
-  <!-- Hero -->
-  <section class="tarifs-hero">
-    <div class="container">
-      <h1>Nos tarifs de taxi à Digne-les-Bains</h1>
-      <p class="hero-text">
-        Tarifs transparents et compétitifs. Pas de surprise à l'arrivée, le prix vous est communiqué avant chaque course.
-      </p>
-    </div>
-  </section>
+  <!-- Hero avec image -->
+  <ImageHero
+    title="Nos tarifs de taxi à Digne-les-Bains"
+    subtitle="Tarifs transparents et compétitifs. Pas de surprise à l'arrivée, le prix vous est communiqué avant chaque course."
+    image="/images/features/tarifs-transparents.svg"
+    imageAlt="Tarifs transparents pour taxi à Digne-les-Bains"
+    ctaPrimary={{ text: "Demander un devis", href: "#booking" }}
+    ctaSecondary={{ text: "Appeler maintenant", href: "tel:+33123456789" }}
+    variant="full"
+    height="medium"
+    overlay="gradient"
+  />
 
   <!-- Tarifs principaux -->
   <section class="tarifs-main">

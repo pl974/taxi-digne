@@ -5,6 +5,7 @@
  */
 
 import Layout from '../layouts/Layout.astro';
+import ImageHero from '../components/ImageHero.astro';
 import BookingForm from '../components/BookingForm.astro';
 import CTA from '../components/CTA.astro';
 
@@ -13,15 +14,18 @@ const description = "Découvrez tous nos services de taxi : transfert aéroport,
 ---
 
 <Layout title={title} description={description}>
-  <!-- Hero -->
-  <section class="services-hero">
-    <div class="container">
-      <h1>Nos services de taxi à Digne et dans les Alpes-de-Haute-Provence</h1>
-      <p class="hero-text">
-        Un service complet pour tous vos besoins de transport, disponible 24h/24 et 7j/7
-      </p>
-    </div>
-  </section>
+  <!-- Hero avec image -->
+  <ImageHero
+    title="Nos services de taxi à Digne et dans les Alpes-de-Haute-Provence"
+    subtitle="Un service complet pour tous vos besoins de transport, disponible 24h/24 et 7j/7"
+    image="/images/hero/hero-transfert-aeroport.svg"
+    imageAlt="Services de taxi professionnels à Digne-les-Bains"
+    ctaPrimary={{ text: "Appeler maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Voir les tarifs", href: "/tarifs" }}
+    variant="full"
+    height="medium"
+    overlay="dark"
+  />
 
   <!-- Navigation rapide -->
   <nav class="services-nav">

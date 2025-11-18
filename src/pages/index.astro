@@ -1,14 +1,29 @@
 ---
 /**
  * Page d'accueil - Optimisée conversion et SEO
- * Landing page principale pour taxi-digne.fr
+ * Version améliorée avec images et nouveaux composants
  */
 
 import Layout from '../layouts/Layout.astro';
-import BookingForm from '../components/BookingForm.astro';
-import ServiceCard from '../components/ServiceCard.astro';
+import ImageHero from '../components/ImageHero.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FleetSection from '../components/FleetSection.astro';
+import StatsCounter from '../components/StatsCounter.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
+import BookingForm from '../components/BookingForm.astro';
 import CTA from '../components/CTA.astro';
+
+import {
+  fleetVehicles,
+  bookingSteps,
+  mainFeatures,
+  trustBadges,
+  keyStats,
+  servicesData,
+  testimonials
+} from '../data/siteData';
 
 const title = "Taxi à Digne-les-Bains et Alpes-de-Haute-Provence";
 const description = "Réservez votre taxi à Digne-les-Bains. Service professionnel disponible 24h/24 et 7j/7. Transfert aéroport, gare, courses locales et longue distance. Devis gratuit en ligne.";
@@ -19,56 +34,27 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
   description={description}
   schemaType="LocalBusiness"
 >
-  <!-- Hero Section - CTA au-dessus de la ligne de flottaison -->
-  <section class="hero">
+  <!-- Hero Section avec image -->
+  <ImageHero
+    title="Votre taxi à Digne-les-Bains"
+    subtitle="Service de taxi professionnel disponible 24h/24 et 7j/7 dans les Alpes-de-Haute-Provence. Réservation en ligne simple et rapide avec devis immédiat."
+    image="/images/hero/hero-taxi-digne-principal.svg"
+    imageAlt="Taxi professionnel à Digne-les-Bains, service disponible 24h/24"
+    ctaPrimary={{ text: "Appeler maintenant", href: "tel:+33123456789" }}
+    ctaSecondary={{ text: "Réserver en ligne", href: "#booking" }}
+    variant="full"
+    height="large"
+    overlay="gradient"
+  />
+
+  <!-- Badges de confiance -->
+  <section class="trust-badges-section">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            Votre taxi à <span class="highlight">Digne-les-Bains</span>
-          </h1>
-          <p class="hero-subtitle">
-            Service de taxi professionnel disponible 24h/24 et 7j/7 dans les Alpes-de-Haute-Provence.
-            Réservation en ligne simple et rapide avec devis immédiat.
-          </p>
-
-          <div class="hero-features">
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <span>Disponible 24h/24</span>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <span>Devis gratuit</span>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <span>Paiement sécurisé</span>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <span>Chauffeurs expérimentés</span>
-            </div>
-          </div>
-
-          <div class="hero-cta">
-            <a href="tel:+33123456789" class="btn btn-primary btn-large">
-              Appeler maintenant
-            </a>
-            <a href="#booking" class="btn btn-secondary btn-large">
-              Réserver en ligne
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-form">
-          <BookingForm compact={true} />
-        </div>
-      </div>
+      <TrustBadges badges={trustBadges} layout="inline" variant="simple" />
     </div>
   </section>
 
-  <!-- Section Services principaux -->
+  <!-- Section Services principaux avec images -->
   <section class="services-section">
     <div class="container">
       <div class="section-header">
@@ -79,104 +65,62 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
       </div>
 
       <div class="services-grid">
-        <ServiceCard
-          title="Transfert aéroport"
-          description="Transport vers les aéroports de Marseille, Nice et Toulon. Service porte-à-porte avec suivi de vol et assistance bagages."
-          link="/services#transfert-aeroport"
-          price="90€"
-        />
-
-        <ServiceCard
-          title="Transfert gare"
-          description="Navette depuis et vers les gares SNCF de Digne, Manosque et Sisteron. Ponctualité garantie pour vos correspondances."
-          link="/services#transfert-gare"
-          price="30€"
-        />
-
-        <ServiceCard
-          title="Taxi longue distance"
-          description="Trajets longue distance vers toute la région PACA et au-delà. Confort assuré pour vos déplacements professionnels ou personnels."
-          link="/services#taxi-longue-distance"
-          price="Sur devis"
-        />
-
-        <ServiceCard
-          title="Transport médical"
-          description="Transport conventionné CPAM pour vos rendez-vous médicaux. Véhicule adapté et chauffeurs formés aux besoins spécifiques."
-          link="/services#taxi-medical"
-          price="Remboursé"
-        />
-
-        <ServiceCard
-          title="Courses locales"
-          description="Déplacements quotidiens dans Digne et alentours. Service rapide et efficace pour toutes vos courses du quotidien."
-          link="/services#courses-locales"
-          price="20€"
-        />
-
-        <ServiceCard
-          title="Taxi professionnel"
-          description="Service dédié aux entreprises avec facturation mensuelle. Disponibilité garantie pour vos collaborateurs et clients."
-          link="/services#taxi-professionnel"
-          price="Sur devis"
-        />
+        {servicesData.map(service => (
+          <article class="service-card-image">
+            <div class="service-image">
+              <img src={service.image} alt={service.title} loading="lazy" />
+            </div>
+            <div class="service-content">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <div class="service-footer">
+                <span class="service-price">{service.price}</span>
+                <a href={service.link} class="service-link">En savoir plus →</a>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
 
       <div class="services-cta">
-        <a href="/services" class="btn btn-primary">Voir tous nos services</a>
+        <a href="/services" class="btn btn-primary btn-large">Voir tous nos services</a>
       </div>
     </div>
   </section>
 
-  <!-- Section Pourquoi nous choisir -->
-  <section class="why-section bg-light">
-    <div class="container">
-      <div class="section-header">
-        <h2>Pourquoi choisir notre service de taxi à Digne ?</h2>
-        <p class="section-subtitle">
-          Plus de 15 ans d'expérience au service des habitants et visiteurs des Alpes-de-Haute-Provence
-        </p>
-      </div>
+  <!-- Section Features/Avantages avec images -->
+  <FeatureGrid
+    title="Pourquoi choisir notre service de taxi à Digne ?"
+    subtitle="Plus de 15 ans d'expérience au service des habitants et visiteurs des Alpes-de-Haute-Provence"
+    features={mainFeatures}
+    columns={4}
+    variant="image"
+  />
 
-      <div class="why-grid">
-        <div class="why-card animate">
-          <div class="why-number">24/7</div>
-          <h3>Disponibilité totale</h3>
-          <p>
-            Notre service est disponible 24 heures sur 24 et 7 jours sur 7, y compris les jours fériés.
-            Réservez à tout moment pour vos urgences ou déplacements planifiés.
-          </p>
-        </div>
-
-        <div class="why-card animate">
-          <div class="why-number">100%</div>
-          <h3>Satisfaction garantie</h3>
-          <p>
-            Plus de 500 clients satisfaits chaque mois. Chauffeurs professionnels, véhicules récents
-            et climatisés. Votre satisfaction est notre priorité.
-          </p>
-        </div>
-
-        <div class="why-card animate">
-          <div class="why-number">€€</div>
-          <h3>Tarifs transparents</h3>
-          <p>
-            Pas de surprise à l'arrivée. Nos tarifs sont clairs et affichés à l'avance.
-            Devis gratuit en ligne ou par téléphone avant chaque course.
-          </p>
-        </div>
-
-        <div class="why-card animate">
-          <div class="why-number">5★</div>
-          <h3>Service de qualité</h3>
-          <p>
-            Véhicules confortables et bien entretenus. Chauffeurs courtois et professionnels
-            connaissant parfaitement la région et ses routes.
-          </p>
-        </div>
-      </div>
-    </div>
+  <!-- Section Process - Comment ça marche -->
+  <section class="bg-light">
+    <ProcessSteps
+      title="Réservez votre taxi en 4 étapes simples"
+      subtitle="Un processus de réservation facile et rapide pour tous vos déplacements"
+      steps={bookingSteps}
+      layout="horizontal"
+    />
   </section>
+
+  <!-- Section Flotte de véhicules -->
+  <FleetSection
+    title="Notre flotte de véhicules à Digne-les-Bains"
+    subtitle="Des véhicules récents, confortables et parfaitement entretenus pour tous vos besoins de transport"
+    vehicles={fleetVehicles}
+  />
+
+  <!-- Section Chiffres clés -->
+  <StatsCounter
+    title="Ils nous font confiance"
+    subtitle="Des chiffres qui témoignent de notre engagement et de notre expertise"
+    stats={keyStats}
+    variant="primary"
+  />
 
   <!-- Section Zones desservies -->
   <section class="zones-section">
@@ -260,34 +204,20 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
       </div>
 
       <div class="testimonials-grid">
-        <TestimonialCard
-          name="Marie Dupont"
-          rating={5}
-          comment="Service impeccable pour mon transfert vers l'aéroport de Marseille. Chauffeur à l'heure, véhicule propre et confortable. Je recommande vivement !"
-          city="Digne-les-Bains"
-          date="2024-01-15"
-        />
-
-        <TestimonialCard
-          name="Jean Martin"
-          rating={5}
-          comment="J'utilise régulièrement ce service de taxi pour mes déplacements professionnels. Toujours ponctuel, tarifs corrects et chauffeurs très professionnels."
-          city="Manosque"
-          date="2024-01-10"
-        />
-
-        <TestimonialCard
-          name="Sophie Bernard"
-          rating={5}
-          comment="Excellent service pour mes rendez-vous médicaux. Le chauffeur est patient et attentionné. Transport conventionné bien géré. Merci beaucoup !"
-          city="Sisteron"
-          date="2024-01-05"
-        />
+        {testimonials.map(testimonial => (
+          <TestimonialCard
+            name={testimonial.name}
+            rating={testimonial.rating}
+            comment={testimonial.comment}
+            city={testimonial.city}
+            date={testimonial.date}
+          />
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Section réservation -->
+  <!-- Section réservation avec formulaire -->
   <section id="booking" class="booking-section">
     <div class="container">
       <div class="booking-content">
@@ -396,87 +326,14 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
 </Layout>
 
 <style>
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
-    color: var(--color-white);
-    padding: var(--spacing-xxl) 0;
-    position: relative;
-    overflow: hidden;
+  /* Trust Badges Section */
+  .trust-badges-section {
+    background-color: var(--color-light);
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--color-gray-light);
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('/images/taxi-pattern.svg') repeat;
-    opacity: 0.05;
-  }
-
-  .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.1;
-    color: var(--color-white);
-  }
-
-  .highlight {
-    color: var(--color-secondary);
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.6;
-    opacity: 0.95;
-  }
-
-  .hero-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: var(--font-weight-medium);
-  }
-
-  .feature-icon {
-    color: var(--color-secondary);
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-  }
-
-  .hero-form {
-    background: var(--color-white);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Sections communes */
+  /* Section Headers */
   .section-header {
     text-align: center;
     max-width: 800px;
@@ -505,39 +362,84 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
     margin-bottom: var(--spacing-xl);
   }
 
-  .services-cta {
-    text-align: center;
+  .service-card-image {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Why Section */
-  .why-section {
-    padding: var(--spacing-xxl) 0;
+  .service-card-image:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-4px);
   }
 
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
+  .service-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
   }
 
-  .why-card {
-    text-align: center;
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card-image:hover .service-image img {
+    transform: scale(1.05);
+  }
+
+  .service-content {
     padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 
-  .why-number {
-    font-size: 3rem;
+  .service-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
+  }
+
+  .service-content p {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-gray-light);
+  }
+
+  .service-price {
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.125rem;
   }
 
-  .why-card h3 {
-    margin-bottom: var(--spacing-sm);
+  .service-link {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
   }
 
-  .why-card p {
-    line-height: 1.6;
+  .service-link:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .services-cta {
+    text-align: center;
   }
 
   /* Zones Section */
@@ -549,6 +451,12 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
+  }
+
+  .zones-main h3,
+  .zones-secondary h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
   }
 
   .zones-list {
@@ -733,35 +641,14 @@ const description = "Réservez votre taxi à Digne-les-Bains. Service profession
 
   /* Responsive */
   @media (max-width: 968px) {
-    .hero-content,
     .zones-content,
     .booking-content {
-      grid-template-columns: 1fr;
-    }
-
-    .hero {
-      padding: var(--spacing-xl) 0;
-    }
-
-    .hero-text {
-      text-align: center;
-    }
-
-    .hero-cta {
-      justify-content: center;
-    }
-
-    .hero-features {
       grid-template-columns: 1fr;
     }
 
     .services-grid,
     .testimonials-grid {
       grid-template-columns: 1fr;
-    }
-
-    .why-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
   }
 </style>
