@@ -1,0 +1,211 @@
+---
+/**
+ * Composant ImageHero - Hero section avec image de fond
+ * Différentes variantes: full (plein écran), split (image + texte), minimal
+ */
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  image: string;
+  imageAlt: string;
+  ctaPrimary?: {
+    text: string;
+    href: string;
+  };
+  ctaSecondary?: {
+    text: string;
+    href: string;
+  };
+  variant?: 'full' | 'split' | 'minimal';
+  height?: 'small' | 'medium' | 'large';
+  overlay?: 'dark' | 'light' | 'gradient';
+}
+
+const {
+  title,
+  subtitle,
+  image,
+  imageAlt,
+  ctaPrimary,
+  ctaSecondary,
+  variant = 'full',
+  height = 'large',
+  overlay = 'dark'
+} = Astro.props;
+---
+
+<section class={`image-hero hero-${variant} hero-${height} overlay-${overlay}`}>
+  <div class="hero-background">
+    <img src={image} alt={imageAlt} class="hero-image" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">{title}</h1>
+      {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+
+      {(ctaPrimary || ctaSecondary) && (
+        <div class="hero-cta">
+          {ctaPrimary && (
+            <a href={ctaPrimary.href} class="btn btn-primary btn-large">
+              {ctaPrimary.text}
+            </a>
+          )}
+          {ctaSecondary && (
+            <a href={ctaSecondary.href} class="btn btn-secondary btn-large">
+              {ctaSecondary.text}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-small {
+    min-height: 400px;
+  }
+
+  .hero-medium {
+    min-height: 500px;
+  }
+
+  .hero-large {
+    min-height: 600px;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay-dark .hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .overlay-light .hero-overlay {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .overlay-gradient .hero-overlay {
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.85) 0%, rgba(0, 77, 153, 0.85) 100%);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xxl) 0;
+    color: var(--color-white);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+    color: var(--color-white);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Variant Split */
+  .hero-split .hero-content {
+    text-align: left;
+    max-width: 600px;
+    margin-left: 0;
+  }
+
+  .hero-split .hero-cta {
+    justify-content: flex-start;
+  }
+
+  /* Variant Minimal */
+  .hero-minimal {
+    min-height: 300px;
+  }
+
+  .hero-minimal .hero-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .hero-minimal .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-small,
+    .hero-medium,
+    .hero-large {
+      min-height: 400px;
+    }
+
+    .hero-content {
+      padding: var(--spacing-xl) 0;
+    }
+
+    .hero-split .hero-content {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-split .hero-cta {
+      justify-content: center;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+    }
+  }
+</style>

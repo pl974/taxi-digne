@@ -1,0 +1,239 @@
+---
+/**
+ * Composant FleetSection - Présentation de la flotte de véhicules
+ * Cartes avec images et caractéristiques
+ */
+
+interface Vehicle {
+  name: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  capacity: string;
+  luggage: string;
+  features: string[];
+  ideal: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  vehicles: Vehicle[];
+}
+
+const {
+  title = "Notre flotte de véhicules",
+  subtitle = "Des véhicules récents, confortables et adaptés à tous vos besoins",
+  vehicles
+} = Astro.props;
+---
+
+<section class="fleet-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>{title}</h2>
+      <p class="section-subtitle">{subtitle}</p>
+    </div>
+
+    <div class="fleet-grid">
+      {vehicles.map(vehicle => (
+        <article class="vehicle-card">
+          <div class="vehicle-image">
+            <img src={vehicle.image} alt={vehicle.imageAlt} loading="lazy" />
+          </div>
+
+          <div class="vehicle-content">
+            <h3 class="vehicle-name">{vehicle.name}</h3>
+            <p class="vehicle-description">{vehicle.description}</p>
+
+            <div class="vehicle-specs">
+              <div class="spec-item">
+                <span class="spec-label">Capacité</span>
+                <span class="spec-value">{vehicle.capacity}</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Bagages</span>
+                <span class="spec-value">{vehicle.luggage}</span>
+              </div>
+            </div>
+
+            <div class="vehicle-features">
+              <h4>Équipements</h4>
+              <ul>
+                {vehicle.features.map(feature => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
+            </div>
+
+            <p class="vehicle-ideal">
+              <strong>Idéal pour :</strong> {vehicle.ideal}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .fleet-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-light);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+  }
+
+  .fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+  }
+
+  .vehicle-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vehicle-card:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .vehicle-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .vehicle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .vehicle-card:hover .vehicle-image img {
+    transform: scale(1.05);
+  }
+
+  .vehicle-content {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vehicle-name {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+
+  .vehicle-description {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .vehicle-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+  }
+
+  .spec-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .spec-label {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-bottom: 0.25rem;
+  }
+
+  .spec-value {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+  }
+
+  .vehicle-features {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .vehicle-features h4 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
+  }
+
+  .vehicle-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .vehicle-features li {
+    padding: 0.375rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-gray-dark);
+  }
+
+  .vehicle-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  .vehicle-ideal {
+    margin-top: auto;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-gray-light);
+    font-size: 0.9375rem;
+    color: var(--color-gray-dark);
+  }
+
+  .vehicle-ideal strong {
+    color: var(--color-dark);
+  }
+
+  @media (max-width: 768px) {
+    .fleet-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vehicle-image {
+      height: 220px;
+    }
+  }
+</style>

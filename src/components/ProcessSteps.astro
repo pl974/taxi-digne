@@ -1,0 +1,164 @@
+---
+/**
+ * Composant ProcessSteps - Affiche les étapes d'un processus (1-2-3-4)
+ * Visualisation claire du flow avec numérotation
+ */
+
+interface Step {
+  number: number;
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  steps: Step[];
+  layout?: 'horizontal' | 'vertical';
+}
+
+const {
+  title = "Comment ça marche ?",
+  subtitle = "Réservez votre taxi en quelques étapes simples",
+  steps,
+  layout = 'horizontal'
+} = Astro.props;
+---
+
+<section class="process-steps-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class={`steps-container layout-${layout}`}>
+      {steps.map((step, index) => (
+        <div class="step-item">
+          <div class="step-number">{step.number}</div>
+
+          {step.icon && (
+            <div class="step-icon" set:html={step.icon} />
+          )}
+
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-description">{step.description}</p>
+
+          {index < steps.length - 1 && layout === 'horizontal' && (
+            <div class="step-connector" aria-hidden="true"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-steps-section {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+  }
+
+  .steps-container {
+    display: grid;
+    gap: var(--spacing-xl);
+    position: relative;
+  }
+
+  .layout-horizontal {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .layout-vertical {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .step-item {
+    text-align: center;
+    position: relative;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+
+  .step-item:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-white);
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
+  }
+
+  .step-description {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+  }
+
+  .step-connector {
+    position: absolute;
+    top: 30px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+    z-index: -1;
+  }
+
+  .layout-vertical .step-connector {
+    display: none;
+  }
+
+  @media (max-width: 968px) {
+    .steps-container {
+      grid-template-columns: 1fr;
+    }
+
+    .step-connector {
+      display: none;
+    }
+  }
+</style>
